@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		8C6A49982B0375C000EE3AEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49972B0375C000EE3AEE /* AppDelegate.swift */; };
 		8C6A499A2B0375C000EE3AEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49992B0375C000EE3AEE /* SceneDelegate.swift */; };
-		8C6A499C2B0375C000EE3AEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A499B2B0375C000EE3AEE /* ViewController.swift */; };
+		8C6A499C2B0375C000EE3AEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A499B2B0375C000EE3AEE /* LoginViewController.swift */; };
 		8C6A49A12B0375C400EE3AEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C6A49A02B0375C400EE3AEE /* Assets.xcassets */; };
 		8C6A49A42B0375C400EE3AEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C6A49A22B0375C400EE3AEE /* LaunchScreen.storyboard */; };
 		8C6A49AF2B0375C400EE3AEE /* MovieLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49AE2B0375C400EE3AEE /* MovieLogTests.swift */; };
 		8C6A49B92B0375C400EE3AEE /* MovieLogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49B82B0375C400EE3AEE /* MovieLogUITests.swift */; };
 		8C6A49BB2B0375C400EE3AEE /* MovieLogUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49BA2B0375C400EE3AEE /* MovieLogUITestsLaunchTests.swift */; };
+		8C6A49C92B04B65700EE3AEE /* IdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49C82B04B65700EE3AEE /* IdView.swift */; };
+		8C6A49CB2B04F20000EE3AEE /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49CA2B04F20000EE3AEE /* PasswordView.swift */; };
+		8C6A49CF2B04F8FD00EE3AEE /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 8C6A49CE2B04F8FD00EE3AEE /* PinLayout */; };
+		8C6A49E32B0503F400EE3AEE /* FlexLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 8C6A49E22B0503F400EE3AEE /* FlexLayout */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +42,7 @@
 		8C6A49942B0375C000EE3AEE /* MovieLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C6A49972B0375C000EE3AEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C6A49992B0375C000EE3AEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8C6A499B2B0375C000EE3AEE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8C6A499B2B0375C000EE3AEE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8C6A49A02B0375C400EE3AEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C6A49A32B0375C400EE3AEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C6A49A52B0375C400EE3AEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +51,8 @@
 		8C6A49B42B0375C400EE3AEE /* MovieLogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieLogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C6A49B82B0375C400EE3AEE /* MovieLogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLogUITests.swift; sourceTree = "<group>"; };
 		8C6A49BA2B0375C400EE3AEE /* MovieLogUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLogUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8C6A49C82B04B65700EE3AEE /* IdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdView.swift; sourceTree = "<group>"; };
+		8C6A49CA2B04F20000EE3AEE /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C6A49CF2B04F8FD00EE3AEE /* PinLayout in Frameworks */,
+				8C6A49E32B0503F400EE3AEE /* FlexLayout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,9 +105,9 @@
 		8C6A49962B0375C000EE3AEE /* MovieLog */ = {
 			isa = PBXGroup;
 			children = (
+				8C6A49C72B04B59F00EE3AEE /* Login */,
 				8C6A49972B0375C000EE3AEE /* AppDelegate.swift */,
 				8C6A49992B0375C000EE3AEE /* SceneDelegate.swift */,
-				8C6A499B2B0375C000EE3AEE /* ViewController.swift */,
 				8C6A49A02B0375C400EE3AEE /* Assets.xcassets */,
 				8C6A49A22B0375C400EE3AEE /* LaunchScreen.storyboard */,
 				8C6A49A52B0375C400EE3AEE /* Info.plist */,
@@ -124,6 +132,16 @@
 			path = MovieLogUITests;
 			sourceTree = "<group>";
 		};
+		8C6A49C72B04B59F00EE3AEE /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8C6A499B2B0375C000EE3AEE /* LoginViewController.swift */,
+				8C6A49C82B04B65700EE3AEE /* IdView.swift */,
+				8C6A49CA2B04F20000EE3AEE /* PasswordView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,6 +158,10 @@
 			dependencies = (
 			);
 			name = MovieLog;
+			packageProductDependencies = (
+				8C6A49CE2B04F8FD00EE3AEE /* PinLayout */,
+				8C6A49E22B0503F400EE3AEE /* FlexLayout */,
+			);
 			productName = MovieLog;
 			productReference = 8C6A49942B0375C000EE3AEE /* MovieLog.app */;
 			productType = "com.apple.product-type.application";
@@ -212,6 +234,10 @@
 				Base,
 			);
 			mainGroup = 8C6A498B2B0375C000EE3AEE;
+			packageReferences = (
+				8C6A49CD2B04F8FD00EE3AEE /* XCRemoteSwiftPackageReference "PinLayout" */,
+				8C6A49E12B0503F400EE3AEE /* XCRemoteSwiftPackageReference "FlexLayout" */,
+			);
 			productRefGroup = 8C6A49952B0375C000EE3AEE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -254,7 +280,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C6A499C2B0375C000EE3AEE /* ViewController.swift in Sources */,
+				8C6A49CB2B04F20000EE3AEE /* PasswordView.swift in Sources */,
+				8C6A499C2B0375C000EE3AEE /* LoginViewController.swift in Sources */,
+				8C6A49C92B04B65700EE3AEE /* IdView.swift in Sources */,
 				8C6A49982B0375C000EE3AEE /* AppDelegate.swift in Sources */,
 				8C6A499A2B0375C000EE3AEE /* SceneDelegate.swift in Sources */,
 			);
@@ -350,6 +378,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -431,6 +460,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AH24YSXN5M;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "FLEXLAYOUT_SWIFT_PACKAGE=1";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MovieLog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -458,6 +489,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AH24YSXN5M;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "FLEXLAYOUT_SWIFT_PACKAGE=1";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MovieLog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -593,6 +626,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8C6A49CD2B04F8FD00EE3AEE /* XCRemoteSwiftPackageReference "PinLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/layoutBox/PinLayout";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.10.5;
+			};
+		};
+		8C6A49E12B0503F400EE3AEE /* XCRemoteSwiftPackageReference "FlexLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/layoutBox/FlexLayout.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.3.18;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8C6A49CE2B04F8FD00EE3AEE /* PinLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C6A49CD2B04F8FD00EE3AEE /* XCRemoteSwiftPackageReference "PinLayout" */;
+			productName = PinLayout;
+		};
+		8C6A49E22B0503F400EE3AEE /* FlexLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C6A49E12B0503F400EE3AEE /* XCRemoteSwiftPackageReference "FlexLayout" */;
+			productName = FlexLayout;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8C6A498C2B0375C000EE3AEE /* Project object */;
 }
