@@ -54,3 +54,16 @@ class LoginViewController: UIViewController {
         }
     }
 }
+
+#if canImport(SwiftUI) && DEBUG
+import SwiftUI
+
+struct MyLoginViewControllerPreview: PreviewProvider {
+    static var previews: some View {
+        ContentViewControllerPreview {
+            let vc = LoginViewController()
+            return vc
+        }
+    }
+}
+#endif

@@ -18,6 +18,7 @@
 		8C6A49C92B04B65700EE3AEE /* IdPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49C82B04B65700EE3AEE /* IdPasswordView.swift */; };
 		8C6A49E62B078E6E00EE3AEE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8C6A49E52B078E6E00EE3AEE /* SnapKit */; };
 		8C6A49E92B0794B100EE3AEE /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 8C6A49E82B0794B100EE3AEE /* Then */; };
+		8C6A49EC2B079D1700EE3AEE /* ContentViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49EB2B079D1700EE3AEE /* ContentViewPreview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		8C6A49B82B0375C400EE3AEE /* MovieLogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLogUITests.swift; sourceTree = "<group>"; };
 		8C6A49BA2B0375C400EE3AEE /* MovieLogUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLogUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8C6A49C82B04B65700EE3AEE /* IdPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdPasswordView.swift; sourceTree = "<group>"; };
+		8C6A49EB2B079D1700EE3AEE /* ContentViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewPreview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				8C6A49C72B04B59F00EE3AEE /* Login */,
+				8C6A49EA2B079CF800EE3AEE /* Utils */,
 				8C6A49972B0375C000EE3AEE /* AppDelegate.swift */,
 				8C6A49992B0375C000EE3AEE /* SceneDelegate.swift */,
 				8C6A49A02B0375C400EE3AEE /* Assets.xcassets */,
@@ -137,6 +140,14 @@
 				8C6A49C82B04B65700EE3AEE /* IdPasswordView.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		8C6A49EA2B079CF800EE3AEE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8C6A49EB2B079D1700EE3AEE /* ContentViewPreview.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C6A499C2B0375C000EE3AEE /* LoginViewController.swift in Sources */,
+				8C6A49EC2B079D1700EE3AEE /* ContentViewPreview.swift in Sources */,
 				8C6A49C92B04B65700EE3AEE /* IdPasswordView.swift in Sources */,
 				8C6A49982B0375C000EE3AEE /* AppDelegate.swift in Sources */,
 				8C6A499A2B0375C000EE3AEE /* SceneDelegate.swift in Sources */,
