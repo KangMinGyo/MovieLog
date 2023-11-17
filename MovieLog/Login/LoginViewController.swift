@@ -6,22 +6,35 @@
 //
 
 import UIKit
+import SnapKit
+import Then
 
 class LoginViewController: UIViewController {
     
-    lazy var logoImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "LogoImage")
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
+    lazy var logoImage = UIImageView().then {
+        $0.image = UIImage(named: "LogoImage")
+        $0.contentMode = .scaleAspectFit
+    }
     
-    lazy var idView: IdView = {
-        let view = IdView()
-            view.translatesAutoresizingMaskIntoConstraints = false
-            return view
-        }()
+//    lazy var logoImage: UIImageView = {
+//        let imageView = UIImageView()
+//        imageView.image = UIImage(named: "LogoImage")
+//        imageView.contentMode = .scaleAspectFit
+//        imageView.translatesAutoresizingMaskIntoConstraints = false
+//        return imageView
+//    }()
+    
+//    lazy var idView: IdView = {
+//        let view = IdView()
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        return view
+//    }()
+//    
+//    lazy var passwordView: PasswordView = {
+//        let view = PasswordView()
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        return view
+//    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +46,11 @@ class LoginViewController: UIViewController {
 
     func setupConstraints() {
         view.addSubview(logoImage)
-        view.addSubview(idView)
+//        view.addSubview(idView)
+//        view.addSubview(passwordView)
         
-        NSLayoutConstraint.activate([
-            logoImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            logoImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            logoImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        ])
+        logoImage.snp.makeConstraints { make in
+            make.edges.equalTo(self.view)
+        }
     }
 }
-
