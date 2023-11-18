@@ -16,10 +16,11 @@ class LoginViewController: UIViewController {
         $0.contentMode = .scaleAspectFit
     }
     
-//    lazy var loginStackView = UIStackView().then {
-//        $0.axis = .vertical
-//        $0.spacing = 10
-//    }
+    lazy var loginStackView = UIStackView().then {
+        $0.axis = .vertical
+        $0.spacing = 10
+        $0.distribution = .fillEqually
+    }
 
     lazy var idView = IdView().then {
         $0.backgroundColor = .systemBackground
@@ -29,25 +30,13 @@ class LoginViewController: UIViewController {
         $0.backgroundColor = .systemBackground
     }
     
-//    lazy var logoImage: UIImageView = {
-//        let imageView = UIImageView()
-//        imageView.image = UIImage(named: "LogoImage")
-//        imageView.contentMode = .scaleAspectFit
-//        imageView.translatesAutoresizingMaskIntoConstraints = false
-//        return imageView
-//    }()
-    
-//    lazy var idView: IdView = {
-//        let view = IdView()
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        return view
-//    }()
-//    
-//    lazy var passwordView: PasswordView = {
-//        let view = PasswordView()
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        return view
-//    }()
+    lazy var loginButton = UIButton().then {
+        $0.setTitle("로그인", for: .normal)
+        $0.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+        $0.backgroundColor = UIColor(named: "MainColor")
+        $0.layer.masksToBounds = true
+        $0.layer.cornerRadius = 30
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,27 +48,34 @@ class LoginViewController: UIViewController {
 
     func setupConstraints() {
         view.addSubview(logoImage)
-//        loginStackView.addArrangedSubview(idView)
-//        loginStackView.addArrangedSubview(passwordView)
+        view.addSubview(loginStackView)
+        view.addSubview(loginButton)
         
-        view.addSubview(idView)
-        view.addSubview(passwordView)
-        
+        loginStackView.addArrangedSubview(idView)
+        loginStackView.addArrangedSubview(passwordView)
+
         logoImage.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.width.equalTo(view.frame.width)
         }
         
-        idView.snp.makeConstraints {
+        for v in loginStackView.arrangedSubviews {
+            v.snp.makeConstraints {
+                $0.height.equalTo(80)
+            }
+        }
+        
+        loginStackView.snp.makeConstraints {
             $0.top.equalTo(logoImage.snp.bottom)
             $0.leading.trailing.equalToSuperview().inset(40)
-            $0.height.equalTo(80)
+            $0.height.equalTo(160)
         }
-
-        passwordView.snp.makeConstraints {
-            $0.top.equalTo(idView.snp.bottom)
-            $0.leading.trailing.equalToSuperview().inset(40)
+        
+        loginButton.snp.makeConstraints {
+            $0.top.equalTo(loginStackView.snp.bottom)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(60)
         }
     }
 }

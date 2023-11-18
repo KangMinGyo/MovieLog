@@ -20,6 +20,7 @@
 		8C6A49E92B0794B100EE3AEE /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 8C6A49E82B0794B100EE3AEE /* Then */; };
 		8C6A49EC2B079D1700EE3AEE /* ContentViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49EB2B079D1700EE3AEE /* ContentViewPreview.swift */; };
 		8C6A49EE2B08887600EE3AEE /* PasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49ED2B08887600EE3AEE /* PasswordView.swift */; };
+		8C6A49F02B08AE1700EE3AEE /* InfoFindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49EF2B08AE1700EE3AEE /* InfoFindView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		8C6A49C82B04B65700EE3AEE /* IdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdView.swift; sourceTree = "<group>"; };
 		8C6A49EB2B079D1700EE3AEE /* ContentViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewPreview.swift; sourceTree = "<group>"; };
 		8C6A49ED2B08887600EE3AEE /* PasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordView.swift; sourceTree = "<group>"; };
+		8C6A49EF2B08AE1700EE3AEE /* InfoFindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoFindView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				8C6A499B2B0375C000EE3AEE /* LoginViewController.swift */,
 				8C6A49C82B04B65700EE3AEE /* IdView.swift */,
 				8C6A49ED2B08887600EE3AEE /* PasswordView.swift */,
+				8C6A49EF2B08AE1700EE3AEE /* InfoFindView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				8C6A499C2B0375C000EE3AEE /* LoginViewController.swift in Sources */,
 				8C6A49EE2B08887600EE3AEE /* PasswordView.swift in Sources */,
 				8C6A49EC2B079D1700EE3AEE /* ContentViewPreview.swift in Sources */,
+				8C6A49F02B08AE1700EE3AEE /* InfoFindView.swift in Sources */,
 				8C6A49C92B04B65700EE3AEE /* IdView.swift in Sources */,
 				8C6A49982B0375C000EE3AEE /* AppDelegate.swift in Sources */,
 				8C6A499A2B0375C000EE3AEE /* SceneDelegate.swift in Sources */,
