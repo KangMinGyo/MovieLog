@@ -16,6 +16,19 @@ class LoginViewController: UIViewController {
         $0.contentMode = .scaleAspectFit
     }
     
+//    lazy var loginStackView = UIStackView().then {
+//        $0.axis = .vertical
+//        $0.spacing = 10
+//    }
+
+    lazy var idView = IdView().then {
+        $0.backgroundColor = .systemBackground
+    }
+    
+    lazy var passwordView = PasswordView().then {
+        $0.backgroundColor = .systemBackground
+    }
+    
 //    lazy var logoImage: UIImageView = {
 //        let imageView = UIImageView()
 //        imageView.image = UIImage(named: "LogoImage")
@@ -46,11 +59,27 @@ class LoginViewController: UIViewController {
 
     func setupConstraints() {
         view.addSubview(logoImage)
-//        view.addSubview(idView)
-//        view.addSubview(passwordView)
+//        loginStackView.addArrangedSubview(idView)
+//        loginStackView.addArrangedSubview(passwordView)
         
-        logoImage.snp.makeConstraints { make in
-            make.edges.equalTo(self.view)
+        view.addSubview(idView)
+        view.addSubview(passwordView)
+        
+        logoImage.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.width.equalTo(view.frame.width)
+        }
+        
+        idView.snp.makeConstraints {
+            $0.top.equalTo(logoImage.snp.bottom)
+            $0.leading.trailing.equalToSuperview().inset(40)
+            $0.height.equalTo(80)
+        }
+
+        passwordView.snp.makeConstraints {
+            $0.top.equalTo(idView.snp.bottom)
+            $0.leading.trailing.equalToSuperview().inset(40)
         }
     }
 }
