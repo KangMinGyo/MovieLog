@@ -58,7 +58,7 @@ final class InfoFindView: UIView {
         
         for v in stackView.arrangedSubviews {
             v.snp.makeConstraints {
-                $0.width.equalTo(30)
+                $0.width.equalTo(100)
             }
         }
         
