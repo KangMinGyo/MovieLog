@@ -42,14 +42,12 @@ final class IdView: UIView {
         addSubview(loginIcon)
         addSubview(loginTextField)
         addSubview(line)
-        
-        loginIcon.setContentHuggingPriority(.init(rawValue: 100), for: .horizontal)
+
         loginIcon.snp.makeConstraints {
             $0.top.leading.equalToSuperview()
             $0.width.equalTo(25)
         }
-        
-        loginIcon.setContentHuggingPriority(.init(rawValue: 99), for: .horizontal)
+
         loginTextField.snp.makeConstraints {
             $0.leading.equalTo(loginIcon.snp.trailing).offset(10)
             $0.centerY.equalTo(loginIcon)

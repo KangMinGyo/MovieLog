@@ -43,20 +43,20 @@ final class PasswordView: UIView {
         addSubview(passwordTextField)
         addSubview(line)
         
-        passwordIcon.snp.makeConstraints { make in
-            make.top.leading.equalToSuperview()
+        passwordIcon.snp.makeConstraints {
+            $0.top.leading.equalToSuperview()
         }
         
-        passwordTextField.snp.makeConstraints { make in
-            make.leading.equalTo(passwordIcon.snp.trailing).offset(10)
-            make.centerY.equalTo(passwordIcon)
+        passwordTextField.snp.makeConstraints {
+            $0.leading.equalTo(passwordIcon.snp.trailing).offset(10)
+            $0.centerY.equalTo(passwordIcon)
         }
         
-        line.snp.makeConstraints { make in
-            make.top.equalTo(passwordIcon.snp.bottom).offset(10)
-            make.leading.trailing.equalToSuperview()
-            make.width.equalTo(self.frame.width)
-            make.height.equalTo(1)
+        line.snp.makeConstraints { 
+            $0.top.equalTo(passwordIcon.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview()
+            $0.width.equalTo(self.frame.width)
+            $0.height.equalTo(1)
         }
     }
 }
