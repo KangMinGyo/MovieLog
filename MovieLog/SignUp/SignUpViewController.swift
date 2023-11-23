@@ -22,7 +22,7 @@ class SignUpViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+   
         view.backgroundColor = .systemBackground
         setupConstraints()
         
@@ -39,9 +39,9 @@ class SignUpViewController: UIViewController {
         view.addSubview(signInButton)
         
         loginHeaderView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(50)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(180)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(40)
+            $0.leading.trailing.equalToSuperview().inset(40)
+            $0.height.equalTo(80)
         }
         
         idField.snp.makeConstraints {

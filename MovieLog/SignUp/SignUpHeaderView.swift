@@ -12,9 +12,10 @@ import Then
 final class SignUpHeaderView: UIView {
     
     // MARK: - UI Components
-    lazy var logoImage = UIImageView().then {
-        $0.image = UIImage(named: "SignUpImage")
-        $0.contentMode = .scaleAspectFit
+    lazy var titleLabel = UILabel().then {
+        $0.text = "회원가입"
+        $0.textColor = UIColor(named: "MainColor")
+        $0.font = .systemFont(ofSize: 38, weight: .bold)
     }
     
     // MARK: - Life Cycle
@@ -30,9 +31,9 @@ final class SignUpHeaderView: UIView {
 
     // MARK: - UI Setup
     private func setupConstraints() {
-        addSubview(logoImage)
+        addSubview(titleLabel)
         
-        logoImage.snp.makeConstraints {
+        titleLabel.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
             $0.width.equalTo(self.frame.width)
         }
