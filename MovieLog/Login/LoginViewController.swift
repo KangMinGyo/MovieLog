@@ -8,42 +8,26 @@
 import UIKit
 import SnapKit
 import Then
+import Combine
 
 class LoginViewController: UIViewController {
-    // ScrollView안에 ContentView의 자식으로 다른 요소들 다 넣어!
     
+//    let viewModel: LoginViewModel = LoginViewModel()
+//    var subscriptions = Set<AnyCancellable>()
+
     lazy var scrollView = UIScrollView()
     lazy var contentView = UIView()
     
-    lazy var logoImage = UIImageView().then {
-        $0.image = UIImage(named: "LogoImage")
-        $0.contentMode = .scaleAspectFit
-    }
+    lazy var loginHeaderView = LoginHeaderView()
     
-    lazy var loginStackView = UIStackView().then {
-        $0.axis = .vertical
-        $0.spacing = 10
-        $0.distribution = .fillEqually
-    }
-
-    lazy var idView = IdView().then {
-        $0.backgroundColor = .systemBackground
-    }
+    lazy var idField = CustomTextField(fieldType: .id)
+    lazy var pwField = CustomTextField(fieldType: .pw)
+    lazy var signInButton = CustomButton(title: "로그인", hasBackground: true, fontSize: .big)
+    lazy var signUpButton = CustomButton(title: "회원이 아니신가요? 회원가입하기", hasBackground: false, fontSize: .small)
     
-    lazy var passwordView = PasswordView().then {
-        $0.backgroundColor = .systemBackground
-    }
-    
-    lazy var loginButton = UIButton().then {
-        $0.setTitle("로그인", for: .normal)
-        $0.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
-        $0.backgroundColor = UIColor(named: "MainColor")
-        $0.layer.masksToBounds = true
-        $0.layer.cornerRadius = 30
-    }
-    
-    lazy var infoFindView = InfoFindView().then {
-        $0.backgroundColor = .systemBackground
+    @objc func signUpButtonCliked() {
+        let vc = SignUpViewController()
+        self.show(vc, sender: self)
     }
 
     override func viewDidLoad() {
@@ -57,13 +41,11 @@ class LoginViewController: UIViewController {
     func setupConstraints() {
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
-        contentView.addSubview(logoImage)
-        contentView.addSubview(loginStackView)
-        contentView.addSubview(loginButton)
-        contentView.addSubview(infoFindView)
-        
-        loginStackView.addArrangedSubview(idView)
-        loginStackView.addArrangedSubview(passwordView)
+        contentView.addSubview(loginHeaderView)
+        contentView.addSubview(idField)
+        contentView.addSubview(pwField)
+        contentView.addSubview(signInButton)
+        contentView.addSubview(signUpButton)
         
         scrollView.snp.makeConstraints {
             $0.edges.equalTo(view)
@@ -74,34 +56,34 @@ class LoginViewController: UIViewController {
             $0.leading.trailing.equalTo(view)
         }
 
-        logoImage.snp.makeConstraints {
+        loginHeaderView.snp.makeConstraints {
             $0.top.equalTo(contentView.snp.top)
             $0.leading.trailing.equalTo(contentView)
-            $0.width.equalTo(view.frame.width)
+            $0.height.equalTo(180)
         }
-        
-        for v in loginStackView.arrangedSubviews {
-            v.snp.makeConstraints {
-                $0.height.equalTo(80)
-            }
-        }
-        
-        loginStackView.snp.makeConstraints {
-            $0.top.equalTo(logoImage.snp.bottom)
+
+        idField.snp.makeConstraints {
+            $0.top.equalTo(loginHeaderView.snp.bottom)
             $0.leading.trailing.equalTo(contentView).inset(40)
-            $0.height.equalTo(160)
+            $0.height.equalTo(55)
         }
         
-        loginButton.snp.makeConstraints {
-            $0.top.equalTo(loginStackView.snp.bottom)
-            $0.leading.trailing.equalTo(contentView).inset(20)
+        pwField.snp.makeConstraints {
+            $0.top.equalTo(idField.snp.bottom).offset(10)
+            $0.leading.trailing.equalTo(contentView).inset(40)
+            $0.height.equalTo(55)
+        }
+        
+        signInButton.snp.makeConstraints {
+            $0.top.equalTo(pwField.snp.bottom).offset(20)
+            $0.leading.trailing.equalTo(contentView).inset(40)
             $0.height.equalTo(60)
         }
         
-        infoFindView.snp.makeConstraints {
-            $0.top.equalTo(loginButton.snp.bottom).inset(-10)
+        signUpButton.snp.makeConstraints {
+            $0.top.equalTo(signInButton.snp.bottom).offset(20)
             $0.leading.trailing.equalTo(contentView).inset(20)
-            $0.height.equalTo(1000)
+//            $0.height.equalTo(500)
             $0.bottom.equalToSuperview()
         }
     }

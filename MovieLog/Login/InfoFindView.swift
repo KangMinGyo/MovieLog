@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Then
+import Combine
 
 final class InfoFindView: UIView {
     
@@ -44,12 +45,14 @@ final class InfoFindView: UIView {
         
         backgroundColor = .systemBackground
         setupConstraints()
+        self.setNeedsUpdateConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Layout Views
     func setupConstraints() {
         addSubview(stackView)
         stackView.addArrangedSubview(idFindButton)
@@ -68,6 +71,13 @@ final class InfoFindView: UIView {
             $0.height.equalTo(50)
         }
     }
+//    
+//    // MARK: Binding
+//    func bind(viewModel: ViewModel) {
+//        signUpButton.controlEvent(.touchUpInside)
+//            .subscribe(viewModel.signUpTapped)
+//            .store(in: &subscriptions)
+//    }
 }
 
 #if canImport(SwiftUI) && DEBUG

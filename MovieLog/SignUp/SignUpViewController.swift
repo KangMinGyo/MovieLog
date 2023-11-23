@@ -11,7 +11,16 @@ import Then
 
 class SignUpViewController: UIViewController {
     
-    lazy var signUpView = SignUpView()
+    lazy var stackView = UIStackView().then {
+        $0.axis = .vertical
+        $0.spacing = 10
+        $0.distribution = .fillEqually
+    }
+    
+    lazy var signUpIdView = SignUpIdView()
+    lazy var signUpPasswordView = SignUpPasswordView()
+    lazy var signUpPasswordCheckView = SignUpPasswordCheckView()
+    lazy var signUpNicknameView = SignUpNicknameView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +28,14 @@ class SignUpViewController: UIViewController {
         setupConstraints()
     }
     
-    func setupConstraints() {
-        view.addSubview(signUpView)
+    private func setupConstraints() {
+        view.addSubview(stackView)
+        stackView.addArrangedSubview(signUpIdView)
+        stackView.addArrangedSubview(signUpPasswordView)
+        stackView.addArrangedSubview(signUpPasswordCheckView)
+        stackView.addArrangedSubview(signUpNicknameView)
         
-        signUpView.snp.makeConstraints {
+        stackView.snp.makeConstraints {
             $0.edges.equalTo(view)
         }
     }
