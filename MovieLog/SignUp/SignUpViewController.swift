@@ -11,33 +11,73 @@ import Then
 
 class SignUpViewController: UIViewController {
     
-    lazy var stackView = UIStackView().then {
-        $0.axis = .vertical
-        $0.spacing = 10
-        $0.distribution = .fillEqually
-    }
-    
-    lazy var signUpIdView = SignUpIdView()
-    lazy var signUpPasswordView = SignUpPasswordView()
-    lazy var signUpPasswordCheckView = SignUpPasswordCheckView()
-    lazy var signUpNicknameView = SignUpNicknameView()
+    // MARK: - UI Components
+    lazy var loginHeaderView = SignUpHeaderView()
+    lazy var idField = CustomTextField(fieldType: .id)
+    lazy var pwField = CustomTextField(fieldType: .pw)
+    lazy var pwCheckField = CustomTextField(fieldType: .pwCheck)
+    lazy var nicknameField = CustomTextField(fieldType: .nickname)
+    lazy var signInButton = CustomButton(title: "회원가입", hasBackground: true, fontSize: .big)
 
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .systemBackground
         setupConstraints()
+        
+        self.signInButton.addTarget(self, action: #selector(signInButtonCliked), for: .touchUpInside)
     }
     
+    // MARK: - UI Setup
     private func setupConstraints() {
-        view.addSubview(stackView)
-        stackView.addArrangedSubview(signUpIdView)
-        stackView.addArrangedSubview(signUpPasswordView)
-        stackView.addArrangedSubview(signUpPasswordCheckView)
-        stackView.addArrangedSubview(signUpNicknameView)
+        view.addSubview(loginHeaderView)
+        view.addSubview(idField)
+        view.addSubview(pwField)
+        view.addSubview(pwCheckField)
+        view.addSubview(nicknameField)
+        view.addSubview(signInButton)
         
-        stackView.snp.makeConstraints {
-            $0.edges.equalTo(view)
+        loginHeaderView.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(50)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(180)
         }
+        
+        idField.snp.makeConstraints {
+            $0.top.equalTo(loginHeaderView.snp.bottom)
+            $0.leading.trailing.equalToSuperview().inset(40)
+            $0.height.equalTo(55)
+        }
+        
+        pwField.snp.makeConstraints {
+            $0.top.equalTo(idField.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(40)
+            $0.height.equalTo(55)
+        }
+        
+        pwCheckField.snp.makeConstraints {
+            $0.top.equalTo(pwField.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(40)
+            $0.height.equalTo(55)
+        }
+        
+        nicknameField.snp.makeConstraints {
+            $0.top.equalTo(pwCheckField.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(40)
+            $0.height.equalTo(55)
+        }
+        
+        signInButton.snp.makeConstraints {
+            $0.top.equalTo(nicknameField.snp.bottom).offset(40)
+            $0.leading.trailing.equalToSuperview().inset(40)
+            $0.height.equalTo(60)
+        }
+    }
+    
+    // MARK: - Selectors
+    @objc private func signInButtonCliked() {
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

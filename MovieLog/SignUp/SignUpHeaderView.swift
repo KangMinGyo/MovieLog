@@ -1,5 +1,5 @@
 //
-//  LoginHeaderView.swift
+//  SignUpHeaderView.swift
 //  MovieLog
 //
 //  Created by KangMingyo on 11/23/23.
@@ -9,11 +9,11 @@ import UIKit
 import SnapKit
 import Then
 
-final class LoginHeaderView: UIView {
+final class SignUpHeaderView: UIView {
     
     // MARK: - UI Components
     lazy var logoImage = UIImageView().then {
-        $0.image = UIImage(named: "LogoImage")
+        $0.image = UIImage(named: "SignUpImage")
         $0.contentMode = .scaleAspectFit
     }
     
@@ -39,3 +39,4 @@ final class LoginHeaderView: UIView {
     }
 }
     
+

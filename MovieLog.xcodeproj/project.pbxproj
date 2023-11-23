@@ -20,14 +20,11 @@
 		8C6A49EC2B079D1700EE3AEE /* ContentViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49EB2B079D1700EE3AEE /* ContentViewPreview.swift */; };
 		8C6A49F02B08AE1700EE3AEE /* InfoFindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49EF2B08AE1700EE3AEE /* InfoFindView.swift */; };
 		8C6A49F32B0C7CC900EE3AEE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49F22B0C7CC900EE3AEE /* SignUpViewController.swift */; };
-		8C78DBE72B0CCAAA0022BCFB /* SignUpPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78DBE62B0CCAAA0022BCFB /* SignUpPasswordView.swift */; };
-		8C78DBE92B0CCABD0022BCFB /* SignUpPasswordCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78DBE82B0CCABD0022BCFB /* SignUpPasswordCheckView.swift */; };
-		8C78DBEB2B0CCACF0022BCFB /* SignUpNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78DBEA2B0CCACF0022BCFB /* SignUpNicknameView.swift */; };
-		8C78DBED2B0CCAE10022BCFB /* SignUpIdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78DBEC2B0CCAE10022BCFB /* SignUpIdView.swift */; };
 		8C78DBF52B0E435D0022BCFB /* ControlEventPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78DBF42B0E435D0022BCFB /* ControlEventPublisher.swift */; };
 		8C78DBF72B0F216C0022BCFB /* LoginHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78DBF62B0F216C0022BCFB /* LoginHeaderView.swift */; };
 		8C78DBF92B0F2B0B0022BCFB /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78DBF82B0F2B0B0022BCFB /* CustomTextField.swift */; };
 		8C78DBFB2B0F39B30022BCFB /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78DBFA2B0F39B30022BCFB /* CustomButton.swift */; };
+		8C78DBFD2B0F55270022BCFB /* SignUpHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78DBFC2B0F55270022BCFB /* SignUpHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,14 +60,11 @@
 		8C6A49EB2B079D1700EE3AEE /* ContentViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewPreview.swift; sourceTree = "<group>"; };
 		8C6A49EF2B08AE1700EE3AEE /* InfoFindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoFindView.swift; sourceTree = "<group>"; };
 		8C6A49F22B0C7CC900EE3AEE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		8C78DBE62B0CCAAA0022BCFB /* SignUpPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordView.swift; sourceTree = "<group>"; };
-		8C78DBE82B0CCABD0022BCFB /* SignUpPasswordCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordCheckView.swift; sourceTree = "<group>"; };
-		8C78DBEA2B0CCACF0022BCFB /* SignUpNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNicknameView.swift; sourceTree = "<group>"; };
-		8C78DBEC2B0CCAE10022BCFB /* SignUpIdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpIdView.swift; sourceTree = "<group>"; };
 		8C78DBF42B0E435D0022BCFB /* ControlEventPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlEventPublisher.swift; sourceTree = "<group>"; };
 		8C78DBF62B0F216C0022BCFB /* LoginHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHeaderView.swift; sourceTree = "<group>"; };
 		8C78DBF82B0F2B0B0022BCFB /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		8C78DBFA2B0F39B30022BCFB /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		8C78DBFC2B0F55270022BCFB /* SignUpHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,10 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				8C6A49F22B0C7CC900EE3AEE /* SignUpViewController.swift */,
-				8C78DBEC2B0CCAE10022BCFB /* SignUpIdView.swift */,
-				8C78DBE62B0CCAAA0022BCFB /* SignUpPasswordView.swift */,
-				8C78DBE82B0CCABD0022BCFB /* SignUpPasswordCheckView.swift */,
-				8C78DBEA2B0CCACF0022BCFB /* SignUpNicknameView.swift */,
+				8C78DBFC2B0F55270022BCFB /* SignUpHeaderView.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -331,16 +322,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C78DBE92B0CCABD0022BCFB /* SignUpPasswordCheckView.swift in Sources */,
 				8C78DBF72B0F216C0022BCFB /* LoginHeaderView.swift in Sources */,
 				8C6A499C2B0375C000EE3AEE /* LoginViewController.swift in Sources */,
-				8C78DBED2B0CCAE10022BCFB /* SignUpIdView.swift in Sources */,
 				8C78DBF92B0F2B0B0022BCFB /* CustomTextField.swift in Sources */,
-				8C78DBE72B0CCAAA0022BCFB /* SignUpPasswordView.swift in Sources */,
+				8C78DBFD2B0F55270022BCFB /* SignUpHeaderView.swift in Sources */,
 				8C6A49F32B0C7CC900EE3AEE /* SignUpViewController.swift in Sources */,
 				8C6A49EC2B079D1700EE3AEE /* ContentViewPreview.swift in Sources */,
 				8C78DBF52B0E435D0022BCFB /* ControlEventPublisher.swift in Sources */,
-				8C78DBEB2B0CCACF0022BCFB /* SignUpNicknameView.swift in Sources */,
 				8C6A49F02B08AE1700EE3AEE /* InfoFindView.swift in Sources */,
 				8C6A49982B0375C000EE3AEE /* AppDelegate.swift in Sources */,
 				8C6A499A2B0375C000EE3AEE /* SceneDelegate.swift in Sources */,
