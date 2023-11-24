@@ -9,7 +9,7 @@ import UIKit
 
 class CustomTextField: UITextField {
     enum CustomTextFieldType {
-        case id
+        case email
         case pw
         case pwCheck
         case nickname
@@ -32,8 +32,8 @@ class CustomTextField: UITextField {
         self.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 12, height: self.frame.size.height))
         
         switch fieldType {
-        case .id:
-            self.placeholder = "아이디를 입력하세요"
+        case .email:
+            self.placeholder = "이메일을 입력하세요"
         case .pw:
             self.placeholder = "비밀번호를 입력하세요"
             self.isSecureTextEntry = true

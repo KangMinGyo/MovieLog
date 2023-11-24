@@ -13,7 +13,7 @@ class SignUpViewController: UIViewController {
     
     // MARK: - UI Components
     lazy var loginHeaderView = SignUpHeaderView()
-    lazy var idField = CustomTextField(fieldType: .id)
+    lazy var idField = CustomTextField(fieldType: .email)
     lazy var pwField = CustomTextField(fieldType: .pw)
     lazy var pwCheckField = CustomTextField(fieldType: .pwCheck)
     lazy var nicknameField = CustomTextField(fieldType: .nickname)

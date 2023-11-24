@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import Then
 import Combine
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
@@ -20,7 +21,7 @@ class LoginViewController: UIViewController {
     lazy var contentView = UIView()
     
     lazy var loginHeaderView = LoginHeaderView()
-    lazy var idField = CustomTextField(fieldType: .id)
+    lazy var idField = CustomTextField(fieldType: .email)
     lazy var pwField = CustomTextField(fieldType: .pw)
     lazy var signInButton = CustomButton(title: "로그인", hasBackground: true, fontSize: .big)
     lazy var signUpButton = CustomButton(title: "회원이 아니신가요? 회원가입하기", hasBackground: false, fontSize: .small)
@@ -31,6 +32,7 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .systemBackground
         setupConstraints()
         
+        self.signInButton.addTarget(self, action: #selector(signInButtonCliked), for: .touchUpInside)
         self.signUpButton.addTarget(self, action: #selector(signUpButtonCliked), for: .touchUpInside)
     }
 
@@ -86,6 +88,24 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - Selectors
+    @objc private func signInButtonCliked() {
+        let email: String = idField.text!.description
+        let pw: String = pwField.text!.description
+        
+        // Firebase Auth Login
+        Auth.auth().signIn(withEmail: email, password: pw) {authResult, error in
+            if authResult != nil {
+                print("로그인 성공")
+                let vc = HomeViewController()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: false, completion: nil)
+            } else {
+                print("로그인 실패")
+                print(error.debugDescription)
+            }
+        }
+    }
+    
     @objc private func signUpButtonCliked() {
         let vc = SignUpViewController()
         vc.modalPresentationStyle = .fullScreen
