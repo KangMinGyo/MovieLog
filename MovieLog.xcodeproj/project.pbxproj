@@ -11,6 +11,7 @@
 		8C399A732B1075A600626B0D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8C399A722B1075A600626B0D /* FirebaseAnalytics */; };
 		8C399A752B1075A600626B0D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8C399A742B1075A600626B0D /* FirebaseAuth */; };
 		8C399A782B1077ED00626B0D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C399A772B1077ED00626B0D /* HomeViewController.swift */; };
+		8C399A7D2B1081ED00626B0D /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 8C399A7C2B1081ED00626B0D /* Toast */; };
 		8C6A49982B0375C000EE3AEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49972B0375C000EE3AEE /* AppDelegate.swift */; };
 		8C6A499A2B0375C000EE3AEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49992B0375C000EE3AEE /* SceneDelegate.swift */; };
 		8C6A499C2B0375C000EE3AEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A499B2B0375C000EE3AEE /* LoginViewController.swift */; };
@@ -81,6 +82,7 @@
 				8C6A49E62B078E6E00EE3AEE /* SnapKit in Frameworks */,
 				8C6A49E92B0794B100EE3AEE /* Then in Frameworks */,
 				8C399A732B1075A600626B0D /* FirebaseAnalytics in Frameworks */,
+				8C399A7D2B1081ED00626B0D /* Toast in Frameworks */,
 				8C399A752B1075A600626B0D /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +225,7 @@
 				8C6A49E82B0794B100EE3AEE /* Then */,
 				8C399A722B1075A600626B0D /* FirebaseAnalytics */,
 				8C399A742B1075A600626B0D /* FirebaseAuth */,
+				8C399A7C2B1081ED00626B0D /* Toast */,
 			);
 			productName = MovieLog;
 			productReference = 8C6A49942B0375C000EE3AEE /* MovieLog.app */;
@@ -300,6 +303,7 @@
 				8C6A49E42B078E6E00EE3AEE /* XCRemoteSwiftPackageReference "SnapKit" */,
 				8C6A49E72B0794B100EE3AEE /* XCRemoteSwiftPackageReference "Then" */,
 				8C399A712B1075A600626B0D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				8C399A7B2B1081ED00626B0D /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = 8C6A49952B0375C000EE3AEE /* Products */;
 			projectDirPath = "";
@@ -707,6 +711,14 @@
 				minimumVersion = 10.18.0;
 			};
 		};
+		8C399A7B2B1081ED00626B0D /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 		8C6A49E42B078E6E00EE3AEE /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -735,6 +747,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8C399A712B1075A600626B0D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		8C399A7C2B1081ED00626B0D /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C399A7B2B1081ED00626B0D /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 		8C6A49E52B078E6E00EE3AEE /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

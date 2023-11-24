@@ -10,6 +10,7 @@ import SnapKit
 import Then
 import Combine
 import FirebaseAuth
+import Toast
 
 class LoginViewController: UIViewController {
     
@@ -68,7 +69,7 @@ class LoginViewController: UIViewController {
         }
         
         pwField.snp.makeConstraints {
-            $0.top.equalTo(idField.snp.bottom).offset(10)
+            $0.top.equalTo(idField.snp.bottom).offset(20)
             $0.leading.trailing.equalTo(contentView).inset(40)
             $0.height.equalTo(55)
         }
@@ -102,6 +103,7 @@ class LoginViewController: UIViewController {
             } else {
                 print("로그인 실패")
                 print(error.debugDescription)
+                self.view.makeToast("아이디와 비밀번호를 다시 확인해주세요.")
             }
         }
     }
