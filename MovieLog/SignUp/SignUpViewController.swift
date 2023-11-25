@@ -11,6 +11,8 @@ import Then
 
 class SignUpViewController: UIViewController {
     
+    var viewModel: SignUpViewModel!
+    
     // MARK: - UI Components
     lazy var loginHeaderView = SignUpHeaderView()
     lazy var idField = CustomTextField(fieldType: .email)
@@ -77,38 +79,12 @@ class SignUpViewController: UIViewController {
     
     // MARK: - Selectors
     @objc private func signInButtonCliked() {
-        guard let email = idField.text?.description else { return }
-        guard let password = pwCheckField.text?.description else { return }
-        signUp(email: email, password: password)
+        guard let email = idField.text else { return }
+        guard let password = pwCheckField.text else { return }
+        print("email: \(email)")
+        print("password: \(password)")
+        viewModel.signUp(email: email, password: "\(password)")
         self.navigationController?.popViewController(animated: true)
-    }
-    
-    func signUp(email: String, password: String) {
-        FirebaseManager.shared.auth.createUser(withEmail: email, password: password) { res, err in
-            if let err = err {
-                print("Failed to cerate user:", err)
-                return
-            }
-            print("Successfully created user: \(res?.user.uid ?? "")")
-            self.storeUserInformation(email: email, password: password)
-        }
-    }
-    
-    private func storeUserInformation(email: String, password: String) {
-        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
-        let userData = ["uid": uid,
-                        "email": email,
-                        "password": password]
-        
-        FirebaseManager.shared.fireStore.collection("users")
-            .document(uid).setData(userData) { err in
-                if let err = err {
-                    print("Firestore에 사용자 정보 저장 실패: \(err.localizedDescription)")
-                } else {
-                    print("Firestore에 사용자 정보 저장 성공!")
-                    // 필요 시 추가 작업 수행
-                }
-            }
     }
 }
 

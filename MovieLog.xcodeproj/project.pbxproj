@@ -35,6 +35,8 @@
 		8C78DBF92B0F2B0B0022BCFB /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78DBF82B0F2B0B0022BCFB /* CustomTextField.swift */; };
 		8C78DBFB2B0F39B30022BCFB /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78DBFA2B0F39B30022BCFB /* CustomButton.swift */; };
 		8C78DBFD2B0F55270022BCFB /* SignUpHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78DBFC2B0F55270022BCFB /* SignUpHeaderView.swift */; };
+		8CC7551E2B11DC61003FB4ED /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC7551D2B11DC61003FB4ED /* SignUpViewModel.swift */; };
+		8CC755212B11DFDE003FB4ED /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC755202B11DFDE003FB4ED /* Extension+String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		8C78DBF82B0F2B0B0022BCFB /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		8C78DBFA2B0F39B30022BCFB /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		8C78DBFC2B0F55270022BCFB /* SignUpHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpHeaderView.swift; sourceTree = "<group>"; };
+		8CC7551D2B11DC61003FB4ED /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		8CC755202B11DFDE003FB4ED /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,7 @@
 				8C6A49F12B0C7B7000EE3AEE /* SignUp */,
 				8C6A49C72B04B59F00EE3AEE /* Login */,
 				8C399A762B1077D100626B0D /* Home */,
+				8CC7551F2B11DFCC003FB4ED /* Extensions */,
 				8C6A49EA2B079CF800EE3AEE /* Utils */,
 				8C6A49972B0375C000EE3AEE /* AppDelegate.swift */,
 				8C6A49992B0375C000EE3AEE /* SceneDelegate.swift */,
@@ -228,8 +233,17 @@
 		8C78DBEE2B0E221B0022BCFB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8CC7551D2B11DC61003FB4ED /* SignUpViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8CC7551F2B11DFCC003FB4ED /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8CC755202B11DFDE003FB4ED /* Extension+String.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,11 +395,13 @@
 			files = (
 				8C399A802B1087FF00626B0D /* User.swift in Sources */,
 				8C78DBF72B0F216C0022BCFB /* LoginHeaderView.swift in Sources */,
+				8CC755212B11DFDE003FB4ED /* Extension+String.swift in Sources */,
 				8C399A832B10887000626B0D /* FirebaseManager.swift in Sources */,
 				8C6A499C2B0375C000EE3AEE /* LoginViewController.swift in Sources */,
 				8C78DBF92B0F2B0B0022BCFB /* CustomTextField.swift in Sources */,
 				8C78DBFD2B0F55270022BCFB /* SignUpHeaderView.swift in Sources */,
 				8C6A49F32B0C7CC900EE3AEE /* SignUpViewController.swift in Sources */,
+				8CC7551E2B11DC61003FB4ED /* SignUpViewModel.swift in Sources */,
 				8C6A49EC2B079D1700EE3AEE /* ContentViewPreview.swift in Sources */,
 				8C78DBF52B0E435D0022BCFB /* ControlEventPublisher.swift in Sources */,
 				8C6A49F02B08AE1700EE3AEE /* InfoFindView.swift in Sources */,
