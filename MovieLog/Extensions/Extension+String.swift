@@ -9,16 +9,21 @@ import Foundation
 
 extension String {
     // 이메일 정규식
-    func isValidEmail(_ email: String) -> Bool {
-        let emailRegex = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailRegex)
-        return emailPredicate.evaluate(with: email)
+    func isValidEmail() -> Bool {
+        let emailRegex = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"
+        return self.range(of: emailRegex, options: .regularExpression) != nil
     }
     
     // 패스워드 정규식
-    func isValidPassword(_ password: String) -> Bool {
-        let passwordRegex = "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-        let passwordPredicate = NSPredicate(format:"SELF MATCHES %@", passwordRegex)
-        return passwordPredicate.evaluate(with: password)
+    func isValidPassword() -> Bool {
+        let passwordRegex = "^(?=.*[a-z])(?=.*\\d)[a-zA-Z\\d]{8,}$"
+        return self.range(of: passwordRegex, options: .regularExpression) != nil
+    }
+    
+    // 닉네임 정규식
+    func isValidNickname() -> Bool {
+        let nicknameRegex = "^[ㄱ-ㅎ가-힣a-zA-Z0-9]{2,20}$"
+        return self.range(of: nicknameRegex, options: .regularExpression) != nil
     }
 }
+

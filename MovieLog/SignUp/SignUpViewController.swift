@@ -8,10 +8,12 @@
 import UIKit
 import SnapKit
 import Then
+import Combine
 
 class SignUpViewController: UIViewController {
     
-    var viewModel: SignUpViewModel!
+    var viewModel =  SignUpViewModel()
+    var subscriptions = Set<AnyCancellable>()
     
     // MARK: - UI Components
     lazy var loginHeaderView = SignUpHeaderView()
@@ -19,7 +21,7 @@ class SignUpViewController: UIViewController {
     lazy var pwField = CustomTextField(fieldType: .pw)
     lazy var pwCheckField = CustomTextField(fieldType: .pwCheck)
     lazy var nicknameField = CustomTextField(fieldType: .nickname)
-    lazy var signInButton = CustomButton(title: "회원가입", hasBackground: true, fontSize: .big)
+    lazy var signUpButton = CustomButton(title: "회원가입", hasBackground: true, fontSize: .big)
 
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -27,8 +29,9 @@ class SignUpViewController: UIViewController {
    
         view.backgroundColor = .systemBackground
         setupConstraints()
+        bind(viewModel: SignUpViewModel())
         
-        self.signInButton.addTarget(self, action: #selector(signInButtonCliked), for: .touchUpInside)
+        self.signUpButton.addTarget(self, action: #selector(signInButtonCliked), for: .touchUpInside)
     }
     
     // MARK: - UI Setup
@@ -38,7 +41,7 @@ class SignUpViewController: UIViewController {
         view.addSubview(pwField)
         view.addSubview(pwCheckField)
         view.addSubview(nicknameField)
-        view.addSubview(signInButton)
+        view.addSubview(signUpButton)
         
         loginHeaderView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide).offset(40)
@@ -70,7 +73,7 @@ class SignUpViewController: UIViewController {
             $0.height.equalTo(55)
         }
         
-        signInButton.snp.makeConstraints {
+        signUpButton.snp.makeConstraints {
             $0.top.equalTo(nicknameField.snp.bottom).offset(40)
             $0.leading.trailing.equalToSuperview().inset(40)
             $0.height.equalTo(60)
@@ -86,6 +89,45 @@ class SignUpViewController: UIViewController {
         viewModel.signUp(email: email, password: "\(password)")
         self.navigationController?.popViewController(animated: true)
     }
+    
+    // MARK: - Binding
+    func bind(viewModel: SignUpViewModel) {
+        idField.publisher
+            .receive(on: RunLoop.main)
+            .assign(to: \.email, on: viewModel)
+            .store(in: &subscriptions)
+        
+        pwField.publisher
+            .receive(on: RunLoop.main)
+            .assign(to: \.password, on: viewModel)
+            .store(in: &subscriptions)
+        
+        pwCheckField.publisher
+            .receive(on: RunLoop.main)
+            .assign(to: \.passwordCheck, on: viewModel)
+            .store(in: &subscriptions)
+        
+        nicknameField.publisher
+            .receive(on: RunLoop.main)
+            .assign(to: \.nickname, on: viewModel)
+            .store(in: &subscriptions)
+        
+        viewModel.$state
+            .sink { [weak self] state in
+                switch state {
+                case .none:
+                    self?.signUpButton.isEnabled = false
+                    self?.signUpButton.backgroundColor = .gray
+                case .success:
+                    self?.signUpButton.isEnabled = true
+                    self?.signUpButton.backgroundColor = UIColor(named: "MainColor")
+                case .failed:
+                    self?.signUpButton.isEnabled = false
+                    self?.signUpButton.backgroundColor = .gray
+                }
+            }
+            .store(in: &subscriptions)
+    }
 }
 
 #if canImport(SwiftUI) && DEBUG
@@ -100,3 +142,21 @@ struct MySignUpViewControllerPreview: PreviewProvider {
     }
 }
 #endif
+
+extension UITextField {
+    /*NotificationCenter.default
+    .publisher(for: UITextField.textDidChangeNotification, object: emailTextField)
+    .map { ($0.object as! UITextField).text ?? "" }
+    .assign(to: \.email, on: viewModel)
+    .store(in: &cancellables)
+     */
+    var publisher: AnyPublisher<String, Never> {
+        NotificationCenter.default.publisher(for: UITextField.textDidChangeNotification, object: self)
+            //NotificationCenter로 들어온 notification의 optional 타입 object 프로퍼티를 UITextField로 타입 캐스팅
+            .compactMap{ $0.object as? UITextField}
+            //text 프로퍼티만 가져오기
+            .map{ $0.text ?? "" }    //값이 없는 경우 빈 문자열 반환
+            .print("[TEXT]: ")
+            .eraseToAnyPublisher()
+    }
+}
