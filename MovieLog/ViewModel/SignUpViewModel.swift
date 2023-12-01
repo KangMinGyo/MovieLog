@@ -44,7 +44,7 @@ class SignUpViewModel {
     
     var isPasswordMatchPublisher: AnyPublisher<Bool, Never> {
         Publishers.CombineLatest($password, $passwordCheck)
-            .map { $0 == $1 }
+            .map { !$1.isEmpty && $0 == $1 }
             .print("[IS VALID PASSWORDCHECK]")
             .eraseToAnyPublisher()
     }
@@ -56,11 +56,10 @@ class SignUpViewModel {
             isPasswordMatchPublisher
         )
         .sink { isValidEmail, isValidPassword, isPasswordMatch in
-            if isValidEmail == true, isValidPassword == true, isPasswordMatch == true {
-                self.state = .success
-            } else {
-                self.state = .failed
-            }
+            self.emailState = isValidEmail ? .success : .failed
+            self.pwState = isValidPassword ? .success : .failed
+            self.pwCheckState = isPasswordMatch ? .success : .failed
+            self.state = (isValidEmail && isValidPassword && isPasswordMatch) ? .success : .failed
         }
         .store(in: &subscriptions)
     }

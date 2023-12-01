@@ -27,7 +27,7 @@ class CustomLabel: UILabel {
         case .email:
             self.text = "사용할 수 없는 이메일입니다."
         case .pw:
-            self.text = "비밀번호를 입력하세요(8~20자)"
+            self.text = "비밀번호를 입력하세요(영문+숫자/8~20자)"
         case .pwCheck:
             self.text = "비밀번호가 일치하지 않습니다."
         }
