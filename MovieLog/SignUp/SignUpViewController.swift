@@ -45,9 +45,9 @@ class SignUpViewController: UIViewController {
     
     // MARK: - UI Setup
     private func setupConstraints() {
-        view.addSubview(headerView)
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
+        contentView.addSubview(headerView)
         
         contentView.addSubview(idField)
         contentView.addSubview(idLabel)
@@ -59,26 +59,26 @@ class SignUpViewController: UIViewController {
         contentView.addSubview(pwCheckLabel)
         
         contentView.addSubview(signUpButton)
-        
-        headerView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(20)
-            $0.leading.trailing.equalToSuperview().inset(20)
-            $0.height.equalTo(100)
-        }
 
         scrollView.snp.makeConstraints {
-            $0.top.equalTo(headerView.snp.bottom).offset(20)
+            $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
         }
         
         contentView.snp.makeConstraints {
             $0.edges.equalTo(scrollView.contentLayoutGuide)
             $0.width.equalTo(scrollView.frameLayoutGuide)
-            $0.height.equalTo(600)
+            $0.height.equalTo(1000)
+        }
+        
+        headerView.snp.makeConstraints {
+            $0.top.equalTo(contentView.snp.top)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(100)
         }
         
         idField.snp.makeConstraints {
-            $0.top.equalTo(contentView.snp.top)
+            $0.top.equalTo(headerView.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(55)
         }
@@ -114,7 +114,7 @@ class SignUpViewController: UIViewController {
         }
         
         signUpButton.snp.makeConstraints {
-            $0.top.equalTo(pwCheckLabel.snp.bottom).offset(40)
+            $0.top.equalTo(pwCheckLabel.snp.bottom).offset(20)
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(60)
         }
@@ -122,11 +122,11 @@ class SignUpViewController: UIViewController {
     
     // MARK: - Selectors
     @objc private func signUpButtonCliked() {
-//        guard let email = idField.text else { return }
-//        guard let password = pwCheckField.text else { return }
-//        print("email: \(email)")
-//        print("password: \(password)")
-//        viewModel.signUp(email: email, password: "\(password)")
+        guard let email = idField.text else { return }
+        guard let password = pwCheckField.text else { return }
+        print("email: \(email)")
+        print("password: \(password)")
+        viewModel.signUp(email: email, password: "\(password)")
         self.navigationController?.popViewController(animated: true)
     }
     

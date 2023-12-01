@@ -33,6 +33,7 @@ class CustomTextField: UITextField {
         switch fieldType {
         case .email:
             self.placeholder = "이메일을 입력하세요"
+            self.keyboardType = .emailAddress
         case .pw:
             self.placeholder = "비밀번호를 입력하세요"
             self.isSecureTextEntry = true
