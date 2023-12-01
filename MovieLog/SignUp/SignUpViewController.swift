@@ -42,6 +42,9 @@ class SignUpViewController: UIViewController {
         
         self.signUpButton.addTarget(self, action: #selector(signUpButtonCliked), for: .touchUpInside)
         self.hideKeyboardWhenTappedAround()
+        idField.delegate = self
+        pwField.delegate = self
+        pwCheckField.delegate = self
     }
     
     // MARK: - UI Setup
@@ -213,6 +216,21 @@ extension UIViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+}
+
+extension SignUpViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == idField {
+            pwField.becomeFirstResponder() // pwField로 커서 이동
+        }
+        if textField == pwField {
+            pwCheckField.becomeFirstResponder() // pwCheckField로 커서 이동
+        }
+        if textField == pwCheckField {
+             textField.resignFirstResponder() // 키보드 숨기기
+         }
+        return true
     }
 }
 

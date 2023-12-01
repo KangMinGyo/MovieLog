@@ -42,6 +42,7 @@ class CustomTextField: UITextField {
             self.placeholder = "비밀번호를 한번 더 입력하세요"
             self.isSecureTextEntry = true
             self.textContentType = .password
+            self.clearsOnBeginEditing = false
         }
     }
     
