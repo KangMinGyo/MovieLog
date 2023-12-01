@@ -13,7 +13,7 @@ final class SignUpHeaderView: UIView {
     
     // MARK: - UI Components
     lazy var titleLabel = UILabel().then {
-        $0.text = "회원가입" //을 통해 \nLog를 남겨보세요.
+        $0.text = "회원가입"
         $0.textColor = UIColor(named: "MainColor")
         $0.font = .systemFont(ofSize: 38, weight: .bold)
     }
@@ -28,7 +28,6 @@ final class SignUpHeaderView: UIView {
     // MARK: - Life Cycle
     init() {
         super.init(frame: .zero)
-
         setupConstraints()
     }
     
