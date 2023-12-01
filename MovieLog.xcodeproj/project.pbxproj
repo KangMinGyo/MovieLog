@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C2451782B1A2CE1007B33B4 /* CustomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2451772B1A2CE1007B33B4 /* CustomStackView.swift */; };
 		8C399A6D2B106E5B00626B0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C399A6C2B106E5B00626B0D /* GoogleService-Info.plist */; };
 		8C399A782B1077ED00626B0D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C399A772B1077ED00626B0D /* HomeViewController.swift */; };
 		8C399A7D2B1081ED00626B0D /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 8C399A7C2B1081ED00626B0D /* Toast */; };
@@ -59,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C2451772B1A2CE1007B33B4 /* CustomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStackView.swift; sourceTree = "<group>"; };
 		8C399A6C2B106E5B00626B0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8C399A772B1077ED00626B0D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8C399A7F2B1087FF00626B0D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				8C78DBF82B0F2B0B0022BCFB /* CustomTextField.swift */,
 				8C78DBFA2B0F39B30022BCFB /* CustomButton.swift */,
 				8CC755242B19BA9C003FB4ED /* CustomLabel.swift */,
+				8C2451772B1A2CE1007B33B4 /* CustomStackView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				8C6A49F32B0C7CC900EE3AEE /* SignUpViewController.swift in Sources */,
 				8CC7551E2B11DC61003FB4ED /* SignUpViewModel.swift in Sources */,
 				8CC755232B18EE53003FB4ED /* Extension+UITextField.swift in Sources */,
+				8C2451782B1A2CE1007B33B4 /* CustomStackView.swift in Sources */,
 				8C6A49EC2B079D1700EE3AEE /* ContentViewPreview.swift in Sources */,
 				8C78DBF52B0E435D0022BCFB /* ControlEventPublisher.swift in Sources */,
 				8C6A49F02B08AE1700EE3AEE /* InfoFindView.swift in Sources */,

@@ -18,7 +18,7 @@ class SignUpViewController: UIViewController {
     // MARK: - UI Components
     lazy var headerView = SignUpHeaderView()
     lazy var scrollView = UIScrollView()
-    lazy var contentView = UIView()
+    lazy var contentView = CustomStackView()
     
     lazy var idField = CustomTextField(fieldType: .email)
     lazy var idLabel = CustomLabel(labelType: .email)
@@ -41,6 +41,7 @@ class SignUpViewController: UIViewController {
         bind(viewModel: SignUpViewModel())
         
         self.signUpButton.addTarget(self, action: #selector(signUpButtonCliked), for: .touchUpInside)
+        self.hideKeyboardWhenTappedAround()
     }
     
     // MARK: - UI Setup
@@ -48,16 +49,12 @@ class SignUpViewController: UIViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubview(headerView)
-        
         contentView.addSubview(idField)
         contentView.addSubview(idLabel)
-        
         contentView.addSubview(pwField)
         contentView.addSubview(pwLabel)
-        
         contentView.addSubview(pwCheckField)
         contentView.addSubview(pwCheckLabel)
-        
         contentView.addSubview(signUpButton)
 
         scrollView.snp.makeConstraints {
@@ -68,7 +65,7 @@ class SignUpViewController: UIViewController {
         contentView.snp.makeConstraints {
             $0.edges.equalTo(scrollView.contentLayoutGuide)
             $0.width.equalTo(scrollView.frameLayoutGuide)
-            $0.height.equalTo(1000)
+            $0.height.equalTo(800)
         }
         
         headerView.snp.makeConstraints {
@@ -206,6 +203,19 @@ class SignUpViewController: UIViewController {
     }
 }
 
+// 키보드 숨기기
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
 
@@ -218,4 +228,3 @@ struct MySignUpViewControllerPreview: PreviewProvider {
     }
 }
 #endif
-
