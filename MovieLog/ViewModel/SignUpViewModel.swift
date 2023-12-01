@@ -16,20 +16,17 @@ class SignUpViewModel {
     @Published var email: String = ""
     @Published var password: String = ""
     @Published var passwordCheck: String = ""
-    @Published var nickname: String = ""
     
     // MARK: - Output
-    //
+    
+    @Published var emailState: ViewState = .none
+    @Published var pwState: ViewState = .none
+    @Published var pwCheckState: ViewState = .none
     @Published var state: ViewState = .none
     
     init() {
         isValid()
     }
-    
-//    // MARK: - binding
-//    private func bind() {
-//
-//    }
     
     var isValidEmailPublisher: AnyPublisher<Bool, Never> {
         $email
@@ -52,22 +49,14 @@ class SignUpViewModel {
             .eraseToAnyPublisher()
     }
     
-    var isValidNicknamePublisher: AnyPublisher<Bool, Never> {
-        $nickname
-            .map { $0.isValidNickname() }
-            .print("[NICKNAME]")
-            .eraseToAnyPublisher()
-    }
-    
     func isValid() {
-        Publishers.CombineLatest4(
+        Publishers.CombineLatest3(
             isValidEmailPublisher,
             isValidPasswordPublisher,
-            isPasswordMatchPublisher,
-            isValidNicknamePublisher
+            isPasswordMatchPublisher
         )
-        .sink { isValidEmail, isValidPassword, isPasswordMatch, isVaildNick in
-            if isValidEmail == true, isValidPassword == true, isPasswordMatch == true, isVaildNick == true  {
+        .sink { isValidEmail, isValidPassword, isPasswordMatch in
+            if isValidEmail == true, isValidPassword == true, isPasswordMatch == true {
                 self.state = .success
             } else {
                 self.state = .failed

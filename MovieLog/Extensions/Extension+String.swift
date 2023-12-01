@@ -16,14 +16,8 @@ extension String {
     
     // 패스워드 정규식
     func isValidPassword() -> Bool {
-        let passwordRegex = "^(?=.*[a-z])(?=.*\\d)[a-zA-Z\\d]{8,}$"
+        let passwordRegex = "^(?=.*[a-z])(?=.*\\d)[a-zA-Z\\d]{8,20}$"
         return self.range(of: passwordRegex, options: .regularExpression) != nil
-    }
-    
-    // 닉네임 정규식
-    func isValidNickname() -> Bool {
-        let nicknameRegex = "^[ㄱ-ㅎ가-힣a-zA-Z0-9]{2,20}$"
-        return self.range(of: nicknameRegex, options: .regularExpression) != nil
     }
 }
 

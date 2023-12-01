@@ -12,7 +12,6 @@ class CustomTextField: UITextField {
         case email
         case pw
         case pwCheck
-        case nickname
     }
     
     private let loginFieldType: CustomTextFieldType
@@ -39,11 +38,9 @@ class CustomTextField: UITextField {
             self.isSecureTextEntry = true
             self.textContentType = .password
         case .pwCheck:
-            self.placeholder = "비밀번호를 입력하세요"
+            self.placeholder = "비밀번호를 한번 더 입력하세요"
             self.isSecureTextEntry = true
             self.textContentType = .password
-        case .nickname:
-            self.placeholder = "닉네임을 입력하세요"
         }
     }
     

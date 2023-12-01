@@ -16,77 +16,116 @@ class SignUpViewController: UIViewController {
     var subscriptions = Set<AnyCancellable>()
     
     // MARK: - UI Components
-    lazy var loginHeaderView = SignUpHeaderView()
+    lazy var headerView = SignUpHeaderView()
+    lazy var scrollView = UIScrollView()
+    lazy var contentView = UIView()
+    
     lazy var idField = CustomTextField(fieldType: .email)
+    lazy var idLabel = CustomLabel(labelType: .email)
+    
     lazy var pwField = CustomTextField(fieldType: .pw)
+    lazy var pwLabel = CustomLabel(labelType: .pw)
+    
     lazy var pwCheckField = CustomTextField(fieldType: .pwCheck)
-    lazy var nicknameField = CustomTextField(fieldType: .nickname)
+    lazy var pwCheckLabel = CustomLabel(labelType: .pwCheck)
+    
     lazy var signUpButton = CustomButton(title: "회원가입", hasBackground: true, fontSize: .big)
 
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-   
+
         view.backgroundColor = .systemBackground
         setupConstraints()
         bind(viewModel: SignUpViewModel())
         
-        self.signUpButton.addTarget(self, action: #selector(signInButtonCliked), for: .touchUpInside)
+        self.signUpButton.addTarget(self, action: #selector(signUpButtonCliked), for: .touchUpInside)
     }
     
     // MARK: - UI Setup
     private func setupConstraints() {
-        view.addSubview(loginHeaderView)
-        view.addSubview(idField)
-        view.addSubview(pwField)
-        view.addSubview(pwCheckField)
-        view.addSubview(nicknameField)
-        view.addSubview(signUpButton)
+        view.addSubview(headerView)
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
         
-        loginHeaderView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide).offset(40)
-            $0.leading.trailing.equalToSuperview().inset(40)
-            $0.height.equalTo(80)
+        contentView.addSubview(idField)
+        contentView.addSubview(idLabel)
+        
+        contentView.addSubview(pwField)
+        contentView.addSubview(pwLabel)
+        
+        contentView.addSubview(pwCheckField)
+        contentView.addSubview(pwCheckLabel)
+        
+        contentView.addSubview(signUpButton)
+        
+        headerView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(100)
+        }
+
+        scrollView.snp.makeConstraints {
+            $0.top.equalTo(headerView.snp.bottom).offset(20)
+            $0.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+        contentView.snp.makeConstraints {
+            $0.edges.equalTo(scrollView.contentLayoutGuide)
+            $0.width.equalTo(scrollView.frameLayoutGuide)
+            $0.height.equalTo(600)
         }
         
         idField.snp.makeConstraints {
-            $0.top.equalTo(loginHeaderView.snp.bottom)
-            $0.leading.trailing.equalToSuperview().inset(40)
+            $0.top.equalTo(contentView.snp.top)
+            $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(55)
+        }
+        
+        idLabel.snp.makeConstraints {
+            $0.top.equalTo(idField.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(20)
         }
         
         pwField.snp.makeConstraints {
-            $0.top.equalTo(idField.snp.bottom).offset(20)
-            $0.leading.trailing.equalToSuperview().inset(40)
+            $0.top.equalTo(idLabel.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(55)
+        }
+        
+        pwLabel.snp.makeConstraints {
+            $0.top.equalTo(pwField.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(20)
         }
         
         pwCheckField.snp.makeConstraints {
-            $0.top.equalTo(pwField.snp.bottom).offset(20)
-            $0.leading.trailing.equalToSuperview().inset(40)
+            $0.top.equalTo(pwLabel.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(55)
         }
         
-        nicknameField.snp.makeConstraints {
-            $0.top.equalTo(pwCheckField.snp.bottom).offset(20)
-            $0.leading.trailing.equalToSuperview().inset(40)
-            $0.height.equalTo(55)
+        pwCheckLabel.snp.makeConstraints {
+            $0.top.equalTo(pwCheckField.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(20)
         }
         
         signUpButton.snp.makeConstraints {
-            $0.top.equalTo(nicknameField.snp.bottom).offset(40)
-            $0.leading.trailing.equalToSuperview().inset(40)
+            $0.top.equalTo(pwCheckLabel.snp.bottom).offset(40)
+            $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(60)
         }
     }
     
     // MARK: - Selectors
-    @objc private func signInButtonCliked() {
-        guard let email = idField.text else { return }
-        guard let password = pwCheckField.text else { return }
-        print("email: \(email)")
-        print("password: \(password)")
-        viewModel.signUp(email: email, password: "\(password)")
+    @objc private func signUpButtonCliked() {
+//        guard let email = idField.text else { return }
+//        guard let password = pwCheckField.text else { return }
+//        print("email: \(email)")
+//        print("password: \(password)")
+//        viewModel.signUp(email: email, password: "\(password)")
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -105,11 +144,6 @@ class SignUpViewController: UIViewController {
         pwCheckField.publisher
             .receive(on: RunLoop.main)
             .assign(to: \.passwordCheck, on: viewModel)
-            .store(in: &subscriptions)
-        
-        nicknameField.publisher
-            .receive(on: RunLoop.main)
-            .assign(to: \.nickname, on: viewModel)
             .store(in: &subscriptions)
         
         viewModel.$state
@@ -143,20 +177,3 @@ struct MySignUpViewControllerPreview: PreviewProvider {
 }
 #endif
 
-extension UITextField {
-    /*NotificationCenter.default
-    .publisher(for: UITextField.textDidChangeNotification, object: emailTextField)
-    .map { ($0.object as! UITextField).text ?? "" }
-    .assign(to: \.email, on: viewModel)
-    .store(in: &cancellables)
-     */
-    var publisher: AnyPublisher<String, Never> {
-        NotificationCenter.default.publisher(for: UITextField.textDidChangeNotification, object: self)
-            //NotificationCenter로 들어온 notification의 optional 타입 object 프로퍼티를 UITextField로 타입 캐스팅
-            .compactMap{ $0.object as? UITextField}
-            //text 프로퍼티만 가져오기
-            .map{ $0.text ?? "" }    //값이 없는 경우 빈 문자열 반환
-            .print("[TEXT]: ")
-            .eraseToAnyPublisher()
-    }
-}
