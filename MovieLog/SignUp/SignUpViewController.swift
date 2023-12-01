@@ -19,32 +19,27 @@ class SignUpViewController: UIViewController {
     lazy var headerView = SignUpHeaderView()
     lazy var scrollView = UIScrollView()
     lazy var contentView = CustomStackView()
-    
     lazy var idField = CustomTextField(fieldType: .email)
     lazy var idLabel = CustomLabel(labelType: .email)
-    
     lazy var pwField = CustomTextField(fieldType: .pw)
     lazy var pwLabel = CustomLabel(labelType: .pw)
-    
     lazy var pwCheckField = CustomTextField(fieldType: .pwCheck)
     lazy var pwCheckLabel = CustomLabel(labelType: .pwCheck)
-    
     lazy var signUpButton = CustomButton(title: "회원가입", hasBackground: true, fontSize: .big)
 
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationItem.backBarButtonItem?.tintColor = .systemGray
-        view.backgroundColor = .systemBackground
+        setupViews()
         setupConstraints()
-        bind(viewModel: SignUpViewModel())
-        
-        self.signUpButton.addTarget(self, action: #selector(signUpButtonCliked), for: .touchUpInside)
-        self.hideKeyboardWhenTappedAround()
-        idField.delegate = self
-        pwField.delegate = self
-        pwCheckField.delegate = self
+        setupDelegates()
+    }
+    
+    // MARK: - Setup Views
+    func setupViews() {
+        view.backgroundColor = .systemBackground
+        bind(viewModel: SignUpViewModel()) //이거
+        self.hideKeyboardWhenTappedAround() //이거 옮겨
     }
     
     // MARK: - UI Setup
@@ -147,6 +142,11 @@ class SignUpViewController: UIViewController {
             .assign(to: \.passwordCheck, on: viewModel)
             .store(in: &subscriptions)
         
+        signUpButton.controlEvent(.touchUpInside)
+            .sink { [weak self] _ in
+                self?.signUpButtonCliked()
+            }.store(in: &subscriptions)
+        
         viewModel.$emailState
             .sink { [weak self] state in
                 switch state {
@@ -204,9 +204,16 @@ class SignUpViewController: UIViewController {
                 }
             }.store(in: &subscriptions)
     }
+    
+    // MARK: - Text Field Delegates
+    private func setupDelegates() {
+        idField.delegate = self
+        pwField.delegate = self
+        pwCheckField.delegate = self
+    }
 }
 
-// 키보드 숨기기
+// MARK: - Keyboard hide
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
@@ -219,6 +226,7 @@ extension UIViewController {
     }
 }
 
+// MARK: - UITextFieldDelegate
 extension SignUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == idField {
