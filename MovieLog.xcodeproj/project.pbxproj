@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8C2451782B1A2CE1007B33B4 /* CustomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2451772B1A2CE1007B33B4 /* CustomStackView.swift */; };
+		8C24517A2B1B5668007B33B4 /* SignUpViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2451792B1B5668007B33B4 /* SignUpViewModelTests.swift */; };
 		8C399A6D2B106E5B00626B0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C399A6C2B106E5B00626B0D /* GoogleService-Info.plist */; };
 		8C399A782B1077ED00626B0D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C399A772B1077ED00626B0D /* HomeViewController.swift */; };
 		8C399A7D2B1081ED00626B0D /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 8C399A7C2B1081ED00626B0D /* Toast */; };
@@ -61,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		8C2451772B1A2CE1007B33B4 /* CustomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStackView.swift; sourceTree = "<group>"; };
+		8C2451792B1B5668007B33B4 /* SignUpViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModelTests.swift; sourceTree = "<group>"; };
 		8C399A6C2B106E5B00626B0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8C399A772B1077ED00626B0D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8C399A7F2B1087FF00626B0D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				8C6A49AE2B0375C400EE3AEE /* MovieLogTests.swift */,
+				8C2451792B1B5668007B33B4 /* SignUpViewModelTests.swift */,
 			);
 			path = MovieLogTests;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C24517A2B1B5668007B33B4 /* SignUpViewModelTests.swift in Sources */,
 				8C6A49AF2B0375C400EE3AEE /* MovieLogTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

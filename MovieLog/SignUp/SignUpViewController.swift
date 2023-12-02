@@ -37,6 +37,7 @@ class SignUpViewController: UIViewController {
     
     // MARK: - Setup Views
     func setupViews() {
+        navigationController?.navigationBar.tintColor = .systemGray
         view.backgroundColor = .systemBackground
         bind(viewModel: SignUpViewModel()) //이거
         self.hideKeyboardWhenTappedAround() //이거 옮겨
