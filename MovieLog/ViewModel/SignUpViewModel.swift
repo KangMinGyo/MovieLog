@@ -11,6 +11,7 @@ import Combine
 class SignUpViewModel {
     
     var subscriptions = Set<AnyCancellable>()
+    let signUpAction = PassthroughSubject<Void, Never>()
     
     // MARK: - Input
     @Published var email: String = ""
@@ -18,7 +19,6 @@ class SignUpViewModel {
     @Published var passwordCheck: String = ""
     
     // MARK: - Output
-    
     @Published var emailState: ViewState = .none
     @Published var pwState: ViewState = .none
     @Published var pwCheckState: ViewState = .none

@@ -15,16 +15,15 @@ import Toast
 class LoginViewController: UIViewController {
     
 //    let viewModel: LoginViewModel = LoginViewModel()
-//    var subscriptions = Set<AnyCancellable>()
+    var subscriptions = Set<AnyCancellable>()
 
     // MARK: - UI Components
     lazy var scrollView = UIScrollView()
-    lazy var contentView = UIView()
-    
+    lazy var contentView = CustomStackView()
     lazy var loginHeaderView = LoginHeaderView()
     lazy var idField = CustomTextField(fieldType: .email)
     lazy var pwField = CustomTextField(fieldType: .pw)
-    lazy var checkButton = CustomCheckbox(title: "아이디 저장하기")
+    lazy var checkButton = CustomCheckbox(title: "자동로그인")
     lazy var signInButton = CustomButton(title: "로그인", hasBackground: true, fontSize: .big)
     lazy var signUpButton = CustomButton(title: "회원이 아니신가요? 회원가입하기", hasBackground: false, fontSize: .small)
 
@@ -32,10 +31,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        bind()
         setupConstraints()
-        
-        self.signInButton.addTarget(self, action: #selector(signInButtonCliked), for: .touchUpInside)
-        self.signUpButton.addTarget(self, action: #selector(signUpButtonCliked), for: .touchUpInside)
     }
 
     // MARK: - UI Setup
@@ -50,12 +47,14 @@ class LoginViewController: UIViewController {
         contentView.addSubview(signUpButton)
         
         scrollView.snp.makeConstraints {
-            $0.edges.equalTo(view)
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
         }
         
         contentView.snp.makeConstraints {
-            $0.top.bottom.equalTo(scrollView)
-            $0.leading.trailing.equalTo(view)
+            $0.edges.equalTo(scrollView.contentLayoutGuide)
+            $0.width.equalTo(scrollView.frameLayoutGuide)
+//            $0.height.equalTo(800)
         }
 
         loginHeaderView.snp.makeConstraints {
@@ -90,7 +89,6 @@ class LoginViewController: UIViewController {
         signUpButton.snp.makeConstraints {
             $0.top.equalTo(signInButton.snp.bottom).offset(20)
             $0.leading.trailing.equalTo(contentView).inset(20)
-//            $0.height.equalTo(500)
             $0.bottom.equalToSuperview()
         }
     }
@@ -118,6 +116,19 @@ class LoginViewController: UIViewController {
     @objc private func signUpButtonCliked() {
         let vc = SignUpViewController()
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    // MARK: - Binding
+    func bind() {
+        signInButton.controlEvent(.touchUpInside)
+            .sink { [weak self] _ in
+                self?.signInButtonCliked()
+            }.store(in: &subscriptions)
+        
+        signUpButton.controlEvent(.touchUpInside)
+            .sink { [weak self] _ in
+                self?.signUpButtonCliked()
+            }.store(in: &subscriptions)
     }
 }
 

@@ -116,16 +116,6 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    // MARK: - Selectors
-    @objc private func signUpButtonCliked() {
-        guard let email = idField.text else { return }
-        guard let password = pwCheckField.text else { return }
-        print("email: \(email)")
-        print("password: \(password)")
-        viewModel.signUp(email: email, password: "\(password)")
-        self.navigationController?.popViewController(animated: true)
-    }
-    
     // MARK: - Binding
     func bind(viewModel: SignUpViewModel) {
         idField.publisher
@@ -145,7 +135,10 @@ class SignUpViewController: UIViewController {
         
         signUpButton.controlEvent(.touchUpInside)
             .sink { [weak self] _ in
-                self?.signUpButtonCliked()
+                guard let email = self?.idField.text else { return }
+                guard let password = self?.pwCheckField.text else { return }
+                viewModel.signUp(email: email, password: password)
+                self?.navigationController?.popViewController(animated: true)
             }.store(in: &subscriptions)
         
         viewModel.$emailState

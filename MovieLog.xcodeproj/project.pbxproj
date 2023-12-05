@@ -38,6 +38,7 @@
 		8C78DBFB2B0F39B30022BCFB /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78DBFA2B0F39B30022BCFB /* CustomButton.swift */; };
 		8C78DBFD2B0F55270022BCFB /* SignUpHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78DBFC2B0F55270022BCFB /* SignUpHeaderView.swift */; };
 		8C8006082B1EFF7A004512F9 /* CustomCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8006072B1EFF7A004512F9 /* CustomCheckbox.swift */; };
+		8C80060A2B1F10DB004512F9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8006092B1F10DB004512F9 /* LoginViewModel.swift */; };
 		8CC7551E2B11DC61003FB4ED /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC7551D2B11DC61003FB4ED /* SignUpViewModel.swift */; };
 		8CC755212B11DFDE003FB4ED /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC755202B11DFDE003FB4ED /* Extension+String.swift */; };
 		8CC755232B18EE53003FB4ED /* Extension+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC755222B18EE53003FB4ED /* Extension+UITextField.swift */; };
@@ -89,6 +90,7 @@
 		8C78DBFA2B0F39B30022BCFB /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		8C78DBFC2B0F55270022BCFB /* SignUpHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpHeaderView.swift; sourceTree = "<group>"; };
 		8C8006072B1EFF7A004512F9 /* CustomCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCheckbox.swift; sourceTree = "<group>"; };
+		8C8006092B1F10DB004512F9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8CC7551D2B11DC61003FB4ED /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		8CC755202B11DFDE003FB4ED /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		8CC755222B18EE53003FB4ED /* Extension+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UITextField.swift"; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				8CC7551D2B11DC61003FB4ED /* SignUpViewModel.swift */,
+				8C8006092B1F10DB004512F9 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				8C8006082B1EFF7A004512F9 /* CustomCheckbox.swift in Sources */,
 				8C78DBFB2B0F39B30022BCFB /* CustomButton.swift in Sources */,
 				8C399A782B1077ED00626B0D /* HomeViewController.swift in Sources */,
+				8C80060A2B1F10DB004512F9 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
