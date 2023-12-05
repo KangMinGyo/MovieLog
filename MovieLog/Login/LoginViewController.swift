@@ -24,6 +24,7 @@ class LoginViewController: UIViewController {
     lazy var loginHeaderView = LoginHeaderView()
     lazy var idField = CustomTextField(fieldType: .email)
     lazy var pwField = CustomTextField(fieldType: .pw)
+    lazy var checkButton = CustomCheckbox(title: "아이디 저장하기")
     lazy var signInButton = CustomButton(title: "로그인", hasBackground: true, fontSize: .big)
     lazy var signUpButton = CustomButton(title: "회원이 아니신가요? 회원가입하기", hasBackground: false, fontSize: .small)
 
@@ -44,6 +45,7 @@ class LoginViewController: UIViewController {
         contentView.addSubview(loginHeaderView)
         contentView.addSubview(idField)
         contentView.addSubview(pwField)
+        contentView.addSubview(checkButton)
         contentView.addSubview(signInButton)
         contentView.addSubview(signUpButton)
         
@@ -74,8 +76,13 @@ class LoginViewController: UIViewController {
             $0.height.equalTo(55)
         }
         
+        checkButton.snp.makeConstraints {
+            $0.top.equalTo(pwField.snp.bottom).offset(10)
+            $0.leading.equalTo(contentView).inset(30)
+        }
+        
         signInButton.snp.makeConstraints {
-            $0.top.equalTo(pwField.snp.bottom).offset(20)
+            $0.top.equalTo(checkButton.snp.bottom).offset(20)
             $0.leading.trailing.equalTo(contentView).inset(40)
             $0.height.equalTo(60)
         }
@@ -112,7 +119,6 @@ class LoginViewController: UIViewController {
         let vc = SignUpViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-
 }
 
 #if canImport(SwiftUI) && DEBUG
