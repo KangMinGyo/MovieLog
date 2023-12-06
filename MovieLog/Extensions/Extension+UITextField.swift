@@ -19,6 +19,19 @@ extension UITextField {
     }
 }
 
+// MARK: - Keyboard hide
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
 /*NotificationCenter.default
 .publisher(for: UITextField.textDidChangeNotification, object: emailTextField)
 .map { ($0.object as! UITextField).text ?? "" }

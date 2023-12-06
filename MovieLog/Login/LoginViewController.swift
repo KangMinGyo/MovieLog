@@ -33,6 +33,7 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .systemBackground
         bind(viewModel: viewModel)
         setupConstraints()
+        setupDelegates()
     }
 
     // MARK: - UI Setup
@@ -92,12 +93,6 @@ class LoginViewController: UIViewController {
         }
     }
     
-    // MARK: - Selectors
-    @objc private func signUpButtonCliked() {
-        let vc = SignUpViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
     // MARK: - Binding
     func bind(viewModel: LoginViewModel) {
         signInButton.controlEvent(.touchUpInside)
@@ -110,6 +105,7 @@ class LoginViewController: UIViewController {
                         vc.modalPresentationStyle = .fullScreen
                         self?.present(vc, animated: false, completion: nil)
                     } else {
+                        self?.view.endEditing(true)
                         self?.view.makeToast("아이디와 비밀번호를 다시 확인해주세요.")
                     }
                 }
@@ -117,7 +113,8 @@ class LoginViewController: UIViewController {
         
         signUpButton.controlEvent(.touchUpInside)
             .sink { [weak self] _ in
-                self?.signUpButtonCliked()
+                let vc = SignUpViewController()
+                self?.navigationController?.pushViewController(vc, animated: true)
             }.store(in: &subscriptions)
     }
     
@@ -139,6 +136,24 @@ class LoginViewController: UIViewController {
 //            }
 //        }
 //    }
+    // MARK: - Text Field Delegates
+    private func setupDelegates() {
+        idField.delegate = self
+        pwField.delegate = self
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == idField {
+            pwField.becomeFirstResponder() // pwField로 커서 이동
+        }
+        if textField == pwField {
+            textField.resignFirstResponder() // 키보드 숨기기
+        }
+        return true
+    }
 }
 
 #if canImport(SwiftUI) && DEBUG
