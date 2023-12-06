@@ -8,24 +8,30 @@
 import UIKit
 import Combine
 import FirebaseAuth
+import Toast
 
 class LoginViewModel {
     
     var subscriptions = Set<AnyCancellable>()
+    // 체크박스 누르면 -> isLoggedIn True -> true면 UserDefault에 아이디 저장 및 다음에 자동로그인
+    @Published var isLoggedIn: Bool = false
     
-//    private func login(email: String, password: String) {
-//        // Firebase Auth Login
-//        Auth.auth().signIn(withEmail: email, password: password) {authResult, error in
-//            if authResult != nil {
-//                print("로그인 성공")
-//                let vc = HomeViewController()
-//                vc.modalPresentationStyle = .fullScreen
-//                self.present(vc, animated: false, completion: nil)
-//            } else {
-//                print("로그인 실패")
-//                print(error.debugDescription)
-//                self.view.makeToast("아이디와 비밀번호를 다시 확인해주세요.")
-//            }
-//        }
-//    }
+    func saveLogin(email: String, password: String) {
+        UserDefaults.standard.set(email, forKey: "email")
+        UserDefaults.standard.set(password, forKey: "password")
+    }
+    
+    func login(email: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
+        // Firebase Auth Login
+        Auth.auth().signIn(withEmail: email, password: password) {authResult, error in
+            if authResult != nil {
+                print("로그인 성공")
+                completion(true, nil)
+            } else {
+                print("로그인 실패")
+                print(error.debugDescription)
+                completion(false, nil)
+            }
+        }
+    }
 }

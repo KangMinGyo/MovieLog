@@ -13,8 +13,8 @@ import FirebaseAuth
 import Toast
 
 class LoginViewController: UIViewController {
-    
-//    let viewModel: LoginViewModel = LoginViewModel()
+
+    var viewModel = LoginViewModel()
     var subscriptions = Set<AnyCancellable>()
 
     // MARK: - UI Components
@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        bind()
+        bind(viewModel: viewModel)
         setupConstraints()
     }
 
@@ -54,7 +54,7 @@ class LoginViewController: UIViewController {
         contentView.snp.makeConstraints {
             $0.edges.equalTo(scrollView.contentLayoutGuide)
             $0.width.equalTo(scrollView.frameLayoutGuide)
-//            $0.height.equalTo(800)
+            $0.height.equalTo(800)
         }
 
         loginHeaderView.snp.makeConstraints {
@@ -89,40 +89,30 @@ class LoginViewController: UIViewController {
         signUpButton.snp.makeConstraints {
             $0.top.equalTo(signInButton.snp.bottom).offset(20)
             $0.leading.trailing.equalTo(contentView).inset(20)
-            $0.bottom.equalToSuperview()
         }
     }
     
     // MARK: - Selectors
-    @objc private func signInButtonCliked() {
-        let email: String = idField.text!.description
-        let pw: String = pwField.text!.description
-        
-        // Firebase Auth Login
-        Auth.auth().signIn(withEmail: email, password: pw) {authResult, error in
-            if authResult != nil {
-                print("로그인 성공")
-                let vc = HomeViewController()
-                vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: false, completion: nil)
-            } else {
-                print("로그인 실패")
-                print(error.debugDescription)
-                self.view.makeToast("아이디와 비밀번호를 다시 확인해주세요.")
-            }
-        }
-    }
-    
     @objc private func signUpButtonCliked() {
         let vc = SignUpViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: - Binding
-    func bind() {
+    func bind(viewModel: LoginViewModel) {
         signInButton.controlEvent(.touchUpInside)
             .sink { [weak self] _ in
-                self?.signInButtonCliked()
+                guard let email = self?.idField.text else { return }
+                guard let pw = self?.pwField.text else { return }
+                viewModel.login(email: email, password: pw) { success, err in
+                    if success {
+                        let vc = HomeViewController()
+                        vc.modalPresentationStyle = .fullScreen
+                        self?.present(vc, animated: false, completion: nil)
+                    } else {
+                        self?.view.makeToast("아이디와 비밀번호를 다시 확인해주세요.")
+                    }
+                }
             }.store(in: &subscriptions)
         
         signUpButton.controlEvent(.touchUpInside)
@@ -130,6 +120,25 @@ class LoginViewController: UIViewController {
                 self?.signUpButtonCliked()
             }.store(in: &subscriptions)
     }
+    
+//    func autoLogin() {
+//        if let id = UserDefaults.standard.string(forKey: "id") {
+//            if let pw = UserDefaults.standard.string(forKey: "pw") {
+//                Auth.auth().signIn(withEmail: id, password: pw) {authResult, error in
+//                    if authResult != nil {
+//                        print("로그인 성공")
+//                        let vc = HomeViewController()
+//                        vc.modalPresentationStyle = .fullScreen
+//                        self.present(vc, animated: false, completion: nil)
+//                    } else {
+//                        print("로그인 실패")
+//                        print(error.debugDescription)
+//                        self.view.makeToast("아이디와 비밀번호를 다시 확인해주세요.")
+//                    }
+//                }
+//            }
+//        }
+//    }
 }
 
 #if canImport(SwiftUI) && DEBUG

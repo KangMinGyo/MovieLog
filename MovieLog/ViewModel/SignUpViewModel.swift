@@ -11,7 +11,6 @@ import Combine
 class SignUpViewModel {
     
     var subscriptions = Set<AnyCancellable>()
-    let signUpAction = PassthroughSubject<Void, Never>()
     
     // MARK: - Input
     @Published var email: String = ""
