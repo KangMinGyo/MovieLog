@@ -103,11 +103,6 @@ class LoginViewController: UIViewController {
         }
     }
     
-    // MARK: - S
-    @objc func didTapAppleSignInButton() {
-
-    }
-    
     // MARK: - Binding
     func bind(viewModel: LoginViewModel) {
         signInButton.controlEvent(.touchUpInside)
@@ -157,28 +152,6 @@ extension LoginViewController: UITextFieldDelegate {
         return true
     }
 }
-
-// MARK: - Apple Login
-//extension LoginViewController: ASAuthorizationControllerDelegate {
-//    // 성공 후 동작
-//    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-//        
-//        switch authorization.credential {
-//        case let credentials as ASAuthorizationAppleIDCredential:
-//            let familyName = credentials.fullName?.familyName
-//            let givenName = credentials.fullName?.givenName
-//            let email = credentials.email
-//            break
-//        default:
-//            break
-//        }
-//    }
-//    
-//    // 실패 후 동작
-//    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-//        print("Apple Login failed!")
-//    }
-//}
 
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
