@@ -14,8 +14,9 @@ import Toast
 
 class LoginViewController: UIViewController {
 
-    var viewModel = LoginViewModel()
+    var viewModel = LoginViewModel(AppleAuthentication())
     var subscriptions = Set<AnyCancellable>()
+    fileprivate var currentNonce: String?
 
     // MARK: - UI Components
     lazy var scrollView = UIScrollView()
@@ -26,6 +27,8 @@ class LoginViewController: UIViewController {
     lazy var checkButton = CustomCheckbox(title: "자동로그인")
     lazy var signInButton = CustomButton(title: "로그인", hasBackground: true, fontSize: .big)
     lazy var signUpButton = CustomButton(title: "회원이 아니신가요? 회원가입하기", hasBackground: false, fontSize: .small)
+    
+    let appleLoginButton = ASAuthorizationAppleIDButton(type: .signIn, style: .black)
 
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -46,6 +49,7 @@ class LoginViewController: UIViewController {
         contentView.addSubview(checkButton)
         contentView.addSubview(signInButton)
         contentView.addSubview(signUpButton)
+        contentView.addSubview(appleLoginButton)
         
         scrollView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
@@ -91,6 +95,17 @@ class LoginViewController: UIViewController {
             $0.top.equalTo(signInButton.snp.bottom).offset(20)
             $0.leading.trailing.equalTo(contentView).inset(20)
         }
+        
+        appleLoginButton.snp.makeConstraints {
+            $0.top.equalTo(signUpButton.snp.bottom).offset(20)
+            $0.leading.trailing.equalTo(contentView).inset(40)
+            $0.height.equalTo(50)
+        }
+    }
+    
+    // MARK: - S
+    @objc func didTapAppleSignInButton() {
+
     }
     
     // MARK: - Binding
@@ -116,26 +131,13 @@ class LoginViewController: UIViewController {
                 let vc = SignUpViewController()
                 self?.navigationController?.pushViewController(vc, animated: true)
             }.store(in: &subscriptions)
+        
+        appleLoginButton.controlEvent(.touchUpInside)
+            .sink { [weak self] _ in
+                viewModel.AppleLogin()
+            }.store(in: &subscriptions)
     }
-    
-//    func autoLogin() {
-//        if let id = UserDefaults.standard.string(forKey: "id") {
-//            if let pw = UserDefaults.standard.string(forKey: "pw") {
-//                Auth.auth().signIn(withEmail: id, password: pw) {authResult, error in
-//                    if authResult != nil {
-//                        print("로그인 성공")
-//                        let vc = HomeViewController()
-//                        vc.modalPresentationStyle = .fullScreen
-//                        self.present(vc, animated: false, completion: nil)
-//                    } else {
-//                        print("로그인 실패")
-//                        print(error.debugDescription)
-//                        self.view.makeToast("아이디와 비밀번호를 다시 확인해주세요.")
-//                    }
-//                }
-//            }
-//        }
-//    }
+
     // MARK: - Text Field Delegates
     private func setupDelegates() {
         idField.delegate = self
@@ -156,8 +158,31 @@ extension LoginViewController: UITextFieldDelegate {
     }
 }
 
+// MARK: - Apple Login
+//extension LoginViewController: ASAuthorizationControllerDelegate {
+//    // 성공 후 동작
+//    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+//        
+//        switch authorization.credential {
+//        case let credentials as ASAuthorizationAppleIDCredential:
+//            let familyName = credentials.fullName?.familyName
+//            let givenName = credentials.fullName?.givenName
+//            let email = credentials.email
+//            break
+//        default:
+//            break
+//        }
+//    }
+//    
+//    // 실패 후 동작
+//    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+//        print("Apple Login failed!")
+//    }
+//}
+
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
+import AuthenticationServices
 
 struct MyLoginViewControllerPreview: PreviewProvider {
     static var previews: some View {

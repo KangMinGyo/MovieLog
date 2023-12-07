@@ -8,18 +8,30 @@
 import UIKit
 import Combine
 import FirebaseAuth
-import Toast
+import CryptoKit
+import AuthenticationServices
 
 class LoginViewModel {
     
     var subscriptions = Set<AnyCancellable>()
+    
+    private var apple: AppleAuthentication
+    
+    init(_ apple: AppleAuthentication) {
+        self.apple = apple
+    }
+    
     // 체크박스 누르면 -> isLoggedIn True -> true면 UserDefault에 아이디 저장 및 다음에 자동로그인
     @Published var isLoggedIn: Bool = false
     
-    func saveLogin(email: String, password: String) {
-        UserDefaults.standard.set(email, forKey: "email")
-        UserDefaults.standard.set(password, forKey: "password")
+    func AppleLogin() {
+        apple.startSignInWithAppleFlow()
     }
+    
+//    func saveLogin(email: String, password: String) {
+//        UserDefaults.standard.set(email, forKey: "email")
+//        UserDefaults.standard.set(password, forKey: "password")
+//    }
     
     func login(email: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
         // Firebase Auth Login
