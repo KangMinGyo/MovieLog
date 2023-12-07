@@ -14,9 +14,8 @@ import Toast
 
 class LoginViewController: UIViewController {
 
-    var viewModel = LoginViewModel(AppleAuthentication())
+    var viewModel = LoginViewModel()
     var subscriptions = Set<AnyCancellable>()
-    fileprivate var currentNonce: String?
 
     // MARK: - UI Components
     lazy var scrollView = UIScrollView()
@@ -27,7 +26,6 @@ class LoginViewController: UIViewController {
     lazy var checkButton = CustomCheckbox(title: "자동로그인")
     lazy var signInButton = CustomButton(title: "로그인", hasBackground: true, fontSize: .big)
     lazy var signUpButton = CustomButton(title: "회원이 아니신가요? 회원가입하기", hasBackground: false, fontSize: .small)
-    
     let appleLoginButton = ASAuthorizationAppleIDButton(type: .signIn, style: .black)
 
     // MARK: - Life Cycle
@@ -128,8 +126,16 @@ class LoginViewController: UIViewController {
             }.store(in: &subscriptions)
         
         appleLoginButton.controlEvent(.touchUpInside)
-            .sink { [weak self] _ in
+            .sink { _ in
                 viewModel.AppleLogin()
+            }.store(in: &subscriptions)
+        
+        viewModel.$signInComplete
+            .sink { [weak self] state in
+                if state {
+                    let vc = HomeViewController()
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                }
             }.store(in: &subscriptions)
     }
 
