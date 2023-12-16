@@ -119,6 +119,13 @@ class LoginViewController: UIViewController {
                 }
             }.store(in: &subscriptions)
         
+        checkButton.controlEvent(.touchUpInside)
+            .sink { [weak self] _ in
+                guard let email = self?.idField.text else { return }
+                guard let pw = self?.pwField.text else { return }
+                viewModel.autoLogin(email: email, password: pw)
+            }.store(in: &subscriptions)
+        
         signUpButton.controlEvent(.touchUpInside)
             .sink { [weak self] _ in
                 let vc = SignUpViewController()

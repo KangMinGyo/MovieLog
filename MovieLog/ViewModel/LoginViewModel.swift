@@ -16,6 +16,12 @@ class LoginViewModel: NSObject {
     
     var subscriptions = Set<AnyCancellable>()
     @Published var signInComplete: Bool = false
+    
+    // UserDefaults에 사용자 정보 저장
+    func autoLogin(email: String, password: String) {
+        UserDefaults.standard.set(email, forKey: "userEmail")
+        UserDefaults.standard.set(password, forKey: "userPassword")
+    }
 
     func AppleLogin() {
         let nonce = randomNonceString()
