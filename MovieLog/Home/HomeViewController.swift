@@ -38,7 +38,7 @@ class HomeViewController: UIViewController {
         view.addSubview(collectionView)
         
         collectionView.snp.makeConstraints {
-            $0.top.leading.trailing.bottom.equalToSuperview()
+            $0.edges.equalTo(view.safeAreaLayoutGuide)
         }
     }
 }
@@ -59,10 +59,6 @@ extension HomeViewController: UICollectionViewDataSource {
 //        nextVC.viewModel.movieData = viewModel.review[indexPath.row]
 //        self.show(nextVC, sender: self)
 //    }
-}
-
-extension HomeViewController: UICollectionViewDelegate {
-    
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
