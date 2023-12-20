@@ -44,6 +44,7 @@
 		8CC755212B11DFDE003FB4ED /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC755202B11DFDE003FB4ED /* Extension+String.swift */; };
 		8CC755232B18EE53003FB4ED /* Extension+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC755222B18EE53003FB4ED /* Extension+UITextField.swift */; };
 		8CC755252B19BA9C003FB4ED /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC755242B19BA9C003FB4ED /* CustomLabel.swift */; };
+		8CECBC992B32A31500FE6EA7 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBC982B32A31500FE6EA7 /* HomeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		8CC755202B11DFDE003FB4ED /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		8CC755222B18EE53003FB4ED /* Extension+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UITextField.swift"; sourceTree = "<group>"; };
 		8CC755242B19BA9C003FB4ED /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		8CECBC982B32A31500FE6EA7 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				8C399A772B1077ED00626B0D /* HomeViewController.swift */,
+				8CECBC982B32A31500FE6EA7 /* HomeCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				8C78DBF72B0F216C0022BCFB /* LoginHeaderView.swift in Sources */,
 				8CC755212B11DFDE003FB4ED /* Extension+String.swift in Sources */,
 				8C399A832B10887000626B0D /* FirebaseManager.swift in Sources */,
+				8CECBC992B32A31500FE6EA7 /* HomeCell.swift in Sources */,
 				8C6A499C2B0375C000EE3AEE /* LoginViewController.swift in Sources */,
 				8C78DBF92B0F2B0B0022BCFB /* CustomTextField.swift in Sources */,
 				8C78DBFD2B0F55270022BCFB /* SignUpHeaderView.swift in Sources */,
