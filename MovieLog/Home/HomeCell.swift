@@ -77,13 +77,11 @@ class HomeCell: UICollectionViewCell {
         directorNameLabel.snp.makeConstraints {
             $0.top.equalTo(movieNameLabel.snp.bottom).offset(5)
             $0.leading.equalTo(posterImageView.snp.trailing).offset(20)
-            $0.trailing.equalTo(safeAreaLayoutGuide)
         }
         
         movieInfoLabel.snp.makeConstraints {
             $0.top.equalTo(directorNameLabel.snp.bottom).offset(5)
             $0.leading.equalTo(posterImageView.snp.trailing).offset(20)
-            $0.trailing.equalTo(safeAreaLayoutGuide)
         }
         
         dateLabel.snp.makeConstraints {
