@@ -45,6 +45,8 @@
 		8CC755232B18EE53003FB4ED /* Extension+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC755222B18EE53003FB4ED /* Extension+UITextField.swift */; };
 		8CC755252B19BA9C003FB4ED /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC755242B19BA9C003FB4ED /* CustomLabel.swift */; };
 		8CECBC992B32A31500FE6EA7 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBC982B32A31500FE6EA7 /* HomeCell.swift */; };
+		8CECBC9F2B345C5F00FE6EA7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBC9E2B345C5F00FE6EA7 /* SearchViewController.swift */; };
+		8CECBCA12B345CEC00FE6EA7 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBCA02B345CEC00FE6EA7 /* SearchCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,8 @@
 		8CC755222B18EE53003FB4ED /* Extension+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UITextField.swift"; sourceTree = "<group>"; };
 		8CC755242B19BA9C003FB4ED /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		8CECBC982B32A31500FE6EA7 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		8CECBC9E2B345C5F00FE6EA7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		8CECBCA02B345CEC00FE6EA7 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,10 +190,8 @@
 				8C80060D2B209705004512F9 /* MovieLog.entitlements */,
 				8C399A812B10884600626B0D /* Managers */,
 				8C399A7E2B1087EF00626B0D /* Model */,
+				8CECBC9C2B345C1400FE6EA7 /* View */,
 				8C78DBEE2B0E221B0022BCFB /* ViewModel */,
-				8C6A49F12B0C7B7000EE3AEE /* SignUp */,
-				8C6A49C72B04B59F00EE3AEE /* Login */,
-				8C399A762B1077D100626B0D /* Home */,
 				8CC755262B19BD59003FB4ED /* Custom */,
 				8CC7551F2B11DFCC003FB4ED /* Extensions */,
 				8C6A49EA2B079CF800EE3AEE /* Utils */,
@@ -272,12 +274,32 @@
 			isa = PBXGroup;
 			children = (
 				8C78DBF82B0F2B0B0022BCFB /* CustomTextField.swift */,
-				8C78DBFA2B0F39B30022BCFB /* CustomButton.swift */,
 				8CC755242B19BA9C003FB4ED /* CustomLabel.swift */,
 				8C2451772B1A2CE1007B33B4 /* CustomStackView.swift */,
 				8C8006072B1EFF7A004512F9 /* CustomCheckbox.swift */,
+				8C78DBFA2B0F39B30022BCFB /* CustomButton.swift */,
 			);
 			path = Custom;
+			sourceTree = "<group>";
+		};
+		8CECBC9C2B345C1400FE6EA7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8C6A49C72B04B59F00EE3AEE /* Login */,
+				8C6A49F12B0C7B7000EE3AEE /* SignUp */,
+				8C399A762B1077D100626B0D /* Home */,
+				8CECBC9D2B345C3D00FE6EA7 /* Search */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8CECBC9D2B345C3D00FE6EA7 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				8CECBC9E2B345C5F00FE6EA7 /* SearchViewController.swift */,
+				8CECBCA02B345CEC00FE6EA7 /* SearchCell.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,6 +460,7 @@
 				8C78DBFD2B0F55270022BCFB /* SignUpHeaderView.swift in Sources */,
 				8C6A49F32B0C7CC900EE3AEE /* SignUpViewController.swift in Sources */,
 				8CC7551E2B11DC61003FB4ED /* SignUpViewModel.swift in Sources */,
+				8CECBCA12B345CEC00FE6EA7 /* SearchCell.swift in Sources */,
 				8CC755232B18EE53003FB4ED /* Extension+UITextField.swift in Sources */,
 				8C2451782B1A2CE1007B33B4 /* CustomStackView.swift in Sources */,
 				8C6A49EC2B079D1700EE3AEE /* ContentViewPreview.swift in Sources */,
@@ -445,6 +468,7 @@
 				8C80060F2B20D8A5004512F9 /* AppleAuthentication.swift in Sources */,
 				8C6A49F02B08AE1700EE3AEE /* InfoFindView.swift in Sources */,
 				8C6A49982B0375C000EE3AEE /* AppDelegate.swift in Sources */,
+				8CECBC9F2B345C5F00FE6EA7 /* SearchViewController.swift in Sources */,
 				8C6A499A2B0375C000EE3AEE /* SceneDelegate.swift in Sources */,
 				8C8006082B1EFF7A004512F9 /* CustomCheckbox.swift in Sources */,
 				8C78DBFB2B0F39B30022BCFB /* CustomButton.swift in Sources */,

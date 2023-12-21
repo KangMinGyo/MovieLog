@@ -12,8 +12,10 @@ import Combine
 
 class HomeViewController: UIViewController {
     
+    var subscriptions = Set<AnyCancellable>()
+    
     // MARK: - UI Components
-    private lazy var collectionView: UICollectionView = {
+    lazy var collectionView: UICollectionView = {
         let flowlayout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowlayout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -23,11 +25,35 @@ class HomeViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpNavigationBar()
         configureCollectionView()
         setupConstraints()
     }
     
     // MARK: - UI Setup
+    func setUpNavigationBar() {
+        let reviewWriteButton = UIBarButtonItem(image: UIImage(systemName: "pencil"),
+                                     style: .plain,
+                                     target: self,
+                                     action: #selector(searchButtonPressed))
+        let boxOfficeButton = UIBarButtonItem(image: UIImage(systemName: "chart.bar.xaxis"),
+                                     style: .plain,
+                                     target: self,
+                                     action: nil)
+        let settingButton = UIBarButtonItem(image: UIImage(systemName: "gearshape.fill"),
+                                     style: .plain,
+                                     target: self,
+                                     action: nil)
+        
+        navigationItem.leftBarButtonItem = settingButton
+        navigationItem.rightBarButtonItems = [boxOfficeButton, reviewWriteButton]
+    }
+    
+    @objc func searchButtonPressed() {
+        let nextVC = SearchViewController()
+        self.show(nextVC, sender: self)
+    }
+    
     func configureCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
