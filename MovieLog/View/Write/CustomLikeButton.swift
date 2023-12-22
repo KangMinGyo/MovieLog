@@ -19,9 +19,9 @@ class CustomLikeButton: UIButton {
         self.layer.cornerRadius = 10
         self.layer.masksToBounds = true
         
-        self.backgroundColor = UIColor(named: "MainColor")
+        self.backgroundColor = .systemGray6
         
-        let titleColor: UIColor = .white
+        let titleColor: UIColor = .black
         self.setTitleColor(titleColor, for: .normal)
         
         switch state {
