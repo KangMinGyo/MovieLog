@@ -24,11 +24,10 @@ class SearchViewController: UIViewController {
         view.backgroundColor = .systemBackground
         configureTableView()
         setUpSearchBar()
-        configureComponent()
+        setupConstraints()
     }
 
     //MARK: - Configure
-    
     func configureTableView() {
         searchTableView.delegate = self
         searchTableView.dataSource = self
@@ -43,7 +42,8 @@ class SearchViewController: UIViewController {
         searchBar.placeholder = "리뷰 작성 할 영화를 검색해주세요."
     }
     
-    func configureComponent() {
+    // MARK: - UI Setup
+    func setupConstraints() {
         view.addSubview(searchTableView)
         
         searchTableView.snp.makeConstraints {
@@ -83,3 +83,16 @@ extension SearchViewController: UISearchBarDelegate {
 //        searchBar.resignFirstResponder()
     }
 }
+
+#if canImport(SwiftUI) && DEBUG
+import SwiftUI
+
+struct MySearchViewControllerPreview: PreviewProvider {
+    static var previews: some View {
+        ContentViewControllerPreview {
+            let vc = SearchViewController()
+            return vc
+        }
+    }
+}
+#endif

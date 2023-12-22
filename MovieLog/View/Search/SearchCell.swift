@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class SearchCell: UITableViewCell {
     
@@ -46,11 +47,10 @@ class SearchCell: UITableViewCell {
     func setupConstraints() {
         addSubview(stackView)
         
-        NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            stackView.centerYAnchor.constraint(equalTo: centerYAnchor)
-        ])
+        stackView.snp.makeConstraints {
+            $0.leading.trailing.equalTo(0).inset(20)
+            $0.centerY.equalTo(snp.centerY)
+        }
     }
     
     func setupStackView() {

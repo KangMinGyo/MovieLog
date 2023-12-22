@@ -47,6 +47,8 @@
 		8CECBC992B32A31500FE6EA7 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBC982B32A31500FE6EA7 /* HomeCell.swift */; };
 		8CECBC9F2B345C5F00FE6EA7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBC9E2B345C5F00FE6EA7 /* SearchViewController.swift */; };
 		8CECBCA12B345CEC00FE6EA7 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBCA02B345CEC00FE6EA7 /* SearchCell.swift */; };
+		8CECBCA42B356AAC00FE6EA7 /* HowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBCA32B356AAC00FE6EA7 /* HowViewController.swift */; };
+		8CECBCA62B356F4100FE6EA7 /* CustomLikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBCA52B356F4100FE6EA7 /* CustomLikeButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +106,8 @@
 		8CECBC982B32A31500FE6EA7 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		8CECBC9E2B345C5F00FE6EA7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8CECBCA02B345CEC00FE6EA7 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		8CECBCA32B356AAC00FE6EA7 /* HowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowViewController.swift; sourceTree = "<group>"; };
+		8CECBCA52B356F4100FE6EA7 /* CustomLikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLikeButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +293,7 @@
 				8C6A49F12B0C7B7000EE3AEE /* SignUp */,
 				8C399A762B1077D100626B0D /* Home */,
 				8CECBC9D2B345C3D00FE6EA7 /* Search */,
+				8CECBCA22B356A4800FE6EA7 /* Write */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -300,6 +305,15 @@
 				8CECBCA02B345CEC00FE6EA7 /* SearchCell.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		8CECBCA22B356A4800FE6EA7 /* Write */ = {
+			isa = PBXGroup;
+			children = (
+				8CECBCA32B356AAC00FE6EA7 /* HowViewController.swift */,
+				8CECBCA52B356F4100FE6EA7 /* CustomLikeButton.swift */,
+			);
+			path = Write;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -450,6 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C399A802B1087FF00626B0D /* User.swift in Sources */,
+				8CECBCA42B356AAC00FE6EA7 /* HowViewController.swift in Sources */,
 				8CC755252B19BA9C003FB4ED /* CustomLabel.swift in Sources */,
 				8C78DBF72B0F216C0022BCFB /* LoginHeaderView.swift in Sources */,
 				8CC755212B11DFDE003FB4ED /* Extension+String.swift in Sources */,
@@ -461,6 +476,7 @@
 				8C6A49F32B0C7CC900EE3AEE /* SignUpViewController.swift in Sources */,
 				8CC7551E2B11DC61003FB4ED /* SignUpViewModel.swift in Sources */,
 				8CECBCA12B345CEC00FE6EA7 /* SearchCell.swift in Sources */,
+				8CECBCA62B356F4100FE6EA7 /* CustomLikeButton.swift in Sources */,
 				8CC755232B18EE53003FB4ED /* Extension+UITextField.swift in Sources */,
 				8C2451782B1A2CE1007B33B4 /* CustomStackView.swift in Sources */,
 				8C6A49EC2B079D1700EE3AEE /* ContentViewPreview.swift in Sources */,
