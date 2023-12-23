@@ -8,6 +8,8 @@
 import UIKit
 
 class CustomSelectButton: UIButton {
+    let imageSize = CGSize(width: 50, height: 50)
+    
     enum Select {
         case acting
         case direct
@@ -31,19 +33,19 @@ class CustomSelectButton: UIButton {
         
         switch select {
         case .acting:
-            let image = UIImage(named: "Acting")
+            let image = UIImage(named: "Acting")?.resize(targetSize: imageSize)
             self.setImage(image, for: .normal)
         case .direct:
-            let image = UIImage(named: "direct")
+            let image = UIImage(named: "direct")?.resize(targetSize: imageSize)
             self.setImage(image, for: .normal)
         case .ost:
-            let image = UIImage(named: "music")
+            let image = UIImage(named: "music")?.resize(targetSize: imageSize)
             self.setImage(image, for: .normal)
         case .visual:
-            let image = UIImage(named: "video")
+            let image = UIImage(named: "video")?.resize(targetSize: imageSize)
             self.setImage(image, for: .normal)
         case .story:
-            let image = UIImage(named: "story")
+            let image = UIImage(named: "story")?.resize(targetSize: imageSize)
             self.setImage(image, for: .normal)
         }
     }

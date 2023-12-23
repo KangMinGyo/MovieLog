@@ -21,9 +21,60 @@ class WhatViewController: UIViewController {
     lazy var visualButton = CustomSelectButton(select: .visual)
     lazy var storyButton = CustomSelectButton(select: .story)
     
+    lazy var actingLabel = UILabel().then {
+        $0.text = "연기"
+    }
+    
+    lazy var directLabel = UILabel().then {
+        $0.text = "연출"
+    }
+    
+    lazy var ostLabel = UILabel().then {
+        $0.text = "OST"
+    }
+    
+    lazy var visualLabel = UILabel().then {
+        $0.text = "영상미"
+    }
+    
+    lazy var storyLabel = UILabel().then {
+        $0.text = "스토리"
+    }
+    
+    let actingStackView = UIStackView().then {
+        $0.axis = .vertical
+        $0.spacing = 5
+        $0.alignment = .center
+    }
+    
+    let directStackView = UIStackView().then {
+        $0.axis = .vertical
+        $0.spacing = 5
+        $0.alignment = .center
+    }
+    
+    let ostStackView = UIStackView().then {
+        $0.axis = .vertical
+        $0.spacing = 5
+        $0.alignment = .center
+    }
+    
+    let visualStackView = UIStackView().then {
+        $0.axis = .vertical
+        $0.spacing = 5
+        $0.alignment = .center
+    }
+    
+    let storyStackView = UIStackView().then {
+        $0.axis = .vertical
+        $0.spacing = 5
+        $0.alignment = .center
+    }
+    
     let stackView = UIStackView().then {
         $0.axis = .horizontal
-        $0.spacing = 10
+        $0.spacing = 20
+        $0.distribution = .fillEqually
     }
     
     lazy var nextButton = UIButton().then {
@@ -52,30 +103,9 @@ class WhatViewController: UIViewController {
             $0.centerY.equalTo(view.snp.centerY).offset(-60)
         }
         
-        actingButton.snp.makeConstraints {
-            $0.width.equalTo(50)
-        }
-        
-        directButton.snp.makeConstraints {
-            $0.width.equalTo(50)
-        }
-        
-        ostButton.snp.makeConstraints {
-            $0.width.equalTo(50)
-        }
-        
-        visualButton.snp.makeConstraints {
-            $0.width.equalTo(50)
-        }
-        
-        storyButton.snp.makeConstraints {
-            $0.width.equalTo(50)
-        }
-        
         stackView.snp.makeConstraints {
             $0.centerX.equalTo(view.snp.centerX)
             $0.centerY.equalTo(view.snp.centerY)
-            $0.height.equalTo(50)
         }
         
         nextButton.snp.makeConstraints {
@@ -87,7 +117,27 @@ class WhatViewController: UIViewController {
     }
     
     func setupStackView() {
-        [actingButton, directButton, ostButton, visualButton, storyButton].forEach {
+        [actingButton, actingLabel].forEach {
+            self.actingStackView.addArrangedSubview($0)
+        }
+        
+        [directButton, directLabel].forEach {
+            self.directStackView.addArrangedSubview($0)
+        }
+        
+        [ostButton, ostLabel].forEach {
+            self.ostStackView.addArrangedSubview($0)
+        }
+        
+        [storyButton, storyLabel].forEach {
+            self.storyStackView.addArrangedSubview($0)
+        }
+        
+        [visualButton, visualLabel].forEach {
+            self.visualStackView.addArrangedSubview($0)
+        }
+        
+        [actingStackView, directStackView, ostStackView, storyStackView, visualStackView].forEach {
             self.stackView.addArrangedSubview($0)
         }
     }

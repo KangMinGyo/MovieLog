@@ -51,6 +51,7 @@
 		8CECBCA62B356F4100FE6EA7 /* CustomLikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBCA52B356F4100FE6EA7 /* CustomLikeButton.swift */; };
 		8CECBCA82B35E19B00FE6EA7 /* WhatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBCA72B35E19B00FE6EA7 /* WhatViewController.swift */; };
 		8CECBCAA2B36ADAE00FE6EA7 /* CustomSelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBCA92B36ADAE00FE6EA7 /* CustomSelectButton.swift */; };
+		8CECBCAC2B37105500FE6EA7 /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBCAB2B37105500FE6EA7 /* Extension+UIImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		8CECBCA52B356F4100FE6EA7 /* CustomLikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLikeButton.swift; sourceTree = "<group>"; };
 		8CECBCA72B35E19B00FE6EA7 /* WhatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatViewController.swift; sourceTree = "<group>"; };
 		8CECBCA92B36ADAE00FE6EA7 /* CustomSelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSelectButton.swift; sourceTree = "<group>"; };
+		8CECBCAB2B37105500FE6EA7 /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +276,7 @@
 			children = (
 				8CC755202B11DFDE003FB4ED /* Extension+String.swift */,
 				8CC755222B18EE53003FB4ED /* Extension+UITextField.swift */,
+				8CECBCAB2B37105500FE6EA7 /* Extension+UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				8C78DBF52B0E435D0022BCFB /* ControlEventPublisher.swift in Sources */,
 				8CECBCA82B35E19B00FE6EA7 /* WhatViewController.swift in Sources */,
 				8C80060F2B20D8A5004512F9 /* AppleAuthentication.swift in Sources */,
+				8CECBCAC2B37105500FE6EA7 /* Extension+UIImage.swift in Sources */,
 				8C6A49F02B08AE1700EE3AEE /* InfoFindView.swift in Sources */,
 				8C6A49982B0375C000EE3AEE /* AppDelegate.swift in Sources */,
 				8CECBC9F2B345C5F00FE6EA7 /* SearchViewController.swift in Sources */,
