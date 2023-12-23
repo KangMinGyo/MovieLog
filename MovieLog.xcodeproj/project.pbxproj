@@ -49,6 +49,8 @@
 		8CECBCA12B345CEC00FE6EA7 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBCA02B345CEC00FE6EA7 /* SearchCell.swift */; };
 		8CECBCA42B356AAC00FE6EA7 /* HowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBCA32B356AAC00FE6EA7 /* HowViewController.swift */; };
 		8CECBCA62B356F4100FE6EA7 /* CustomLikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBCA52B356F4100FE6EA7 /* CustomLikeButton.swift */; };
+		8CECBCA82B35E19B00FE6EA7 /* WhatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBCA72B35E19B00FE6EA7 /* WhatViewController.swift */; };
+		8CECBCAA2B36ADAE00FE6EA7 /* CustomSelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBCA92B36ADAE00FE6EA7 /* CustomSelectButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +110,8 @@
 		8CECBCA02B345CEC00FE6EA7 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		8CECBCA32B356AAC00FE6EA7 /* HowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowViewController.swift; sourceTree = "<group>"; };
 		8CECBCA52B356F4100FE6EA7 /* CustomLikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLikeButton.swift; sourceTree = "<group>"; };
+		8CECBCA72B35E19B00FE6EA7 /* WhatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatViewController.swift; sourceTree = "<group>"; };
+		8CECBCA92B36ADAE00FE6EA7 /* CustomSelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSelectButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +316,8 @@
 			children = (
 				8CECBCA32B356AAC00FE6EA7 /* HowViewController.swift */,
 				8CECBCA52B356F4100FE6EA7 /* CustomLikeButton.swift */,
+				8CECBCA72B35E19B00FE6EA7 /* WhatViewController.swift */,
+				8CECBCA92B36ADAE00FE6EA7 /* CustomSelectButton.swift */,
 			);
 			path = Write;
 			sourceTree = "<group>";
@@ -474,6 +480,7 @@
 				8C78DBF92B0F2B0B0022BCFB /* CustomTextField.swift in Sources */,
 				8C78DBFD2B0F55270022BCFB /* SignUpHeaderView.swift in Sources */,
 				8C6A49F32B0C7CC900EE3AEE /* SignUpViewController.swift in Sources */,
+				8CECBCAA2B36ADAE00FE6EA7 /* CustomSelectButton.swift in Sources */,
 				8CC7551E2B11DC61003FB4ED /* SignUpViewModel.swift in Sources */,
 				8CECBCA12B345CEC00FE6EA7 /* SearchCell.swift in Sources */,
 				8CECBCA62B356F4100FE6EA7 /* CustomLikeButton.swift in Sources */,
@@ -481,6 +488,7 @@
 				8C2451782B1A2CE1007B33B4 /* CustomStackView.swift in Sources */,
 				8C6A49EC2B079D1700EE3AEE /* ContentViewPreview.swift in Sources */,
 				8C78DBF52B0E435D0022BCFB /* ControlEventPublisher.swift in Sources */,
+				8CECBCA82B35E19B00FE6EA7 /* WhatViewController.swift in Sources */,
 				8C80060F2B20D8A5004512F9 /* AppleAuthentication.swift in Sources */,
 				8C6A49F02B08AE1700EE3AEE /* InfoFindView.swift in Sources */,
 				8C6A49982B0375C000EE3AEE /* AppDelegate.swift in Sources */,
