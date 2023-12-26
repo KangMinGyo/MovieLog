@@ -52,7 +52,7 @@
 		8CECBCA82B35E19B00FE6EA7 /* WhatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBCA72B35E19B00FE6EA7 /* WhatViewController.swift */; };
 		8CECBCAA2B36ADAE00FE6EA7 /* CustomSelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBCA92B36ADAE00FE6EA7 /* CustomSelectButton.swift */; };
 		8CECBCAC2B37105500FE6EA7 /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBCAB2B37105500FE6EA7 /* Extension+UIImage.swift */; };
-		8CECBCAE2B39C1B400FE6EA7 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBCAD2B39C1B400FE6EA7 /* ReviewViewController.swift */; };
+		8CECBCB02B3B0C2B00FE6EA7 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBCAF2B3B0C2B00FE6EA7 /* WriteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,7 +115,7 @@
 		8CECBCA72B35E19B00FE6EA7 /* WhatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatViewController.swift; sourceTree = "<group>"; };
 		8CECBCA92B36ADAE00FE6EA7 /* CustomSelectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSelectButton.swift; sourceTree = "<group>"; };
 		8CECBCAB2B37105500FE6EA7 /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
-		8CECBCAD2B39C1B400FE6EA7 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		8CECBCAF2B3B0C2B00FE6EA7 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,7 +323,7 @@
 				8CECBCA52B356F4100FE6EA7 /* CustomLikeButton.swift */,
 				8CECBCA72B35E19B00FE6EA7 /* WhatViewController.swift */,
 				8CECBCA92B36ADAE00FE6EA7 /* CustomSelectButton.swift */,
-				8CECBCAD2B39C1B400FE6EA7 /* ReviewViewController.swift */,
+				8CECBCAF2B3B0C2B00FE6EA7 /* WriteViewController.swift */,
 			);
 			path = Write;
 			sourceTree = "<group>";
@@ -480,6 +480,7 @@
 				8CC755252B19BA9C003FB4ED /* CustomLabel.swift in Sources */,
 				8C78DBF72B0F216C0022BCFB /* LoginHeaderView.swift in Sources */,
 				8CC755212B11DFDE003FB4ED /* Extension+String.swift in Sources */,
+				8CECBCB02B3B0C2B00FE6EA7 /* WriteViewController.swift in Sources */,
 				8C399A832B10887000626B0D /* FirebaseManager.swift in Sources */,
 				8CECBC992B32A31500FE6EA7 /* HomeCell.swift in Sources */,
 				8C6A499C2B0375C000EE3AEE /* LoginViewController.swift in Sources */,
@@ -503,7 +504,6 @@
 				8C6A499A2B0375C000EE3AEE /* SceneDelegate.swift in Sources */,
 				8C8006082B1EFF7A004512F9 /* CustomCheckbox.swift in Sources */,
 				8C78DBFB2B0F39B30022BCFB /* CustomButton.swift in Sources */,
-				8CECBCAE2B39C1B400FE6EA7 /* ReviewViewController.swift in Sources */,
 				8C399A782B1077ED00626B0D /* HomeViewController.swift in Sources */,
 				8C80060A2B1F10DB004512F9 /* LoginViewModel.swift in Sources */,
 			);
