@@ -10,23 +10,25 @@ import UIKit
 class WriteViewController: UIViewController {
     
     // MARK: - UI Components
-    lazy var myReviewLabel: UILabel = {
-        let label = UILabel()
-        label.text = "나의 관람평"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
+    lazy var label = UILabel().then {
+        $0.text = "어떤점이 좋았나요?"
+        $0.font = .systemFont(ofSize: 25)
+    }
     
-    lazy var reviewTextView: UITextView = {
-        let textView = UITextView()
-        textView.text = "관람평을 작성해주세요."
-        textView.font = .systemFont(ofSize: 17)
-        textView.textColor = .lightGray
-        textView.backgroundColor = .systemGray6
-        textView.isScrollEnabled = false
-        textView.translatesAutoresizingMaskIntoConstraints = false
-        return textView
-    }()
+    lazy var reviewTextView = UITextView().then {
+        $0.text = "관람평을 작성해주세요."
+        $0.font = .systemFont(ofSize: 17)
+        $0.textColor = .lightGray
+        $0.backgroundColor = .systemGray6
+        $0.isScrollEnabled = false
+    }
+    
+    lazy var doneButton = UIButton().then {
+        $0.setTitle("완료", for: .normal)
+        $0.backgroundColor = UIColor(named: "MainColor")
+        $0.layer.masksToBounds = true
+        $0.layer.cornerRadius = 25
+    }
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -37,17 +39,27 @@ class WriteViewController: UIViewController {
     
     // MARK: - UI Setup
     func setupConstraints() {
-        view.addSubview(myReviewLabel)
+        view.addSubview(label)
         view.addSubview(reviewTextView)
+        view.addSubview(doneButton)
         
-        myReviewLabel.snp.makeConstraints {
+        label.snp.makeConstraints {
             $0.centerX.equalTo(view.snp.centerX)
-            $0.centerY.equalTo(view.snp.centerY).offset(-60)
+            $0.centerY.equalTo(view.snp.centerY).offset(-view.frame.height/3)
         }
         
         reviewTextView.snp.makeConstraints {
+            $0.top.equalTo(label.snp.bottom).offset(20)
+            $0.leading.trailing.equalTo(view.safeAreaInsets).inset(20)
             $0.centerX.equalTo(view.snp.centerX)
             $0.centerY.equalTo(view.snp.centerY)
+        }
+        
+        doneButton.snp.makeConstraints { 
+            $0.top.equalTo(reviewTextView.snp.bottom).offset(20)
+            $0.centerX.equalTo(view.snp.centerX)
+            $0.width.equalTo(150)
+            $0.height.equalTo(50)
         }
     }
 }
