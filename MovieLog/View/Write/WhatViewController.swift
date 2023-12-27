@@ -87,7 +87,7 @@ class WhatViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = .systemBackground
         setupConstraints()
         setupStackView()
     }

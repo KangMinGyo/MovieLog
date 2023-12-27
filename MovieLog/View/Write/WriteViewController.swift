@@ -33,6 +33,7 @@ class WriteViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         setupConstraints()
     }
     
@@ -76,9 +77,3 @@ struct MyWriteViewControllerPreview: PreviewProvider {
     }
 }
 #endif
-
-struct Previews_WriteViewController_LibraryContent: LibraryContentProvider {
-    var views: [LibraryItem] {
-        LibraryItem(/*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/)
-    }
-}

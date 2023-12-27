@@ -7,8 +7,11 @@
 
 import UIKit
 import SnapKit
+import Combine
 
 class HowViewController: UIViewController {
+    
+    var subscriptions = Set<AnyCancellable>()
     
     // MARK: - UI Components
     lazy var movieNameLabel = UILabel().then {
@@ -36,6 +39,7 @@ class HowViewController: UIViewController {
         view.backgroundColor = .systemBackground
         setupConstraints()
         setupStackView()
+        bind()
     }
     
     // MARK: - UI Setup
@@ -75,6 +79,15 @@ class HowViewController: UIViewController {
         [likeButton, hateButton].forEach {
             self.stackView.addArrangedSubview($0)
         }
+    }
+    
+    // MARK: - Binding
+    func bind() {
+        nextButton.controlEvent(.touchUpInside)
+            .sink { [weak self] _ in
+                let vc = WhatViewController()
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }.store(in: &subscriptions)
     }
 }
 
