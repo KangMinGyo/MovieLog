@@ -83,6 +83,24 @@ class HowViewController: UIViewController {
     
     // MARK: - Binding
     func bind() {
+        likeButton.controlEvent(.touchUpInside)
+            .sink { [weak self] _ in
+                print("좋았어요")
+                self?.likeButton.backgroundColor = UIColor(named: "MainColor")
+                self?.likeButton.setTitleColor(.white, for: .normal)
+                self?.hateButton.backgroundColor = UIColor.systemGray6
+                self?.hateButton.setTitleColor(.black, for: .normal)
+            }.store(in: &subscriptions)
+        
+        hateButton.controlEvent(.touchUpInside)
+            .sink { [weak self] _ in
+                print("별로였어요")
+                self?.hateButton.backgroundColor = UIColor(named: "MainColor")
+                self?.hateButton.setTitleColor(.white, for: .normal)
+                self?.likeButton.backgroundColor = UIColor.systemGray6
+                self?.likeButton.setTitleColor(.black, for: .normal)
+            }.store(in: &subscriptions)
+        
         nextButton.controlEvent(.touchUpInside)
             .sink { [weak self] _ in
                 let vc = WhatViewController()

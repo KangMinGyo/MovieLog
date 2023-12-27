@@ -20,9 +20,9 @@ class CustomLikeButton: UIButton {
         self.layer.masksToBounds = true
         
         self.backgroundColor = .systemGray6
+        self.setTitleColor(.black, for: .normal)
         
-        let titleColor: UIColor = .black
-        self.setTitleColor(titleColor, for: .normal)
+        addTarget(self, action:#selector(buttonTapped), for: .touchUpInside)
         
         switch state {
         case .like:
@@ -34,5 +34,15 @@ class CustomLikeButton: UIButton {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func buttonTapped(_ sender: UIButton) {
+        if sender.backgroundColor == UIColor.systemGray6 {
+            sender.backgroundColor = UIColor(named: "MainColor")
+            self.setTitleColor(.white, for: .normal)
+        } else {
+            sender.backgroundColor = UIColor.systemGray6
+            self.setTitleColor(.black, for: .normal)
+        }
     }
 }
