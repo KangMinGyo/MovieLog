@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Combine
 
 class WhatViewController: UIViewController {
+    
+    var subscriptions = Set<AnyCancellable>()
     
     // MARK: - UI Components
     lazy var label = UILabel().then {
@@ -90,6 +93,7 @@ class WhatViewController: UIViewController {
         view.backgroundColor = .systemBackground
         setupConstraints()
         setupStackView()
+        bind()
     }
     
     // MARK: - UI Setup
@@ -140,6 +144,15 @@ class WhatViewController: UIViewController {
         [actingStackView, directStackView, ostStackView, storyStackView, visualStackView].forEach {
             self.stackView.addArrangedSubview($0)
         }
+    }
+    
+    // MARK: - Binding
+    func bind() {
+        nextButton.controlEvent(.touchUpInside)
+            .sink { [weak self] _ in
+                let vc = WriteViewController()
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }.store(in: &subscriptions)
     }
 }
 
