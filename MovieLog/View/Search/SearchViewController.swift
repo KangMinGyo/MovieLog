@@ -6,8 +6,13 @@
 //
 
 import UIKit
+import Combine
 
 class SearchViewController: UIViewController {
+    
+    @Published private(set) var users = [Search]()
+    var viewModel = SearchViewModel()
+    var subscriptions = Set<AnyCancellable>()
 
     // MARK: - UI Components
     lazy var searchBar = UISearchBar()
@@ -73,8 +78,12 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let movieName = searchBar.text
-        print("Movie Search: \(movieName)")
+        guard let title = searchBar.text else { return }
+        
+        print("Movie Search: \(title)")
+ 
+        viewModel.configureMovieSearch(title: title)
+        
 //        viewModel.getSearchDatas(title: "\(movieName ?? "")") {
 //            DispatchQueue.main.async {
 //                self.movieSearchTableView.reloadData()

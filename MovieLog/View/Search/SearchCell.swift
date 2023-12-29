@@ -23,7 +23,7 @@ class SearchCell: UITableViewCell {
     }
     
     let movieInfoLabel = UILabel().then {
-        $0.text = "미국 | 미스터리, 범죄 | 2000"
+        $0.text = "미국 • 미스터리, 범죄 • 2000"
         $0.textColor = .systemGray2
     }
     
@@ -57,5 +57,11 @@ class SearchCell: UITableViewCell {
         [movieNameLabel, directorLabel, movieInfoLabel].forEach {
             self.stackView.addArrangedSubview($0)
         }
+    }
+    
+    func setup(with data: MovieList) {
+        movieNameLabel.text = data.movieNm
+        directorLabel.text = data.directors.first?.peopleNm ?? "-"
+        movieInfoLabel.text = data.movieInfo
     }
 }
