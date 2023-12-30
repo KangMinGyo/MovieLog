@@ -20,7 +20,6 @@ final class LoginHeaderView: UIView {
     // MARK: - Life Cycle
     init() {
         super.init(frame: .zero)
-
         setupConstraints()
     }
     

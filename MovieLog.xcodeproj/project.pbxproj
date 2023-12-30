@@ -12,6 +12,7 @@
 		8C30048E2B3EE73500E0AAD8 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C30048D2B3EE73500E0AAD8 /* EndPoint.swift */; };
 		8C3004902B3EE74D00E0AAD8 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C30048F2B3EE74D00E0AAD8 /* APIRequest.swift */; };
 		8C3004922B3EE77900E0AAD8 /* APIComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3004912B3EE77900E0AAD8 /* APIComponents.swift */; };
+		8C3004962B405B2200E0AAD8 /* MovieRegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3004952B405B2200E0AAD8 /* MovieRegistrationView.swift */; };
 		8C399A6D2B106E5B00626B0D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C399A6C2B106E5B00626B0D /* GoogleService-Info.plist */; };
 		8C399A782B1077ED00626B0D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C399A772B1077ED00626B0D /* HomeViewController.swift */; };
 		8C399A7D2B1081ED00626B0D /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 8C399A7C2B1081ED00626B0D /* Toast */; };
@@ -88,6 +89,7 @@
 		8C30048D2B3EE73500E0AAD8 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		8C30048F2B3EE74D00E0AAD8 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		8C3004912B3EE77900E0AAD8 /* APIComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIComponents.swift; sourceTree = "<group>"; };
+		8C3004952B405B2200E0AAD8 /* MovieRegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRegistrationView.swift; sourceTree = "<group>"; };
 		8C399A6C2B106E5B00626B0D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8C399A772B1077ED00626B0D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8C399A7F2B1087FF00626B0D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 			children = (
 				8CECBC9E2B345C5F00FE6EA7 /* SearchViewController.swift */,
 				8CECBCA02B345CEC00FE6EA7 /* SearchCell.swift */,
+				8C3004952B405B2200E0AAD8 /* MovieRegistrationView.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 				8CECBCC12B3DE03600FE6EA7 /* SearchResponse.swift in Sources */,
 				8CECBCA82B35E19B00FE6EA7 /* WhatViewController.swift in Sources */,
 				8C80060F2B20D8A5004512F9 /* AppleAuthentication.swift in Sources */,
+				8C3004962B405B2200E0AAD8 /* MovieRegistrationView.swift in Sources */,
 				8CECBCAC2B37105500FE6EA7 /* Extension+UIImage.swift in Sources */,
 				8C6A49F02B08AE1700EE3AEE /* InfoFindView.swift in Sources */,
 				8C6A49982B0375C000EE3AEE /* AppDelegate.swift in Sources */,

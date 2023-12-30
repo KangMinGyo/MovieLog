@@ -42,7 +42,6 @@ final class InfoFindView: UIView {
     // MARK: Life Cycle
     init() {
         super.init(frame: .zero)
-        
         backgroundColor = .systemBackground
         setupConstraints()
         self.setNeedsUpdateConstraints()
