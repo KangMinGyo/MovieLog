@@ -59,11 +59,10 @@ class SearchViewController: UIViewController {
     // MARK: - Binding
     func bind() {
         viewModel.$searchData
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] searchDataList in
                 print("ViewController ->> \(searchDataList)")
-                DispatchQueue.main.async {
-                    self?.searchTableView.reloadData()
-                }
+                self?.searchTableView.reloadData()
             }.store(in: &subscriptions)
     }
 }

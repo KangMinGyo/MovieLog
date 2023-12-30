@@ -16,6 +16,7 @@ class SearchViewModel: ObservableObject {
     @Published var searchData = [MovieList]()
     
     func configureMovieSearch(title: String) {
+        searchData = [MovieList]()
         let url = EndPoints.makeMovieSearchApi(
             key: "60c9b995596ead85ff6e59a8d3725e72",
             title: title
