@@ -10,28 +10,28 @@ import Combine
 
 class SearchViewController: UIViewController {
     
-    @Published private(set) var users = [Search]()
     var viewModel = SearchViewModel()
     var subscriptions = Set<AnyCancellable>()
-
+    
     // MARK: - UI Components
     lazy var searchBar = UISearchBar()
     
     lazy var searchTableView = UITableView().then {
-         $0.rowHeight = 100
-     }
+        $0.rowHeight = 100
+    }
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         title = "영화 검색"
         view.backgroundColor = .systemBackground
         configureTableView()
         setUpSearchBar()
         setupConstraints()
+        bind()
     }
-
+    
     //MARK: - Configure
     func configureTableView() {
         searchTableView.delegate = self
@@ -55,16 +55,28 @@ class SearchViewController: UIViewController {
             $0.edges.equalTo(0)
         }
     }
+    
+    // MARK: - Binding
+    func bind() {
+        viewModel.$searchData
+            .sink { [weak self] searchDataList in
+                print("ViewController ->> \(searchDataList)")
+                DispatchQueue.main.async {
+                    self?.searchTableView.reloadData()
+                }
+            }.store(in: &subscriptions)
+    }
 }
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.searchData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SearchCell.identifier, for: indexPath) as! SearchCell
+        cell.setup(with: viewModel.searchData[indexPath.row])
         return cell
     }
     
@@ -79,17 +91,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let title = searchBar.text else { return }
-        
-        print("Movie Search: \(title)")
- 
         viewModel.configureMovieSearch(title: title)
-        
-//        viewModel.getSearchDatas(title: "\(movieName ?? "")") {
-//            DispatchQueue.main.async {
-//                self.movieSearchTableView.reloadData()
-//            }
-//        }
-//        searchBar.resignFirstResponder()
+        searchBar.resignFirstResponder()
     }
 }
 
