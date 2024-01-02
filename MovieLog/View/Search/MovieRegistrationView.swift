@@ -13,7 +13,7 @@ class MovieRegistrationView: UIView {
     // MARK: - UI Components
     lazy var label = UILabel().then {
         $0.text = "찾는 영화가 없으신가요?"
-        $0.font = .systemFont(ofSize: 18, weight: .semibold)
+        $0.font = .systemFont(ofSize: 18)
     }
     
     lazy var button = UIButton().then {
