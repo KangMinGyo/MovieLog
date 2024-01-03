@@ -20,7 +20,22 @@ class SearchViewController: UIViewController {
         $0.rowHeight = 100
     }
     
-    lazy var movieRegistrationView = MovieRegistrationView()
+    lazy var movieRegistrationView = UIView().then {
+        $0.backgroundColor = .systemGray6
+    }
+    
+    lazy var label = UILabel().then {
+        $0.text = "찾는 영화가 없으신가요?"
+        $0.font = .systemFont(ofSize: 18)
+    }
+    
+    lazy var button = UIButton().then {
+        $0.setTitle("영화정보 추가하기", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.backgroundColor = UIColor(named: "MainColor")
+        $0.layer.cornerRadius = 25
+        $0.layer.masksToBounds = true
+    }
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -53,6 +68,8 @@ class SearchViewController: UIViewController {
     func setupConstraints() {
         view.addSubview(searchTableView)
         view.addSubview(movieRegistrationView)
+        movieRegistrationView.addSubview(label)
+        movieRegistrationView.addSubview(button)
         
         searchTableView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(0)
@@ -63,6 +80,18 @@ class SearchViewController: UIViewController {
             $0.top.equalTo(searchTableView.snp.bottom)
             $0.leading.trailing.bottom.equalTo(0)
         }
+        
+        label.snp.makeConstraints {
+            $0.top.equalTo(0).offset(20)
+            $0.centerX.equalTo(view.snp.centerX)
+        }
+        
+        button.snp.makeConstraints {
+            $0.top.equalTo(label.snp.bottom).offset(20)
+            $0.centerX.equalTo(view.snp.centerX)
+            $0.width.equalTo(200)
+            $0.height.equalTo(50)
+        }
     }
     
     // MARK: - Binding
@@ -71,6 +100,13 @@ class SearchViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
                 self?.searchTableView.reloadData()
+            }.store(in: &subscriptions)
+        
+        button.controlEvent(.touchUpInside)
+            .sink { [weak self] _ in
+                let vc = MovieInputFormViewController()
+                vc.modalPresentationStyle = .fullScreen
+                self?.present(vc, animated: false, completion: nil)
             }.store(in: &subscriptions)
     }
 }

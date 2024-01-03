@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Combine
 
-class MovieInputFormView: UIView {
+class MovieInputFormViewController: UIViewController {
+    
+    var subscriptions = Set<AnyCancellable>()
     
     // MARK: - UI Components
 //    lazy var scrollView = UIScrollView()
@@ -25,29 +28,25 @@ class MovieInputFormView: UIView {
     lazy var addButton = CustomButton(title: "영화 정보 추가", hasBackground: true, fontSize: .big)
     
     // MARK: - Life Cycle
-    init() {
-        super.init(frame: .zero)
-        backgroundColor = .systemBackground
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         setupConstraints()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - UI Setup
     func setupConstraints() {
-        self.addSubview(titlelabel)
-        self.addSubview(titleTextField)
-        self.addSubview(directorlabel)
-        self.addSubview(directorTextField)
-        self.addSubview(nationlabel)
-        self.addSubview(nationTextField)
-        self.addSubview(genrelabel)
-        self.addSubview(genreTextField)
-        self.addSubview(yearlabel)
-        self.addSubview(yearTextField)
-        self.addSubview(addButton)
+        view.addSubview(titlelabel)
+        view.addSubview(titleTextField)
+        view.addSubview(directorlabel)
+        view.addSubview(directorTextField)
+        view.addSubview(nationlabel)
+        view.addSubview(nationTextField)
+        view.addSubview(genrelabel)
+        view.addSubview(genreTextField)
+        view.addSubview(yearlabel)
+        view.addSubview(yearTextField)
+        view.addSubview(addButton)
         
         titlelabel.snp.makeConstraints {
             $0.top.equalTo(0).offset(20)
@@ -113,15 +112,15 @@ class MovieInputFormView: UIView {
 }
 
 #if canImport(SwiftUI) && DEBUG
-
 import SwiftUI
 
-struct MyMovieInputFormViewPreview: PreviewProvider {
+struct MyMovieInputFormViewControllerPreview: PreviewProvider {
     static var previews: some View {
-        ContentViewPreview {
-            let view = MovieInputFormView()
-            return view
-        }.previewLayout(.fixed(width: 358, height: 151))
+        ContentViewControllerPreview {
+            let vc = MovieInputFormViewController()
+            return vc
+        }
     }
 }
 #endif
+
