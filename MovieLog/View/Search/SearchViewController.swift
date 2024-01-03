@@ -20,6 +20,8 @@ class SearchViewController: UIViewController {
         $0.rowHeight = 100
     }
     
+    lazy var movieRegistrationView = MovieRegistrationView()
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,9 +52,16 @@ class SearchViewController: UIViewController {
     // MARK: - UI Setup
     func setupConstraints() {
         view.addSubview(searchTableView)
+        view.addSubview(movieRegistrationView)
         
         searchTableView.snp.makeConstraints {
-            $0.edges.equalTo(0)
+            $0.top.leading.trailing.equalTo(0)
+            $0.bottom.equalToSuperview().offset(-150)
+        }
+        
+        movieRegistrationView.snp.makeConstraints {
+            $0.top.equalTo(searchTableView.snp.bottom)
+            $0.leading.trailing.bottom.equalTo(0)
         }
     }
     

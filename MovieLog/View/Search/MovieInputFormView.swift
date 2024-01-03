@@ -10,6 +10,8 @@ import UIKit
 class MovieInputFormView: UIView {
     
     // MARK: - UI Components
+//    lazy var scrollView = UIScrollView()
+//    lazy var contentView = CustomStackView()
     lazy var titlelabel = CustomInputFormLabel(text: "영화제목")
     lazy var titleTextField = CustomInputFormTextField(fieldType: .title)
     lazy var directorlabel = CustomInputFormLabel(text: "감독이름")
