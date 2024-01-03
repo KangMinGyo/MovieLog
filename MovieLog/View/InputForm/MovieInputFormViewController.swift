@@ -13,8 +13,9 @@ class MovieInputFormViewController: UIViewController {
     var subscriptions = Set<AnyCancellable>()
     
     // MARK: - UI Components
-//    lazy var scrollView = UIScrollView()
-//    lazy var contentView = CustomStackView()
+    lazy var headerView = MovieInputFormHeaderView()
+    lazy var scrollView = UIScrollView()
+    lazy var contentView = CustomStackView()
     lazy var titlelabel = CustomInputFormLabel(text: "영화제목")
     lazy var titleTextField = CustomInputFormTextField(fieldType: .title)
     lazy var directorlabel = CustomInputFormLabel(text: "감독이름")
@@ -36,20 +37,40 @@ class MovieInputFormViewController: UIViewController {
     
     // MARK: - UI Setup
     func setupConstraints() {
-        view.addSubview(titlelabel)
-        view.addSubview(titleTextField)
-        view.addSubview(directorlabel)
-        view.addSubview(directorTextField)
-        view.addSubview(nationlabel)
-        view.addSubview(nationTextField)
-        view.addSubview(genrelabel)
-        view.addSubview(genreTextField)
-        view.addSubview(yearlabel)
-        view.addSubview(yearTextField)
-        view.addSubview(addButton)
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addSubview(headerView)
+        contentView.addSubview(titlelabel)
+        contentView.addSubview(titleTextField)
+        contentView.addSubview(directorlabel)
+        contentView.addSubview(directorTextField)
+        contentView.addSubview(nationlabel)
+        contentView.addSubview(nationTextField)
+        contentView.addSubview(genrelabel)
+        contentView.addSubview(genreTextField)
+        contentView.addSubview(yearlabel)
+        contentView.addSubview(yearTextField)
+        contentView.addSubview(addButton)
+        
+        scrollView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+        contentView.snp.makeConstraints {
+            $0.edges.equalTo(scrollView.contentLayoutGuide)
+            $0.width.equalTo(scrollView.frameLayoutGuide)
+            $0.height.equalTo(800)
+        }
+        
+        headerView.snp.makeConstraints {
+            $0.top.equalTo(contentView.snp.top)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.height.equalTo(70)
+        }
         
         titlelabel.snp.makeConstraints {
-            $0.top.equalTo(0).offset(20)
+            $0.top.equalTo(headerView.snp.bottom)
             $0.leading.trailing.equalToSuperview().inset(20)
         }
         

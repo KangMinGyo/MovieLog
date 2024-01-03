@@ -46,6 +46,7 @@
 		8C8006082B1EFF7A004512F9 /* CustomCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8006072B1EFF7A004512F9 /* CustomCheckbox.swift */; };
 		8C80060A2B1F10DB004512F9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8006092B1F10DB004512F9 /* LoginViewModel.swift */; };
 		8C80060F2B20D8A5004512F9 /* AppleAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80060E2B20D8A5004512F9 /* AppleAuthentication.swift */; };
+		8CC4EB252B457278002B51E0 /* MovieInputFormHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4EB242B457278002B51E0 /* MovieInputFormHeaderView.swift */; };
 		8CC7551E2B11DC61003FB4ED /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC7551D2B11DC61003FB4ED /* SignUpViewModel.swift */; };
 		8CC755212B11DFDE003FB4ED /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC755202B11DFDE003FB4ED /* Extension+String.swift */; };
 		8CC755232B18EE53003FB4ED /* Extension+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC755222B18EE53003FB4ED /* Extension+UITextField.swift */; };
@@ -122,6 +123,7 @@
 		8C8006092B1F10DB004512F9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8C80060D2B209705004512F9 /* MovieLog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MovieLog.entitlements; sourceTree = "<group>"; };
 		8C80060E2B20D8A5004512F9 /* AppleAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthentication.swift; sourceTree = "<group>"; };
+		8CC4EB242B457278002B51E0 /* MovieInputFormHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInputFormHeaderView.swift; sourceTree = "<group>"; };
 		8CC7551D2B11DC61003FB4ED /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		8CC755202B11DFDE003FB4ED /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		8CC755222B18EE53003FB4ED /* Extension+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UITextField.swift"; sourceTree = "<group>"; };
@@ -304,6 +306,17 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		8CC4EB232B45721A002B51E0 /* InputForm */ = {
+			isa = PBXGroup;
+			children = (
+				8C3004972B4518F100E0AAD8 /* MovieInputFormViewController.swift */,
+				8CC4EB242B457278002B51E0 /* MovieInputFormHeaderView.swift */,
+				8C3004992B45323800E0AAD8 /* CustomInputFormLabel.swift */,
+				8C30049B2B454E1B00E0AAD8 /* CustomInputFormTextField.swift */,
+			);
+			path = InputForm;
+			sourceTree = "<group>";
+		};
 		8CC7551F2B11DFCC003FB4ED /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,6 +346,7 @@
 				8C6A49F12B0C7B7000EE3AEE /* SignUp */,
 				8C399A762B1077D100626B0D /* Home */,
 				8CECBC9D2B345C3D00FE6EA7 /* Search */,
+				8CC4EB232B45721A002B51E0 /* InputForm */,
 				8CECBCA22B356A4800FE6EA7 /* Write */,
 			);
 			path = View;
@@ -343,9 +357,6 @@
 			children = (
 				8CECBC9E2B345C5F00FE6EA7 /* SearchViewController.swift */,
 				8CECBCA02B345CEC00FE6EA7 /* SearchCell.swift */,
-				8C3004972B4518F100E0AAD8 /* MovieInputFormViewController.swift */,
-				8C3004992B45323800E0AAD8 /* CustomInputFormLabel.swift */,
-				8C30049B2B454E1B00E0AAD8 /* CustomInputFormTextField.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -543,6 +554,7 @@
 				8CECBCB32B3D57CA00FE6EA7 /* NetworkManager.swift in Sources */,
 				8C78DBFD2B0F55270022BCFB /* SignUpHeaderView.swift in Sources */,
 				8C6A49F32B0C7CC900EE3AEE /* SignUpViewController.swift in Sources */,
+				8CC4EB252B457278002B51E0 /* MovieInputFormHeaderView.swift in Sources */,
 				8CECBCAA2B36ADAE00FE6EA7 /* CustomSelectButton.swift in Sources */,
 				8CC7551E2B11DC61003FB4ED /* SignUpViewModel.swift in Sources */,
 				8CECBCA12B345CEC00FE6EA7 /* SearchCell.swift in Sources */,
