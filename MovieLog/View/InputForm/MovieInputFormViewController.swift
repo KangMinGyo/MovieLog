@@ -35,6 +35,23 @@ class MovieInputFormViewController: UIViewController {
         setupConstraints()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        NotificationCenter.default.addObserver(self, 
+                                               selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification, 
+                                               object: nil)
+        NotificationCenter.default.addObserver(self, 
+                                               selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     // MARK: - UI Setup
     func setupConstraints() {
         view.addSubview(scrollView)
@@ -64,7 +81,7 @@ class MovieInputFormViewController: UIViewController {
         }
         
         headerView.snp.makeConstraints {
-            $0.top.equalTo(contentView.snp.top)
+            $0.top.equalTo(contentView.snp.top).offset(20)
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(70)
         }
@@ -129,6 +146,20 @@ class MovieInputFormViewController: UIViewController {
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(60)
         }
+    }
+    
+    //키보드가 올라올때
+    @objc func keyboardWillShow(notification: NSNotification) {
+        guard let userInfo = notification.userInfo as NSDictionary?,
+              let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        let keyboardHeight = keyboardFrame.size.height
+        scrollView.contentOffset.y = keyboardHeight
+        
+    }
+    //키보드가 내려갈때
+    @objc func keyboardWillHide(notification: NSNotification) {
+        scrollView.contentOffset.y = .zero
+        scrollView.scrollIndicatorInsets = self.scrollView.contentInset
     }
 }
 
