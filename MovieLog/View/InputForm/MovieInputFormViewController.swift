@@ -33,6 +33,7 @@ class MovieInputFormViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         setupConstraints()
+        bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -148,7 +149,16 @@ class MovieInputFormViewController: UIViewController {
         }
     }
     
-    //키보드가 올라올때
+    // MARK: - Binding
+    func bind() {
+        addButton.controlEvent(.touchUpInside)
+            .sink { [weak self] _ in
+                let vc = HowViewController()
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }.store(in: &subscriptions)
+    }
+    
+    // 키보드 올라올때
     @objc func keyboardWillShow(notification: NSNotification) {
         guard let userInfo = notification.userInfo as NSDictionary?,
               let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
@@ -156,7 +166,7 @@ class MovieInputFormViewController: UIViewController {
         scrollView.contentOffset.y = keyboardHeight
         
     }
-    //키보드가 내려갈때
+    // 키보드 내려갈때
     @objc func keyboardWillHide(notification: NSNotification) {
         scrollView.contentOffset.y = .zero
         scrollView.scrollIndicatorInsets = self.scrollView.contentInset

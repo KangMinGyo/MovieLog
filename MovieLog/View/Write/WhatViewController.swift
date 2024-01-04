@@ -10,6 +10,8 @@ import Combine
 
 class WhatViewController: UIViewController {
     
+    let imageSize = CGSize(width: 50, height: 50)
+    var goodPointSelected = [false, false, false, false, false]
     var subscriptions = Set<AnyCancellable>()
     
     // MARK: - UI Components
@@ -18,11 +20,38 @@ class WhatViewController: UIViewController {
         $0.font = .systemFont(ofSize: 25)
     }
     
-    lazy var actingButton = CustomSelectButton(select: .acting)
-    lazy var directButton = CustomSelectButton(select: .direct)
-    lazy var ostButton = CustomSelectButton(select: .ost)
-    lazy var visualButton = CustomSelectButton(select: .visual)
-    lazy var storyButton = CustomSelectButton(select: .story)
+    lazy var actingButton = UIButton().then {
+        let image = UIImage(named: "Acting")?.resize(targetSize: imageSize)
+        $0.setImage(image, for: .normal)
+        $0.addTarget(self, action: #selector(goodPointButtonAction), for: .touchUpInside)
+        $0.tag = 0
+    }
+    lazy var directButton = UIButton().then {
+        let image = UIImage(named: "direct")?.resize(targetSize: imageSize)
+        $0.setImage(image, for: .normal)
+        $0.addTarget(self, action: #selector(goodPointButtonAction), for: .touchUpInside)
+        $0.tag = 1
+    }
+    
+    lazy var ostButton = UIButton().then {
+        let image = UIImage(named: "music")?.resize(targetSize: imageSize)
+        $0.setImage(image, for: .normal)
+        $0.addTarget(self, action: #selector(goodPointButtonAction), for: .touchUpInside)
+        $0.tag = 2
+    }
+    lazy var visualButton = UIButton().then {
+        let image = UIImage(named: "video")?.resize(targetSize: imageSize)
+        $0.setImage(image, for: .normal)
+        $0.addTarget(self, action: #selector(goodPointButtonAction), for: .touchUpInside)
+        $0.tag = 3
+    }
+    
+    lazy var storyButton = UIButton().then {
+        let image = UIImage(named: "story")?.resize(targetSize: imageSize)
+        $0.setImage(image, for: .normal)
+        $0.addTarget(self, action: #selector(goodPointButtonAction), for: .touchUpInside)
+        $0.tag = 4
+    }
     
     lazy var actingLabel = UILabel().then {
         $0.text = "연기"
@@ -150,9 +179,49 @@ class WhatViewController: UIViewController {
     func bind() {
         nextButton.controlEvent(.touchUpInside)
             .sink { [weak self] _ in
+                print("->> \(self?.goodPointSelected)")
                 let vc = WriteViewController()
                 self?.navigationController?.pushViewController(vc, animated: true)
             }.store(in: &subscriptions)
+    }
+    
+    @objc func goodPointButtonAction(sender: UIButton) {
+        if sender.tag == 0 {
+            goodPointSelected[0].toggle()
+            if goodPointSelected[0] == true {
+                actingLabel.textColor = UIColor(named: "RedColor")
+            } else {
+                actingLabel.textColor = .black
+            }
+        } else if sender.tag == 1 {
+            goodPointSelected[1].toggle()
+            if goodPointSelected[1] == true {
+                directLabel.textColor = UIColor(named: "RedColor")
+            } else {
+                directLabel.textColor = .black
+            }
+        } else if sender.tag == 2 {
+            goodPointSelected[2].toggle()
+            if goodPointSelected[2] == true {
+                ostLabel.textColor = UIColor(named: "RedColor")
+            } else {
+                ostLabel.textColor = .black
+            }
+        } else if sender.tag == 3 {
+            goodPointSelected[3].toggle()
+            if goodPointSelected[3] == true {
+                visualLabel.textColor = UIColor(named: "RedColor")
+            } else {
+                visualLabel.textColor = .black
+            }
+        } else {
+            goodPointSelected[4].toggle()
+            if goodPointSelected[4] == true {
+                storyLabel.textColor = UIColor(named: "RedColor")
+            } else {
+                storyLabel.textColor = .black
+            }
+        }
     }
 }
 

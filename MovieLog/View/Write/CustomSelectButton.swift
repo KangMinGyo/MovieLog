@@ -17,7 +17,7 @@ class CustomSelectButton: UIButton {
         case visual
         case story
     }
-    
+
     init(select: Select) {
         super.init(frame: .zero)
         setupButton(select: select)
@@ -35,18 +35,23 @@ class CustomSelectButton: UIButton {
         case .acting:
             let image = UIImage(named: "Acting")?.resize(targetSize: imageSize)
             self.setImage(image, for: .normal)
+            self.tag = 0
         case .direct:
             let image = UIImage(named: "direct")?.resize(targetSize: imageSize)
             self.setImage(image, for: .normal)
+            self.tag = 1
         case .ost:
             let image = UIImage(named: "music")?.resize(targetSize: imageSize)
             self.setImage(image, for: .normal)
+            self.tag = 2
         case .visual:
             let image = UIImage(named: "video")?.resize(targetSize: imageSize)
             self.setImage(image, for: .normal)
+            self.tag = 3
         case .story:
             let image = UIImage(named: "story")?.resize(targetSize: imageSize)
             self.setImage(image, for: .normal)
+            self.tag = 4
         }
     }
 }

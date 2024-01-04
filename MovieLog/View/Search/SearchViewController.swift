@@ -105,8 +105,7 @@ class SearchViewController: UIViewController {
         button.controlEvent(.touchUpInside)
             .sink { [weak self] _ in
                 let vc = MovieInputFormViewController()
-                vc.modalPresentationStyle = .fullScreen
-                self?.present(vc, animated: false, completion: nil)
+                self?.navigationController?.pushViewController(vc, animated: true)
             }.store(in: &subscriptions)
     }
 }
