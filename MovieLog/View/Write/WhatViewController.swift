@@ -12,6 +12,7 @@ class WhatViewController: UIViewController {
     
     let imageSize = CGSize(width: 50, height: 50)
     var goodPointSelected = [false, false, false, false, false]
+    var viewModel = WriteViewModel()
     var subscriptions = Set<AnyCancellable>()
     
     // MARK: - UI Components
@@ -39,20 +40,21 @@ class WhatViewController: UIViewController {
         $0.addTarget(self, action: #selector(goodPointButtonAction), for: .touchUpInside)
         $0.tag = 2
     }
-    lazy var visualButton = UIButton().then {
-        let image = UIImage(named: "video")?.resize(targetSize: imageSize)
-        $0.setImage(image, for: .normal)
-        $0.addTarget(self, action: #selector(goodPointButtonAction), for: .touchUpInside)
-        $0.tag = 3
-    }
     
     lazy var storyButton = UIButton().then {
         let image = UIImage(named: "story")?.resize(targetSize: imageSize)
         $0.setImage(image, for: .normal)
         $0.addTarget(self, action: #selector(goodPointButtonAction), for: .touchUpInside)
-        $0.tag = 4
+        $0.tag = 3
     }
     
+    lazy var visualButton = UIButton().then {
+        let image = UIImage(named: "video")?.resize(targetSize: imageSize)
+        $0.setImage(image, for: .normal)
+        $0.addTarget(self, action: #selector(goodPointButtonAction), for: .touchUpInside)
+        $0.tag = 4
+    }
+
     lazy var actingLabel = UILabel().then {
         $0.text = "연기"
     }
@@ -179,7 +181,7 @@ class WhatViewController: UIViewController {
     func bind() {
         nextButton.controlEvent(.touchUpInside)
             .sink { [weak self] _ in
-                print("->> \(self?.goodPointSelected)")
+                self?.viewModel.whatData = self?.goodPointSelected
                 let vc = WriteViewController()
                 self?.navigationController?.pushViewController(vc, animated: true)
             }.store(in: &subscriptions)
@@ -188,39 +190,19 @@ class WhatViewController: UIViewController {
     @objc func goodPointButtonAction(sender: UIButton) {
         if sender.tag == 0 {
             goodPointSelected[0].toggle()
-            if goodPointSelected[0] == true {
-                actingLabel.textColor = UIColor(named: "RedColor")
-            } else {
-                actingLabel.textColor = .black
-            }
+            actingLabel.textColor = goodPointSelected[0] ? UIColor(named: "RedColor") : .black
         } else if sender.tag == 1 {
             goodPointSelected[1].toggle()
-            if goodPointSelected[1] == true {
-                directLabel.textColor = UIColor(named: "RedColor")
-            } else {
-                directLabel.textColor = .black
-            }
+            directLabel.textColor = goodPointSelected[1] ? UIColor(named: "RedColor") : .black
         } else if sender.tag == 2 {
             goodPointSelected[2].toggle()
-            if goodPointSelected[2] == true {
-                ostLabel.textColor = UIColor(named: "RedColor")
-            } else {
-                ostLabel.textColor = .black
-            }
+            ostLabel.textColor = goodPointSelected[2] ? UIColor(named: "RedColor") : .black
         } else if sender.tag == 3 {
             goodPointSelected[3].toggle()
-            if goodPointSelected[3] == true {
-                visualLabel.textColor = UIColor(named: "RedColor")
-            } else {
-                visualLabel.textColor = .black
-            }
+            storyLabel.textColor = goodPointSelected[3] ? UIColor(named: "RedColor") : .black
         } else {
             goodPointSelected[4].toggle()
-            if goodPointSelected[4] == true {
-                storyLabel.textColor = UIColor(named: "RedColor")
-            } else {
-                storyLabel.textColor = .black
-            }
+            visualLabel.textColor = goodPointSelected[4] ? UIColor(named: "RedColor") : .black
         }
     }
 }

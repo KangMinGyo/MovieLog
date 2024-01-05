@@ -47,6 +47,7 @@
 		8C80060A2B1F10DB004512F9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8006092B1F10DB004512F9 /* LoginViewModel.swift */; };
 		8C80060F2B20D8A5004512F9 /* AppleAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80060E2B20D8A5004512F9 /* AppleAuthentication.swift */; };
 		8CC4EB252B457278002B51E0 /* MovieInputFormHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4EB242B457278002B51E0 /* MovieInputFormHeaderView.swift */; };
+		8CC4EB272B472E7E002B51E0 /* WriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4EB262B472E7E002B51E0 /* WriteViewModel.swift */; };
 		8CC7551E2B11DC61003FB4ED /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC7551D2B11DC61003FB4ED /* SignUpViewModel.swift */; };
 		8CC755212B11DFDE003FB4ED /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC755202B11DFDE003FB4ED /* Extension+String.swift */; };
 		8CC755232B18EE53003FB4ED /* Extension+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC755222B18EE53003FB4ED /* Extension+UITextField.swift */; };
@@ -124,6 +125,7 @@
 		8C80060D2B209705004512F9 /* MovieLog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MovieLog.entitlements; sourceTree = "<group>"; };
 		8C80060E2B20D8A5004512F9 /* AppleAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthentication.swift; sourceTree = "<group>"; };
 		8CC4EB242B457278002B51E0 /* MovieInputFormHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInputFormHeaderView.swift; sourceTree = "<group>"; };
+		8CC4EB262B472E7E002B51E0 /* WriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewModel.swift; sourceTree = "<group>"; };
 		8CC7551D2B11DC61003FB4ED /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		8CC755202B11DFDE003FB4ED /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		8CC755222B18EE53003FB4ED /* Extension+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UITextField.swift"; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 				8CC7551D2B11DC61003FB4ED /* SignUpViewModel.swift */,
 				8C8006092B1F10DB004512F9 /* LoginViewModel.swift */,
 				8CECBCBC2B3DD4AB00FE6EA7 /* SearchViewModel.swift */,
+				8CC4EB262B472E7E002B51E0 /* WriteViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				8C2451782B1A2CE1007B33B4 /* CustomStackView.swift in Sources */,
 				8C6A49EC2B079D1700EE3AEE /* ContentViewPreview.swift in Sources */,
 				8C78DBF52B0E435D0022BCFB /* ControlEventPublisher.swift in Sources */,
+				8CC4EB272B472E7E002B51E0 /* WriteViewModel.swift in Sources */,
 				8CECBCC12B3DE03600FE6EA7 /* SearchResponse.swift in Sources */,
 				8CECBCA82B35E19B00FE6EA7 /* WhatViewController.swift in Sources */,
 				8C80060F2B20D8A5004512F9 /* AppleAuthentication.swift in Sources */,

@@ -11,6 +11,8 @@ import Combine
 
 class HowViewController: UIViewController {
     
+    var howData: String?
+    var viewModel = WriteViewModel()
     var subscriptions = Set<AnyCancellable>()
     
     // MARK: - UI Components
@@ -90,6 +92,7 @@ class HowViewController: UIViewController {
                 self?.likeButton.setTitleColor(.white, for: .normal)
                 self?.hateButton.backgroundColor = UIColor.systemGray6
                 self?.hateButton.setTitleColor(.black, for: .normal)
+                self?.howData = "❤️좋았어요"
             }.store(in: &subscriptions)
         
         hateButton.controlEvent(.touchUpInside)
@@ -99,10 +102,12 @@ class HowViewController: UIViewController {
                 self?.hateButton.setTitleColor(.white, for: .normal)
                 self?.likeButton.backgroundColor = UIColor.systemGray6
                 self?.likeButton.setTitleColor(.black, for: .normal)
+                self?.howData = "💔별로였어요"
             }.store(in: &subscriptions)
         
         nextButton.controlEvent(.touchUpInside)
             .sink { [weak self] _ in
+                self?.viewModel.howData = self?.howData
                 let vc = WhatViewController()
                 self?.navigationController?.pushViewController(vc, animated: true)
             }.store(in: &subscriptions)

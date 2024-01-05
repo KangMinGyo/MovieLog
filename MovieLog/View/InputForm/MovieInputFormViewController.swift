@@ -10,6 +10,7 @@ import Combine
 
 class MovieInputFormViewController: UIViewController {
     
+    var viewModel = WriteViewModel()
     var subscriptions = Set<AnyCancellable>()
     
     // MARK: - UI Components

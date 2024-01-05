@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import Combine
 
 class WriteViewController: UIViewController {
+    
+    var viewModel = WriteViewModel()
+    var subscriptions = Set<AnyCancellable>()
     
     // MARK: - UI Components
     lazy var label = UILabel().then {
@@ -23,8 +27,8 @@ class WriteViewController: UIViewController {
         $0.isScrollEnabled = false
     }
     
-    lazy var doneButton = UIButton().then {
-        $0.setTitle("완료", for: .normal)
+    lazy var registerButton = UIButton().then {
+        $0.setTitle("등록", for: .normal)
         $0.backgroundColor = UIColor(named: "MainColor")
         $0.layer.masksToBounds = true
         $0.layer.cornerRadius = 25
@@ -35,6 +39,7 @@ class WriteViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         setupConstraints()
+        bind()
     }
     
     
@@ -42,7 +47,7 @@ class WriteViewController: UIViewController {
     func setupConstraints() {
         view.addSubview(label)
         view.addSubview(reviewTextView)
-        view.addSubview(doneButton)
+        view.addSubview(registerButton)
         
         label.snp.makeConstraints {
             $0.centerX.equalTo(view.snp.centerX)
@@ -56,12 +61,22 @@ class WriteViewController: UIViewController {
             $0.centerY.equalTo(view.snp.centerY)
         }
         
-        doneButton.snp.makeConstraints { 
+        registerButton.snp.makeConstraints { 
             $0.top.equalTo(reviewTextView.snp.bottom).offset(20)
             $0.centerX.equalTo(view.snp.centerX)
             $0.width.equalTo(150)
             $0.height.equalTo(50)
         }
+    }
+    
+    // MARK: - Binding
+    func bind() {
+        registerButton.controlEvent(.touchUpInside)
+            .sink { [weak self] _ in
+                self?.viewModel.reviewText = self?.reviewTextView.text
+                self?.viewModel.uploadReview()
+                self?.navigationController?.popToRootViewController(animated: true)
+            }.store(in: &subscriptions)
     }
 }
 
