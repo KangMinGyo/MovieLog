@@ -125,7 +125,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let nextVC = HowViewController()
         let data = viewModel.searchData[indexPath.row]
-        nextVC.viewModel.searchData = data
+        nextVC.searchData = data
         self.show(nextVC, sender: self)
     }
 }

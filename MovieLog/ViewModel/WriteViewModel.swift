@@ -9,7 +9,7 @@ import UIKit
 import Combine
 
 class WriteViewModel: ObservableObject {
-    var searchData: MovieList? //Search에서 넘겨받기
+    var searchData: MovieList?
     var howData: String?
     var whatData: [Bool]?
     var reviewText: String?

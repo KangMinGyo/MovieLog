@@ -11,6 +11,7 @@ import Combine
 
 class HowViewController: UIViewController {
     
+    var searchData: MovieList?
     var howData: String?
     var viewModel = WriteViewModel()
     var subscriptions = Set<AnyCancellable>()
@@ -107,8 +108,9 @@ class HowViewController: UIViewController {
         
         nextButton.controlEvent(.touchUpInside)
             .sink { [weak self] _ in
-                self?.viewModel.howData = self?.howData
                 let vc = WhatViewController()
+                vc.searchData = self?.searchData
+                vc.howData = self?.howData
                 self?.navigationController?.pushViewController(vc, animated: true)
             }.store(in: &subscriptions)
     }

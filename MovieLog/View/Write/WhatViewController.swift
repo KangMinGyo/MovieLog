@@ -11,6 +11,8 @@ import Combine
 class WhatViewController: UIViewController {
     
     let imageSize = CGSize(width: 50, height: 50)
+    var searchData: MovieList?
+    var howData: String?
     var goodPointSelected = [false, false, false, false, false]
     var viewModel = WriteViewModel()
     var subscriptions = Set<AnyCancellable>()
@@ -181,8 +183,10 @@ class WhatViewController: UIViewController {
     func bind() {
         nextButton.controlEvent(.touchUpInside)
             .sink { [weak self] _ in
-                self?.viewModel.whatData = self?.goodPointSelected
                 let vc = WriteViewController()
+                vc.searchData = self?.searchData
+                vc.howData = self?.howData
+                vc.whatData = self!.goodPointSelected
                 self?.navigationController?.pushViewController(vc, animated: true)
             }.store(in: &subscriptions)
     }
