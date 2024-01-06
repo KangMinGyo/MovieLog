@@ -49,6 +49,8 @@
 		8CC4EB252B457278002B51E0 /* MovieInputFormHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4EB242B457278002B51E0 /* MovieInputFormHeaderView.swift */; };
 		8CC4EB272B472E7E002B51E0 /* WriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4EB262B472E7E002B51E0 /* WriteViewModel.swift */; };
 		8CC4EB292B49358D002B51E0 /* Poster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4EB282B49358D002B51E0 /* Poster.swift */; };
+		8CC4EB2B2B49544C002B51E0 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4EB2A2B49544C002B51E0 /* Review.swift */; };
+		8CC4EB2D2B495BD6002B51E0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4EB2C2B495BD6002B51E0 /* HomeViewModel.swift */; };
 		8CC7551E2B11DC61003FB4ED /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC7551D2B11DC61003FB4ED /* SignUpViewModel.swift */; };
 		8CC755212B11DFDE003FB4ED /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC755202B11DFDE003FB4ED /* Extension+String.swift */; };
 		8CC755232B18EE53003FB4ED /* Extension+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC755222B18EE53003FB4ED /* Extension+UITextField.swift */; };
@@ -128,6 +130,8 @@
 		8CC4EB242B457278002B51E0 /* MovieInputFormHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInputFormHeaderView.swift; sourceTree = "<group>"; };
 		8CC4EB262B472E7E002B51E0 /* WriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewModel.swift; sourceTree = "<group>"; };
 		8CC4EB282B49358D002B51E0 /* Poster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poster.swift; sourceTree = "<group>"; };
+		8CC4EB2A2B49544C002B51E0 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		8CC4EB2C2B495BD6002B51E0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		8CC7551D2B11DC61003FB4ED /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		8CC755202B11DFDE003FB4ED /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		8CC755222B18EE53003FB4ED /* Extension+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UITextField.swift"; sourceTree = "<group>"; };
@@ -199,6 +203,7 @@
 				8CECBCBE2B3DD79D00FE6EA7 /* Search.swift */,
 				8CECBCC02B3DE03600FE6EA7 /* SearchResponse.swift */,
 				8CC4EB282B49358D002B51E0 /* Poster.swift */,
+				8CC4EB2A2B49544C002B51E0 /* Review.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -306,6 +311,7 @@
 			children = (
 				8CC7551D2B11DC61003FB4ED /* SignUpViewModel.swift */,
 				8C8006092B1F10DB004512F9 /* LoginViewModel.swift */,
+				8CC4EB2C2B495BD6002B51E0 /* HomeViewModel.swift */,
 				8CECBCBC2B3DD4AB00FE6EA7 /* SearchViewModel.swift */,
 				8CC4EB262B472E7E002B51E0 /* WriteViewModel.swift */,
 			);
@@ -562,6 +568,7 @@
 				8C78DBFD2B0F55270022BCFB /* SignUpHeaderView.swift in Sources */,
 				8C6A49F32B0C7CC900EE3AEE /* SignUpViewController.swift in Sources */,
 				8CC4EB252B457278002B51E0 /* MovieInputFormHeaderView.swift in Sources */,
+				8CC4EB2D2B495BD6002B51E0 /* HomeViewModel.swift in Sources */,
 				8CECBCAA2B36ADAE00FE6EA7 /* CustomSelectButton.swift in Sources */,
 				8CC7551E2B11DC61003FB4ED /* SignUpViewModel.swift in Sources */,
 				8CECBCA12B345CEC00FE6EA7 /* SearchCell.swift in Sources */,
@@ -580,6 +587,7 @@
 				8CECBCBF2B3DD79D00FE6EA7 /* Search.swift in Sources */,
 				8CECBC9F2B345C5F00FE6EA7 /* SearchViewController.swift in Sources */,
 				8C3004982B4518F100E0AAD8 /* MovieInputFormViewController.swift in Sources */,
+				8CC4EB2B2B49544C002B51E0 /* Review.swift in Sources */,
 				8C6A499A2B0375C000EE3AEE /* SceneDelegate.swift in Sources */,
 				8C8006082B1EFF7A004512F9 /* CustomCheckbox.swift in Sources */,
 				8C78DBFB2B0F39B30022BCFB /* CustomButton.swift in Sources */,

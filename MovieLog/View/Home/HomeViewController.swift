@@ -12,6 +12,7 @@ import Combine
 
 class HomeViewController: UIViewController {
     
+    var viewModel = HomeViewModel()
     var subscriptions = Set<AnyCancellable>()
     
     // MARK: - UI Components
@@ -28,6 +29,10 @@ class HomeViewController: UIViewController {
         setUpNavigationBar()
         configureCollectionView()
         setupConstraints()
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
+        viewModel.fetchReview(forUid: uid) { review in
+            print("review: \(review)")
+        }
     }
     
     // MARK: - UI Setup
