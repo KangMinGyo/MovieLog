@@ -41,8 +41,9 @@ class WriteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        self.hideKeyboardWhenTappedAround() 
+        self.hideKeyboardWhenTappedAround()
         setupConstraints()
+        fetchPoster()
         bind()
     }
     
@@ -85,6 +86,10 @@ class WriteViewController: UIViewController {
                 self?.viewModel.uploadReview()
                 self?.navigationController?.popToRootViewController(animated: true)
             }.store(in: &subscriptions)
+    }
+    
+    func fetchPoster() {
+        viewModel.configureMoviePoster(title: self.searchData?.movieNm ?? "")
     }
 }
 

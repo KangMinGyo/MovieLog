@@ -31,6 +31,10 @@ struct EndPoints {
         return EndPoint(baseURL: .movieSearch, key: .kobisKey(key: key), query: .searchMovie(title: title))
     }
     
+    static func makeMoviePosterApi(key: String, title: String) -> APIRequest {
+        return EndPoint(baseURL: .moviePoster, key: .tbdmKey(key: key), query: .moviePoster(query: title))
+    }
+    
 //    static func makeBoxOfficeApi(key: String, date: String) -> APIRequest {
 //        return EndPoint(baseURL: .boxOfficeURL, key: .boxOffice(key: key), query: .boxOffice(targetDt: date))
 //    }

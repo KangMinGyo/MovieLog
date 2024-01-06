@@ -48,6 +48,7 @@
 		8C80060F2B20D8A5004512F9 /* AppleAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80060E2B20D8A5004512F9 /* AppleAuthentication.swift */; };
 		8CC4EB252B457278002B51E0 /* MovieInputFormHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4EB242B457278002B51E0 /* MovieInputFormHeaderView.swift */; };
 		8CC4EB272B472E7E002B51E0 /* WriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4EB262B472E7E002B51E0 /* WriteViewModel.swift */; };
+		8CC4EB292B49358D002B51E0 /* Poster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4EB282B49358D002B51E0 /* Poster.swift */; };
 		8CC7551E2B11DC61003FB4ED /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC7551D2B11DC61003FB4ED /* SignUpViewModel.swift */; };
 		8CC755212B11DFDE003FB4ED /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC755202B11DFDE003FB4ED /* Extension+String.swift */; };
 		8CC755232B18EE53003FB4ED /* Extension+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC755222B18EE53003FB4ED /* Extension+UITextField.swift */; };
@@ -126,6 +127,7 @@
 		8C80060E2B20D8A5004512F9 /* AppleAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthentication.swift; sourceTree = "<group>"; };
 		8CC4EB242B457278002B51E0 /* MovieInputFormHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInputFormHeaderView.swift; sourceTree = "<group>"; };
 		8CC4EB262B472E7E002B51E0 /* WriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewModel.swift; sourceTree = "<group>"; };
+		8CC4EB282B49358D002B51E0 /* Poster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poster.swift; sourceTree = "<group>"; };
 		8CC7551D2B11DC61003FB4ED /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		8CC755202B11DFDE003FB4ED /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		8CC755222B18EE53003FB4ED /* Extension+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UITextField.swift"; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				8C399A7F2B1087FF00626B0D /* User.swift */,
 				8CECBCBE2B3DD79D00FE6EA7 /* Search.swift */,
 				8CECBCC02B3DE03600FE6EA7 /* SearchResponse.swift */,
+				8CC4EB282B49358D002B51E0 /* Poster.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				8C30049C2B454E1B00E0AAD8 /* CustomInputFormTextField.swift in Sources */,
 				8C3004922B3EE77900E0AAD8 /* APIComponents.swift in Sources */,
 				8CECBCA42B356AAC00FE6EA7 /* HowViewController.swift in Sources */,
+				8CC4EB292B49358D002B51E0 /* Poster.swift in Sources */,
 				8CECBCB72B3D58A800FE6EA7 /* Publisher+Utils.swift in Sources */,
 				8CECBCBD2B3DD4AB00FE6EA7 /* SearchViewModel.swift in Sources */,
 				8CC755252B19BA9C003FB4ED /* CustomLabel.swift in Sources */,
