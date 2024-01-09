@@ -102,4 +102,14 @@ class HomeCell: UICollectionViewCell {
         contentView.layer.cornerRadius = 15
         contentView.layer.masksToBounds = true
     }
+    
+    func setup(with data: Review) {
+        posterImageView.image = UIImage(named: "Poster")
+//        let url = BaseURL.poster.rawValue + data.imageURL
+//        posterImageView.setImageUrl(url)
+        movieNameLabel.text = data.title
+        directorNameLabel.text = data.director
+        movieInfoLabel.text = data.movieInfo
+        dateLabel.text = data.date
+    }
 }

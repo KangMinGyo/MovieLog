@@ -39,8 +39,12 @@ class WriteViewModel: ObservableObject {
                          "what": whatData,
                          "review": reviewText] as [String : Any]
         
-        FirebaseManager.shared.fireStore.collection("review")
-            .document().setData(reviewData) { err in
+        FirebaseManager.shared.fireStore
+            .collection("review")
+            .document("\(uid)")
+            .collection("review")
+            .document()
+            .setData(reviewData) { err in
                 if let err = err {
                     print(err)
                     return

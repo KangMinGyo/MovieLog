@@ -6,24 +6,18 @@
 //
 
 import Foundation
+import Combine
 
-class HomeViewModel {
+class HomeViewModel: ObservableObject {
     
-    func fetchReview(forUid uid: String, completion: @escaping([Review]) -> Void) {
-        FirebaseManager.shared.fireStore
-            .collection("review")
-            .whereField("uid", isEqualTo: uid)
-            .getDocuments { snapshot, err in
-                guard let documents = snapshot?.documents else { return }
-                if let err = err {
-                    print("Error fetching reviews: \(err.localizedDescription)")
-                    return
-                }
-                
-                for document in documents {
-                    let reviewData = document.data()
-                    print("Review Data ->>: \(reviewData)")
-                }
-            }
+    let service = ReviewService()
+    @Published var review = [Review]()
+    
+    func fetchPost() {
+        print("*fetchPost*")
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
+        service.fetchReview(forUid: uid, completion: { data in
+            self.review = data
+        })
     }
 }

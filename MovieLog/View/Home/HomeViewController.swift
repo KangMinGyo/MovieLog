@@ -29,10 +29,12 @@ class HomeViewController: UIViewController {
         setUpNavigationBar()
         configureCollectionView()
         setupConstraints()
-        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
-        viewModel.fetchReview(forUid: uid) { review in
-            print("review: \(review)")
-        }
+        bind()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.fetchPost()
+        collectionView.reloadData()
     }
     
     // MARK: - UI Setup
@@ -72,16 +74,27 @@ class HomeViewController: UIViewController {
             $0.edges.equalTo(0)
         }
     }
+    
+    // MARK: - Binding
+    func bind() {
+        viewModel.$review
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                print("VIEW MODEL REVIEW: \(self?.viewModel.review)")
+                self?.collectionView.reloadData()
+            }.store(in: &subscriptions)
+    }
 }
 
 extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return viewModel.review.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCell.identifier, for: indexPath) as! HomeCell
+        cell.setup(with: viewModel.review[indexPath.row])
         return cell
     }
     
