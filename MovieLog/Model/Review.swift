@@ -8,13 +8,25 @@
 import Foundation
 
 class Review {
-    let uid: String = ""
-    let imageURL: String = ""
-    let title: String = ""
-    let director: String = ""
-    let movieInfo: String = ""
-    let date: String = ""
-    let how: String = ""
-    let what = [Bool]()
-    let review: String = ""
+    var uid: String = ""
+    var imageURL: String = ""
+    var title: String = ""
+    var director: String = ""
+    var movieInfo: String = ""
+    var date: String = ""
+    var how: String = ""
+    var what = [Bool]()
+    var review: String = ""
+    
+    init(data: [String: Any]) {
+        self.uid = data["uid"] as? String ?? ""
+        self.imageURL = data["imageURL"] as? String ?? ""
+        self.title = data["title"] as? String ?? ""
+        self.director = data["director"] as? String ?? ""
+        self.movieInfo = data["movieInfo"] as? String ?? ""
+        self.date = data["date"] as? String ?? ""
+        self.how = data["how"] as? String ?? ""
+        self.what = data["what"] as? [Bool] ?? []
+        self.review = data["review"] as? String ?? ""
+    }
 }

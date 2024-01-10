@@ -11,13 +11,28 @@ import Combine
 class HomeViewModel: ObservableObject {
     
     let service = ReviewService()
-    @Published var review = [Review]()
+    @Published var reviews = [Review]()
+    var subscriptions = Set<AnyCancellable>()
     
-    func fetchPost() {
-        print("*fetchPost*")
+    func fetchReviews(completion: @escaping([Review]) -> Void) {
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
-        service.fetchReview(forUid: uid, completion: { data in
-            self.review = data
-        })
+        FirebaseManager.shared.fireStore
+            .collection("review")
+            .document(uid)
+            .collection("review")
+            .getDocuments { snapshot, err in
+                guard let documents = snapshot?.documents else { return }
+                if let err = err {
+                    print("Error fetching reviews: \(err.localizedDescription)")
+                    return
+                }
+                
+                for document in documents {
+                    let reviewData = document.data()
+                    self.reviews.append(Review(data: reviewData))
+                    print("Review Data ->>: \(self.reviews)")
+                }
+            }
     }
 }
+    

@@ -29,14 +29,13 @@ class HomeViewController: UIViewController {
         setUpNavigationBar()
         configureCollectionView()
         setupConstraints()
+        viewModel.fetchReviews(completion: { _ in 
+            print("완.")
+//            self.collectionView.reloadData()
+        })
         bind()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        viewModel.fetchPost()
-        collectionView.reloadData()
-    }
-    
+
     // MARK: - UI Setup
     func setUpNavigationBar() {
         let reviewWriteButton = UIBarButtonItem(image: UIImage(systemName: "pencil"),
@@ -77,10 +76,10 @@ class HomeViewController: UIViewController {
     
     // MARK: - Binding
     func bind() {
-        viewModel.$review
+        viewModel.$reviews
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
-                print("VIEW MODEL REVIEW: \(self?.viewModel.review)")
+                print("VIEW MODEL REVIEW: \(self?.viewModel.reviews)")
                 self?.collectionView.reloadData()
             }.store(in: &subscriptions)
     }
@@ -89,12 +88,12 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.review.count
+        return viewModel.reviews.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCell.identifier, for: indexPath) as! HomeCell
-        cell.setup(with: viewModel.review[indexPath.row])
+        cell.setup(with: viewModel.reviews[indexPath.row])
         return cell
     }
     
