@@ -9,18 +9,22 @@ import Foundation
 import Combine
 
 class HomeViewModel: ObservableObject {
+
+    var reviewsSubject = PassthroughSubject<[Review], Error>()
     
-    let service = ReviewService()
     @Published var reviews = [Review]()
     var subscriptions = Set<AnyCancellable>()
     
-    func fetchReviews(completion: @escaping([Review]) -> Void) {
+    func fetchReviews() {
+        reviews = [Review]()
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
+
         FirebaseManager.shared.fireStore
             .collection("review")
             .document(uid)
             .collection("review")
-            .getDocuments { snapshot, err in
+            .getDocuments { [weak self] snapshot, err in
+                guard let self = self else { return }
                 guard let documents = snapshot?.documents else { return }
                 if let err = err {
                     print("Error fetching reviews: \(err.localizedDescription)")
@@ -30,8 +34,9 @@ class HomeViewModel: ObservableObject {
                 for document in documents {
                     let reviewData = document.data()
                     self.reviews.append(Review(data: reviewData))
-                    print("Review Data ->>: \(self.reviews)")
                 }
+                
+                self.reviewsSubject.send(reviews)
             }
     }
 }

@@ -29,11 +29,11 @@ class HomeViewController: UIViewController {
         setUpNavigationBar()
         configureCollectionView()
         setupConstraints()
-        viewModel.fetchReviews(completion: { _ in 
-            print("완.")
-//            self.collectionView.reloadData()
-        })
         bind()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fetch()
     }
 
     // MARK: - UI Setup
@@ -82,6 +82,10 @@ class HomeViewController: UIViewController {
                 print("VIEW MODEL REVIEW: \(self?.viewModel.reviews)")
                 self?.collectionView.reloadData()
             }.store(in: &subscriptions)
+    }
+    
+    func fetch() {
+        viewModel.fetchReviews()
     }
 }
 
