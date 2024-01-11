@@ -89,7 +89,7 @@ class WriteViewController: UIViewController {
     }
     
     func fetchPoster() {
-        viewModel.configureMoviePoster(title: self.searchData?.movieNm ?? "")
+        viewModel.getMoviePoster(title: self.searchData?.movieNm ?? "")
     }
 }
 

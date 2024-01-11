@@ -53,7 +53,8 @@ class WriteViewModel: ObservableObject {
             }
     }
     
-    func configureMoviePoster(title: String) {
+    // Poster 이미지 url 가져오기
+    func getMoviePoster(title: String) {
         posterData = [Results]()
         let url = EndPoints.makeMoviePosterApi(
             key: "ab318418ee513b352deb4c9ab21f7ed7",
@@ -63,7 +64,6 @@ class WriteViewModel: ObservableObject {
                                  dataType: Poster.self) { result in
             switch result {
             case .success(let data):
-                print("-->\(url.query)")
                 self.posterData.append(contentsOf: data.results)
             case .failure(let err):
                 print(err)

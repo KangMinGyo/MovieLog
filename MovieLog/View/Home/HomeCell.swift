@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Then
+import Kingfisher
 
 class HomeCell: UICollectionViewCell {
     
@@ -105,8 +106,9 @@ class HomeCell: UICollectionViewCell {
     
     func setup(with data: Review) {
         posterImageView.image = UIImage(named: "Poster")
-//        let url = BaseURL.poster.rawValue + data.imageURL
-//        posterImageView.setImageUrl(url)
+        
+        let url = URL(string: "https://image.tmdb.org/t/p/original\(data.imageURL)")
+        posterImageView.kf.setImage(with: url)
         movieNameLabel.text = data.title
         directorNameLabel.text = data.director
         movieInfoLabel.text = data.movieInfo
