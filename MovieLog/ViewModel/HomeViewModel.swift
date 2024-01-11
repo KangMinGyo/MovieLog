@@ -23,6 +23,7 @@ class HomeViewModel: ObservableObject {
             .collection("review")
             .document(uid)
             .collection("review")
+            .order(by: "date", descending: true)
             .getDocuments { [weak self] snapshot, err in
                 guard let self = self else { return }
                 guard let documents = snapshot?.documents else { return }
