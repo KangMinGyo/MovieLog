@@ -18,12 +18,12 @@ class WriteViewController: UIViewController {
     
     // MARK: - UI Components
     lazy var label = UILabel().then {
-        $0.text = "어떤점이 좋았나요?"
+        $0.text = "관람평"
         $0.font = .systemFont(ofSize: 25)
     }
     
     lazy var reviewTextView = UITextView().then {
-        $0.text = "관람평을 작성해주세요."
+        $0.text = "내용을 입력해주세요."
         $0.font = .systemFont(ofSize: 17)
         $0.textColor = .lightGray
         $0.backgroundColor = .systemGray6
@@ -41,6 +41,7 @@ class WriteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        reviewTextView.delegate = self
         self.hideKeyboardWhenTappedAround()
         setupConstraints()
         fetchPoster()
@@ -63,7 +64,8 @@ class WriteViewController: UIViewController {
             $0.top.equalTo(label.snp.bottom).offset(20)
             $0.leading.trailing.equalTo(view.safeAreaInsets).inset(20)
             $0.centerX.equalTo(view.snp.centerX)
-            $0.centerY.equalTo(view.snp.centerY)
+//            $0.centerY.equalTo(view.snp.centerY)
+            $0.height.equalTo(200)
         }
         
         registerButton.snp.makeConstraints { 
@@ -92,6 +94,24 @@ class WriteViewController: UIViewController {
         viewModel.getMoviePoster(title: self.searchData?.movieNm ?? "")
     }
 }
+
+// MARK: - UITextViewDelegate
+extension WriteViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if reviewTextView.textColor == UIColor.lightGray {
+            reviewTextView.text = ""
+            reviewTextView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if reviewTextView.text.isEmpty {
+            reviewTextView.text = "내용을 입력해주세요."
+            reviewTextView.textColor = UIColor.lightGray
+        }
+    }
+}
+
 
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
