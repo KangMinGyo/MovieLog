@@ -42,14 +42,17 @@ class HomeViewController: UIViewController {
                                      style: .plain,
                                      target: self,
                                      action: #selector(searchButtonPressed))
+        reviewWriteButton.tintColor = .black
         let boxOfficeButton = UIBarButtonItem(image: UIImage(systemName: "chart.bar.xaxis"),
                                      style: .plain,
                                      target: self,
                                      action: nil)
+        boxOfficeButton.tintColor = .black
         let settingButton = UIBarButtonItem(image: UIImage(systemName: "gearshape.fill"),
                                      style: .plain,
                                      target: self,
                                      action: nil)
+        settingButton.tintColor = .black
         
         navigationItem.leftBarButtonItem = settingButton
         navigationItem.rightBarButtonItems = [boxOfficeButton, reviewWriteButton]
