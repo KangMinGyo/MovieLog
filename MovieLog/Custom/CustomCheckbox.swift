@@ -32,8 +32,6 @@ class CustomCheckbox: UIButton {
         
         var config = UIButton.Configuration.plain()
         config.imagePadding = 10 // 이미지 패딩 조정
-        
-        // 버튼의 이미지와 텍스트 간격을 조정
         config.imagePlacement = .leading
         config.titlePadding = 10 // 텍스트 패딩 조정
 
