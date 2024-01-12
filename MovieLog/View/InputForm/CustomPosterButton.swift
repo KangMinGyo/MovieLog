@@ -20,7 +20,6 @@ class CustomPosterButton: UIButton {
     }
 
     private func setupButton() {
-        // 버튼 속성 설정
         backgroundColor = .systemGray6
         self.setImage(UIImage(systemName: "plus"), for: .normal)
     }
