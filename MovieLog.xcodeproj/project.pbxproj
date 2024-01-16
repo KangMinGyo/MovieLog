@@ -26,6 +26,7 @@
 		8C399A932B1089AD00626B0D /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8C399A922B1089AD00626B0D /* FirebaseFirestoreSwift */; };
 		8C399A952B1089AD00626B0D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8C399A942B1089AD00626B0D /* FirebaseStorage */; };
 		8C5307F02B567D9300B03A45 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5307EF2B567D9300B03A45 /* TabViewController.swift */; };
+		8C5307F32B56A61700B03A45 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5307F22B56A61700B03A45 /* CalendarViewController.swift */; };
 		8C6A49982B0375C000EE3AEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49972B0375C000EE3AEE /* AppDelegate.swift */; };
 		8C6A499A2B0375C000EE3AEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49992B0375C000EE3AEE /* SceneDelegate.swift */; };
 		8C6A499C2B0375C000EE3AEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A499B2B0375C000EE3AEE /* LoginViewController.swift */; };
@@ -108,6 +109,7 @@
 		8C399A7F2B1087FF00626B0D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8C399A822B10886F00626B0D /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		8C5307EF2B567D9300B03A45 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		8C5307F22B56A61700B03A45 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		8C6A49942B0375C000EE3AEE /* MovieLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C6A49972B0375C000EE3AEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C6A49992B0375C000EE3AEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -230,6 +232,14 @@
 				8C5307EF2B567D9300B03A45 /* TabViewController.swift */,
 			);
 			path = Tab;
+			sourceTree = "<group>";
+		};
+		8C5307F12B5680B200B03A45 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				8C5307F22B56A61700B03A45 /* CalendarViewController.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		8C6A498B2B0375C000EE3AEE = {
@@ -387,6 +397,7 @@
 				8CECBC9D2B345C3D00FE6EA7 /* Search */,
 				8CC4EB232B45721A002B51E0 /* InputForm */,
 				8CECBCA22B356A4800FE6EA7 /* Write */,
+				8C5307F12B5680B200B03A45 /* Calendar */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -580,6 +591,7 @@
 				8C30049C2B454E1B00E0AAD8 /* CustomInputFormTextField.swift in Sources */,
 				8C5307F02B567D9300B03A45 /* TabViewController.swift in Sources */,
 				8C3004922B3EE77900E0AAD8 /* APIComponents.swift in Sources */,
+				8C5307F32B56A61700B03A45 /* CalendarViewController.swift in Sources */,
 				8CECBCA42B356AAC00FE6EA7 /* HowViewController.swift in Sources */,
 				8CB935BC2B5165CE00D001A5 /* CustomPosterButton.swift in Sources */,
 				8CC4EB292B49358D002B51E0 /* Poster.swift in Sources */,
