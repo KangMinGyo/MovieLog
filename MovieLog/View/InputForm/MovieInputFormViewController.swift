@@ -12,6 +12,7 @@ import PhotosUI
 
 class MovieInputFormViewController: UIViewController {
 
+    var poster = UIImage()
     var viewModel = WriteViewModel()
     var subscriptions = Set<AnyCancellable>()
     
@@ -89,7 +90,7 @@ class MovieInputFormViewController: UIViewController {
         contentView.snp.makeConstraints {
             $0.edges.equalTo(scrollView.contentLayoutGuide)
             $0.width.equalTo(scrollView.frameLayoutGuide)
-            $0.height.equalTo(900)
+            $0.height.equalTo(1500)
         }
         
         headerView.snp.makeConstraints {
@@ -183,13 +184,28 @@ class MovieInputFormViewController: UIViewController {
     func bind() {
         addButton.controlEvent(.touchUpInside)
             .sink { [weak self] _ in
+                guard let self = self else { return }
+                guard let title = titleTextField.text,
+                      let directorName = directorTextField.text,
+                      let year = yearTextField.text,
+                      let nation = nationTextField.text,
+                      let genre = genreTextField.text else {
+                    return
+                }
+
+                let movieData = MovieList(movieNm: title,
+                                          prdtYear: year,
+                                          nationAlt: nation,
+                                          genreAlt: genre,
+                                          directors: [Director(peopleNm: directorName)])
                 let vc = HowViewController()
-                self?.navigationController?.pushViewController(vc, animated: true)
+                vc.searchData = movieData
+                vc.poster = poster
+                self.navigationController?.pushViewController(vc, animated: true)
             }.store(in: &subscriptions)
         
         posterButton.controlEvent(.touchUpInside)
             .sink { [weak self] _ in
-                print("poster button cldd")
                 self?.pickImage()
         }.store(in: &subscriptions)
     }
@@ -207,43 +223,20 @@ class MovieInputFormViewController: UIViewController {
         scrollView.contentOffset.y = .zero
         scrollView.scrollIndicatorInsets = self.scrollView.contentInset
     }
-    
-    // 버튼 액션 함수
-    func touchUpImageAddButton() {
-        // 갤러리 접근 권한 허용 여부 체크
-        PHPhotoLibrary.requestAuthorization(for: .readWrite) { status in
-            switch status {
-            case .notDetermined:
-                print("접근 허용 필요")
-//                DispatchQueue.main.async {
-//                    self.showAlert(message: "갤러리를 불러올 수 없습니다. 핸드폰 설정에서 사진 접근 허용을 모든 사진으로 변경해주세요.")
-//                }
-            case .denied, .restricted:
-                print("접근 허용 필요")
-//                DispatchQueue.main.async {
-//                    self.showAlert(message: "갤러리를 불러올 수 없습니다. 핸드폰 설정에서 사진 접근 허용을 모든 사진으로 변경해주세요.")
-//                }
-            case .authorized, .limited: // 모두 허용, 일부 허용
-                self.pickImage() // 갤러리 불러오는 동작을 할 함수
-            @unknown default:
-                print("PHPhotoLibrary::execute - \"Unknown case\"")
-            }
-        }
-    }
 
     // 갤러리 불러오기
     func pickImage(){
         let photoLibrary = PHPhotoLibrary.shared()
         var configuration = PHPickerConfiguration(photoLibrary: photoLibrary)
 
-        configuration.selectionLimit = 1 //한번에 가지고 올 이미지 갯수 제한
-        configuration.filter = .any(of: [.images]) // 이미지, 비디오 등의 옵션
+        configuration.selectionLimit = 1 // 한번에 가져올 수 있는 이미지 수 제한
+        configuration.filter = .any(of: [.images])
 
         DispatchQueue.main.async {
             let picker = PHPickerViewController(configuration: configuration)
             picker.delegate = self
             picker.isEditing = true
-            self.present(picker, animated: true, completion: nil) // 갤러리뷰 프리젠트
+            self.present(picker, animated: true, completion: nil)
         }
     }
 }
@@ -259,11 +252,12 @@ extension MovieInputFormViewController: PHPickerViewControllerDelegate {
                 guard let image = image as? UIImage else { return }
                 DispatchQueue.main.async {
                     self.posterImageView.image = image
+                    self.poster = image
                 }
             }
         }
         
-        // 갤러리뷰 닫기
+        // 앨범 닫기
         picker.dismiss(animated: true, completion: nil)
     }
 }

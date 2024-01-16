@@ -12,6 +12,7 @@ import Combine
 class HowViewController: UIViewController {
     
     var searchData: MovieList?
+    var poster: UIImage?
     var howData: String?
     var viewModel = WriteViewModel()
     var subscriptions = Set<AnyCancellable>()
@@ -110,6 +111,7 @@ class HowViewController: UIViewController {
             .sink { [weak self] _ in
                 let vc = WhatViewController()
                 vc.searchData = self?.searchData
+                vc.poster = self?.poster
                 vc.howData = self?.howData
                 self?.navigationController?.pushViewController(vc, animated: true)
             }.store(in: &subscriptions)

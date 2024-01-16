@@ -12,6 +12,7 @@ class WhatViewController: UIViewController {
     
     let imageSize = CGSize(width: 50, height: 50)
     var searchData: MovieList?
+    var poster: UIImage?
     var howData: String?
     var goodPointSelected = [false, false, false, false, false]
     var viewModel = WriteViewModel()
@@ -185,6 +186,7 @@ class WhatViewController: UIViewController {
             .sink { [weak self] _ in
                 let vc = WriteViewController()
                 vc.searchData = self?.searchData
+                vc.poster = self?.poster
                 vc.howData = self?.howData
                 vc.whatData = self!.goodPointSelected
                 self?.navigationController?.pushViewController(vc, animated: true)

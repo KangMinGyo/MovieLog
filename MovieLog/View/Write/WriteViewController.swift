@@ -12,6 +12,7 @@ class WriteViewController: UIViewController {
     
     var viewModel = WriteViewModel()
     var searchData: MovieList?
+    var poster: UIImage?
     var howData: String?
     var whatData = [Bool]()
     var subscriptions = Set<AnyCancellable>()
@@ -80,13 +81,19 @@ class WriteViewController: UIViewController {
     func bind() {
         registerButton.controlEvent(.touchUpInside)
             .sink { [weak self] _ in
-                print("ViewModel ->> \(self?.viewModel.searchData)")
-                self?.viewModel.searchData = self?.searchData
-                self?.viewModel.howData = self?.howData
-                self?.viewModel.whatData = self?.whatData
-                self?.viewModel.reviewText = self?.reviewTextView.text
-                self?.viewModel.uploadReview()
-                self?.navigationController?.popToRootViewController(animated: true)
+                guard let self = self else { return }
+                print("ViewModel ->> \(self.poster)")
+                self.viewModel.searchData = self.searchData
+                self.viewModel.poster = self.poster
+                self.viewModel.howData = self.howData
+                self.viewModel.whatData = self.whatData
+                self.viewModel.reviewText = self.reviewTextView.text
+                if self.poster == nil {
+                    self.viewModel.uploadReview()
+                } else {
+                    self.viewModel.directUploadReview()
+                }
+                self.navigationController?.popToRootViewController(animated: true)
             }.store(in: &subscriptions)
     }
     

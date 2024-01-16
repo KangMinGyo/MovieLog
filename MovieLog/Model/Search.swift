@@ -17,7 +17,6 @@ struct MovieListResult: Decodable {
 
 struct MovieList: Decodable {
     let movieNm: String
-    let movieNmEn: String
     let prdtYear: String
     let nationAlt: String
     let genreAlt: String
@@ -34,7 +33,6 @@ struct Director: Decodable {
 extension Search {
     static let sampleData: [MovieList] = [
         MovieList(movieNm: "범죄도시4",
-                  movieNmEn: "THE ROUNDUP : PUNISHMENT",
                   prdtYear: "2022",
                   nationAlt: "한국",
                   genreAlt: "액션,범죄",

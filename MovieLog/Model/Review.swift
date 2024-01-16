@@ -5,11 +5,12 @@
 //  Created by KangMingyo on 1/6/24.
 //
 
-import Foundation
+import UIKit
 
 class Review {
     var uid: String = ""
     var imageURL: String = ""
+    var poster = UIImage()
     var title: String = ""
     var director: String = ""
     var movieInfo: String = ""
@@ -21,6 +22,7 @@ class Review {
     init(data: [String: Any]) {
         self.uid = data["uid"] as? String ?? ""
         self.imageURL = data["imageURL"] as? String ?? ""
+//        self.poster = data["poster"] as? UIImage ?? UIImage(named: "Poster")!
         self.title = data["title"] as? String ?? ""
         self.director = data["director"] as? String ?? ""
         self.movieInfo = data["movieInfo"] as? String ?? ""
