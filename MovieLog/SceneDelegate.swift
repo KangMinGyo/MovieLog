@@ -12,21 +12,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
-//        let navController = UINavigationController(rootViewController: LoginViewController())
-        window = UIWindow(windowScene: windowScene)
-        if isLoggedIn() {
-               // 자동 로그인 -> 메인 앱 화면으로 이동
-               navigateToMainAppScreen()
-           } else {
-               // 로그인 필요한 경우 -> 로그인 화면으로 이동
-               navigateToLoginScreen()
-           }
         
-        window?.makeKeyAndVisible()
+        let vc = TabViewController()
+        let window = UIWindow(windowScene: windowScene)
+        window.rootViewController = vc
+        window.makeKeyAndVisible()
+        self.window = window
     }
     
     func isLoggedIn() -> Bool {
