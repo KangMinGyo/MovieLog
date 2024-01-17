@@ -49,6 +49,14 @@ class SearchViewController: UIViewController {
         bind()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = true
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
+    }
+    
     //MARK: - Configure
     func configureTableView() {
         searchTableView.delegate = self

@@ -47,7 +47,8 @@ class MovieInputFormViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        NotificationCenter.default.addObserver(self, 
+        tabBarController?.tabBar.isHidden = true
+        NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillShow),
                                                name: UIResponder.keyboardWillShowNotification, 
                                                object: nil)
@@ -59,9 +60,10 @@ class MovieInputFormViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        tabBarController?.tabBar.isHidden = false
         NotificationCenter.default.removeObserver(self)
     }
-    
+
     // MARK: - UI Setup
     func setupConstraints() {
         view.addSubview(scrollView)
