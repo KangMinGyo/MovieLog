@@ -107,7 +107,7 @@ class HomeCell: UICollectionViewCell {
     func setup(with data: Review) {
         posterImageView.image = UIImage(named: "Poster")
         
-        let url = URL(string: "https://image.tmdb.org/t/p/original\(data.imageURL)")
+        let url = URL(string: "https://image.tmdb.org/t/p/original\(data.posterURL)")
         posterImageView.kf.setImage(with: url)
         movieNameLabel.text = data.title
         directorNameLabel.text = data.director

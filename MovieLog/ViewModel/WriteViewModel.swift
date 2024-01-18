@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import FirebaseStorage
 
 class WriteViewModel: ObservableObject {
     var searchData: MovieList?
@@ -31,8 +32,7 @@ class WriteViewModel: ObservableObject {
     func uploadReview() {
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
         let reviewData = ["uid": uid,
-                          "imageURL": posterData.first?.posterPath ?? "URL 없음",
-                          "poster": nil,
+                          "posterURL": posterData.first?.posterPath ?? "URL 없음",
                           "title": searchData?.movieNm,
                           "director": searchData?.directors.first?.peopleNm,
                           "movieInfo": searchData?.movieInfo,
@@ -40,34 +40,6 @@ class WriteViewModel: ObservableObject {
                           "how": howData,
                           "what": whatData,
                           "review": reviewText] as [String : Any]
-        
-        FirebaseManager.shared.fireStore
-            .collection("review")
-            .document("\(uid)")
-            .collection("review")
-            .document()
-            .setData(reviewData) { err in
-                if let err = err {
-                    print(err)
-                    return
-                }
-                print("Success")
-            }
-    }
-    
-    // Firebase에 데이터 저장
-    func directUploadReview() {
-        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
-        let reviewData = ["uid": uid,
-                         "imageURL": "URL 없음",
-                          "poster": poster,
-                          "title": searchData?.movieNm,
-                          "director": searchData?.directors.first?.peopleNm,
-                          "movieInfo": searchData?.movieInfo,
-                         "date": dateString,
-                         "how": howData,
-                         "what": whatData,
-                         "review": reviewText] as [String : Any]
         
         FirebaseManager.shared.fireStore
             .collection("review")

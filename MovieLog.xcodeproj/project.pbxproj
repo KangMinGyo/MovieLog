@@ -27,6 +27,7 @@
 		8C399A952B1089AD00626B0D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8C399A942B1089AD00626B0D /* FirebaseStorage */; };
 		8C5307F02B567D9300B03A45 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5307EF2B567D9300B03A45 /* TabViewController.swift */; };
 		8C5307F32B56A61700B03A45 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5307F22B56A61700B03A45 /* CalendarViewController.swift */; };
+		8C5307F52B5958BA00B03A45 /* FirestorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5307F42B5958BA00B03A45 /* FirestorageManager.swift */; };
 		8C6A49982B0375C000EE3AEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49972B0375C000EE3AEE /* AppDelegate.swift */; };
 		8C6A499A2B0375C000EE3AEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49992B0375C000EE3AEE /* SceneDelegate.swift */; };
 		8C6A499C2B0375C000EE3AEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A499B2B0375C000EE3AEE /* LoginViewController.swift */; };
@@ -110,6 +111,7 @@
 		8C399A822B10886F00626B0D /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		8C5307EF2B567D9300B03A45 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		8C5307F22B56A61700B03A45 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		8C5307F42B5958BA00B03A45 /* FirestorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestorageManager.swift; sourceTree = "<group>"; };
 		8C6A49942B0375C000EE3AEE /* MovieLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C6A49972B0375C000EE3AEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C6A49992B0375C000EE3AEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				8C399A822B10886F00626B0D /* FirebaseManager.swift */,
+				8C5307F42B5958BA00B03A45 /* FirestorageManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -586,6 +589,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C30048E2B3EE73500E0AAD8 /* EndPoint.swift in Sources */,
+				8C5307F52B5958BA00B03A45 /* FirestorageManager.swift in Sources */,
 				8CECBCBB2B3DA8C400FE6EA7 /* URLSessionProtocol.swift in Sources */,
 				8C399A802B1087FF00626B0D /* User.swift in Sources */,
 				8C30049C2B454E1B00E0AAD8 /* CustomInputFormTextField.swift in Sources */,

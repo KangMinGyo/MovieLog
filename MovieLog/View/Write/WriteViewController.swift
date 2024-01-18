@@ -95,11 +95,7 @@ class WriteViewController: UIViewController {
                 self.viewModel.howData = self.howData
                 self.viewModel.whatData = self.whatData
                 self.viewModel.reviewText = self.reviewTextView.text
-                if self.poster == nil {
-                    self.viewModel.uploadReview()
-                } else {
-                    self.viewModel.directUploadReview()
-                }
+                self.viewModel.uploadReview()
                 self.navigationController?.popToRootViewController(animated: true)
             }.store(in: &subscriptions)
     }
