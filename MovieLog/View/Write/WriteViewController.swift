@@ -47,6 +47,9 @@ class WriteViewController: UIViewController {
         setupConstraints()
         fetchPoster()
         bind()
+        print("poster -> \(poster)")
+        guard let poster = poster else { return }
+        viewModel.upLoadImage(img: poster)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,7 +75,6 @@ class WriteViewController: UIViewController {
             $0.top.equalTo(label.snp.bottom).offset(20)
             $0.leading.trailing.equalTo(view.safeAreaInsets).inset(20)
             $0.centerX.equalTo(view.snp.centerX)
-//            $0.centerY.equalTo(view.snp.centerY)
             $0.height.equalTo(200)
         }
         
@@ -91,7 +93,7 @@ class WriteViewController: UIViewController {
                 guard let self = self else { return }
                 print("ViewModel ->> \(self.poster)")
                 self.viewModel.searchData = self.searchData
-                self.viewModel.poster = self.poster
+//                self.viewModel.poster = self.poster
                 self.viewModel.howData = self.howData
                 self.viewModel.whatData = self.whatData
                 self.viewModel.reviewText = self.reviewTextView.text

@@ -12,7 +12,6 @@ import FirebaseStorage
 class WriteViewModel: ObservableObject {
     var searchData: MovieList?
     var posterData = [Results]()
-    var poster: UIImage?
     var howData: String?
     var whatData: [Bool]?
     var reviewText: String?
@@ -69,6 +68,22 @@ class WriteViewModel: ObservableObject {
                 self.posterData.append(contentsOf: data.results)
             case .failure(let err):
                 print(err)
+            }
+        }
+    }
+
+    func upLoadImage(img: UIImage){
+        let storage = Storage.storage()
+        var data = Data()
+        data = img.jpegData(compressionQuality: 0.8)!
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/png"
+        storage.reference().child("posters").putData(data, metadata: metaData){
+            (metaData,error) in if let error = error {
+                print(error)
+                return
+            }else{
+                print("성공")
             }
         }
     }
