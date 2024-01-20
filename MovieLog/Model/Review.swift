@@ -10,7 +10,7 @@ import UIKit
 class Review {
     var uid: String = ""
     var posterURL: String = ""
-    var posterImage = UIImage()
+//    var posterImage = UIImage()
     var title: String = ""
     var director: String = ""
     var movieInfo: String = ""
