@@ -202,7 +202,6 @@ class MovieInputFormViewController: UIViewController {
                                           directors: [Director(peopleNm: directorName)])
                 let vc = HowViewController()
                 vc.searchData = movieData
-                vc.poster = poster
                 self.navigationController?.pushViewController(vc, animated: true)
             }.store(in: &subscriptions)
         
@@ -258,7 +257,6 @@ extension MovieInputFormViewController: PHPickerViewControllerDelegate {
                 }
             }
         }
-        
         // 앨범 닫기
         picker.dismiss(animated: true, completion: nil)
     }

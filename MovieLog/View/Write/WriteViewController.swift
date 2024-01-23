@@ -12,7 +12,6 @@ class WriteViewController: UIViewController {
     
     var viewModel = WriteViewModel()
     var searchData: MovieList?
-    var poster: UIImage?
     var howData: String?
     var whatData = [Bool]()
     var subscriptions = Set<AnyCancellable>()
@@ -47,9 +46,6 @@ class WriteViewController: UIViewController {
         setupConstraints()
         fetchPoster()
         bind()
-        print("poster -> \(poster)")
-        guard let poster = poster else { return }
-        viewModel.upLoadImage(img: poster)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,9 +87,7 @@ class WriteViewController: UIViewController {
         registerButton.controlEvent(.touchUpInside)
             .sink { [weak self] _ in
                 guard let self = self else { return }
-                print("ViewModel ->> \(self.poster)")
                 self.viewModel.searchData = self.searchData
-//                self.viewModel.poster = self.poster
                 self.viewModel.howData = self.howData
                 self.viewModel.whatData = self.whatData
                 self.viewModel.reviewText = self.reviewTextView.text
@@ -123,7 +117,6 @@ extension WriteViewController: UITextViewDelegate {
         }
     }
 }
-
 
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI

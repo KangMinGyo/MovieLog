@@ -10,7 +10,6 @@ import UIKit
 class Review {
     var uid: String = ""
     var posterURL: String = ""
-//    var posterImage = UIImage()
     var title: String = ""
     var director: String = ""
     var movieInfo: String = ""
@@ -21,8 +20,7 @@ class Review {
     
     init(data: [String: Any]) {
         self.uid = data["uid"] as? String ?? ""
-        self.posterURL = data["imageURL"] as? String ?? ""
-//        self.posterImage = data["posterImage"] as? UIImage ?? UIImage(named: "Poster")!
+        self.posterURL = data["posterURL"] as? String ?? ""
         self.title = data["title"] as? String ?? ""
         self.director = data["director"] as? String ?? ""
         self.movieInfo = data["movieInfo"] as? String ?? ""

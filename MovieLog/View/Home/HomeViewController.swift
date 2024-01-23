@@ -82,7 +82,7 @@ class HomeViewController: UIViewController {
         viewModel.$reviews
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
-                print("VIEW MODEL REVIEW: \(self?.viewModel.reviews)")
+                print("VIEW MODEL REVIEW: \(self?.viewModel.reviews.count)")
                 self?.collectionView.reloadData()
             }.store(in: &subscriptions)
     }

@@ -15,7 +15,6 @@ class WriteViewModel: ObservableObject {
     var howData: String?
     var whatData: [Bool]?
     var reviewText: String?
-    var posterURL: String?
     
     let networkManager = NetworkManager()
     
@@ -32,7 +31,7 @@ class WriteViewModel: ObservableObject {
     func uploadReview() {
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
         let reviewData = ["uid": uid,
-                          "posterURL": posterURL ?? "URL 없음",
+                          "posterURL": posterData.first?.posterPath ?? "URL 없음",
                           "title": searchData?.movieNm,
                           "director": searchData?.directors.first?.peopleNm,
                           "movieInfo": searchData?.movieInfo,
@@ -73,36 +72,33 @@ class WriteViewModel: ObservableObject {
         }
     }
 
-    func upLoadImage(img: UIImage){
-        let storage = Storage.storage()
-        var data = Data()
-        data = img.jpegData(compressionQuality: 0.8)!
-        let metaData = StorageMetadata()
-        metaData.contentType = "image/png"
-        let title = searchData?.movieNm.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)
-        storage.reference().child("posters/\(title)").putData(data, metadata: metaData){
-            (metaData,error) in if let error = error {
-                print(error)
-                return
-            }else{
-                print("성공")
-            }
-        }
-    }
-    
-    func downloadImage() {
-        let title = searchData?.movieNm.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)
-        let imagePath = "posters/\(title)"
-        
-        let storage = Storage.storage()
-        let storageRef = storage.reference(withPath: imagePath)
-        
-        storageRef.downloadURL { (url, error) in
-            if let error = error {
-                print("Error: \(error)")
-            } else {
-                self.posterURL = url?.absoluteString
-            }
-        }
-    }
+//    // Firebase Storage에 이미지 저장 - x
+//    static func uploadImage(image: UIImage, completion: @escaping (URL?) -> Void) {
+//        guard let imageData = image.jpegData(compressionQuality: 0.8) else { return }
+//        let metaData = StorageMetadata()
+//        metaData.contentType = "image/jpeg"
+//        
+//        let imageName = UUID().uuidString + String(Date().timeIntervalSince1970)
+//        
+//        let firebaseReference = Storage.storage().reference().child("\(imageName)")
+//        firebaseReference.putData(imageData, metadata: metaData) { metaData, error in
+//            firebaseReference.downloadURL { url, _ in
+//                completion(url)
+//            }
+//        }
+//    }
+//    
+//    // Firebase Storage에서 이미지 불러오기 - x
+//    static func downloadImage(urlString: String, completion: @escaping (UIImage?) -> Void) {
+//        let storageReference = Storage.storage().reference(forURL: urlString)
+//        let megaByte = Int64(1 * 1024 * 1024)
+//        
+//        storageReference.getData(maxSize: megaByte) { data, error in
+//            guard let imageData = data else {
+//                completion(nil)
+//                return
+//            }
+//            completion(UIImage(data: imageData))
+//        }
+//    }
 }
