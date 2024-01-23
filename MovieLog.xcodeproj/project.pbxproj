@@ -49,6 +49,7 @@
 		8C8006082B1EFF7A004512F9 /* CustomCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8006072B1EFF7A004512F9 /* CustomCheckbox.swift */; };
 		8C80060A2B1F10DB004512F9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8006092B1F10DB004512F9 /* LoginViewModel.swift */; };
 		8C80060F2B20D8A5004512F9 /* AppleAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80060E2B20D8A5004512F9 /* AppleAuthentication.swift */; };
+		8C86B7B82B600B24003F70AA /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 8C86B7B72B600B24003F70AA /* FSCalendar */; };
 		8CB935BA2B501BF400D001A5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB935B92B501BF400D001A5 /* Kingfisher */; };
 		8CB935BC2B5165CE00D001A5 /* CustomPosterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB935BB2B5165CE00D001A5 /* CustomPosterButton.swift */; };
 		8CC4EB252B457278002B51E0 /* MovieInputFormHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4EB242B457278002B51E0 /* MovieInputFormHeaderView.swift */; };
@@ -173,6 +174,7 @@
 				8C6A49E62B078E6E00EE3AEE /* SnapKit in Frameworks */,
 				8C399A8F2B1089AD00626B0D /* FirebaseAuth in Frameworks */,
 				8C6A49E92B0794B100EE3AEE /* Then in Frameworks */,
+				8C86B7B82B600B24003F70AA /* FSCalendar in Frameworks */,
 				8CB935BA2B501BF400D001A5 /* Kingfisher in Frameworks */,
 				8C399A932B1089AD00626B0D /* FirebaseFirestoreSwift in Frameworks */,
 				8C399A8D2B1089AD00626B0D /* FirebaseAnalytics in Frameworks */,
@@ -465,6 +467,7 @@
 				8C399A922B1089AD00626B0D /* FirebaseFirestoreSwift */,
 				8C399A942B1089AD00626B0D /* FirebaseStorage */,
 				8CB935B92B501BF400D001A5 /* Kingfisher */,
+				8C86B7B72B600B24003F70AA /* FSCalendar */,
 			);
 			productName = MovieLog;
 			productReference = 8C6A49942B0375C000EE3AEE /* MovieLog.app */;
@@ -544,6 +547,7 @@
 				8C399A7B2B1081ED00626B0D /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				8C399A8B2B1089AD00626B0D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				8CB935B82B501BF400D001A5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				8C86B7B62B600B24003F70AA /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = 8C6A49952B0375C000EE3AEE /* Products */;
 			projectDirPath = "";
@@ -1020,6 +1024,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		8C86B7B62B600B24003F70AA /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.4;
+			};
+		};
 		8CB935B82B501BF400D001A5 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -1070,6 +1082,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8C6A49E72B0794B100EE3AEE /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		8C86B7B72B600B24003F70AA /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C86B7B62B600B24003F70AA /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
 		};
 		8CB935B92B501BF400D001A5 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
