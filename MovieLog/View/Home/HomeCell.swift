@@ -113,6 +113,6 @@ class HomeCell: UICollectionViewCell {
         movieNameLabel.text = data.title
         directorNameLabel.text = data.director
         movieInfoLabel.text = data.movieInfo
-        dateLabel.text = data.date
+//        dateLabel.text = data.date
     }
 }

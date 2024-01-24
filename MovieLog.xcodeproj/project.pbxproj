@@ -50,6 +50,7 @@
 		8C80060A2B1F10DB004512F9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8006092B1F10DB004512F9 /* LoginViewModel.swift */; };
 		8C80060F2B20D8A5004512F9 /* AppleAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80060E2B20D8A5004512F9 /* AppleAuthentication.swift */; };
 		8C86B7B82B600B24003F70AA /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 8C86B7B72B600B24003F70AA /* FSCalendar */; };
+		8C86B7BA2B60FBD4003F70AA /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86B7B92B60FBD4003F70AA /* CalendarViewModel.swift */; };
 		8CB935BA2B501BF400D001A5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB935B92B501BF400D001A5 /* Kingfisher */; };
 		8CB935BC2B5165CE00D001A5 /* CustomPosterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB935BB2B5165CE00D001A5 /* CustomPosterButton.swift */; };
 		8CC4EB252B457278002B51E0 /* MovieInputFormHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4EB242B457278002B51E0 /* MovieInputFormHeaderView.swift */; };
@@ -137,6 +138,7 @@
 		8C8006092B1F10DB004512F9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8C80060D2B209705004512F9 /* MovieLog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MovieLog.entitlements; sourceTree = "<group>"; };
 		8C80060E2B20D8A5004512F9 /* AppleAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthentication.swift; sourceTree = "<group>"; };
+		8C86B7B92B60FBD4003F70AA /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		8CB935BB2B5165CE00D001A5 /* CustomPosterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPosterButton.swift; sourceTree = "<group>"; };
 		8CC4EB242B457278002B51E0 /* MovieInputFormHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInputFormHeaderView.swift; sourceTree = "<group>"; };
 		8CC4EB262B472E7E002B51E0 /* WriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewModel.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				8CC4EB2C2B495BD6002B51E0 /* HomeViewModel.swift */,
 				8CECBCBC2B3DD4AB00FE6EA7 /* SearchViewModel.swift */,
 				8CC4EB262B472E7E002B51E0 /* WriteViewModel.swift */,
+				8C86B7B92B60FBD4003F70AA /* CalendarViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -601,6 +604,7 @@
 				8C3004922B3EE77900E0AAD8 /* APIComponents.swift in Sources */,
 				8C5307F32B56A61700B03A45 /* CalendarViewController.swift in Sources */,
 				8CECBCA42B356AAC00FE6EA7 /* HowViewController.swift in Sources */,
+				8C86B7BA2B60FBD4003F70AA /* CalendarViewModel.swift in Sources */,
 				8CB935BC2B5165CE00D001A5 /* CustomPosterButton.swift in Sources */,
 				8CC4EB292B49358D002B51E0 /* Poster.swift in Sources */,
 				8CECBCB72B3D58A800FE6EA7 /* Publisher+Utils.swift in Sources */,

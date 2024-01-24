@@ -13,22 +13,37 @@ class CalendarViewController: UIViewController {
     fileprivate weak var calendar: FSCalendar!
     
     // MARK: - UI Components
+    lazy var titleLabel = UILabel().then {
+        $0.text = "영화제목"
+        $0.font = .systemFont(ofSize: 25)
+    }
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         
-        let calendar = FSCalendar(frame: CGRect(x: 0, y: 0, width: 320, height: 300))
+        let screenSize = UIScreen.main.bounds.size
+        let safeAreaTop = view.safeAreaInsets.top
+        
+        let calendar = FSCalendar(frame: CGRect(x: 20, y: safeAreaTop + 100, width: screenSize.width - 40, height: 300))
         calendar.dataSource = self
         calendar.delegate = self
         view.addSubview(calendar)
         self.calendar = calendar
+        
+        setupConstraints()
     }
     
     // MARK: - UI Setup
     func setupConstraints() {
-        view.addSubview(calendar)
+        view.addSubview(titleLabel)
+        
+        titleLabel.snp.makeConstraints {
+            $0.top.equalTo(calendar.snp.bottom).offset(20)
+            $0.leading.trailing.equalTo(view.safeAreaInsets).inset(20)
+            $0.height.equalTo(100)
+        }
     }
 }
 
