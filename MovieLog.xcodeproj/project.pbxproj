@@ -46,6 +46,7 @@
 		8C78DBF92B0F2B0B0022BCFB /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78DBF82B0F2B0B0022BCFB /* CustomTextField.swift */; };
 		8C78DBFB2B0F39B30022BCFB /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78DBFA2B0F39B30022BCFB /* CustomButton.swift */; };
 		8C78DBFD2B0F55270022BCFB /* SignUpHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78DBFC2B0F55270022BCFB /* SignUpHeaderView.swift */; };
+		8C7966622B6260A600A1E93D /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7966612B6260A600A1E93D /* CalendarCell.swift */; };
 		8C8006082B1EFF7A004512F9 /* CustomCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8006072B1EFF7A004512F9 /* CustomCheckbox.swift */; };
 		8C80060A2B1F10DB004512F9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8006092B1F10DB004512F9 /* LoginViewModel.swift */; };
 		8C80060F2B20D8A5004512F9 /* AppleAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80060E2B20D8A5004512F9 /* AppleAuthentication.swift */; };
@@ -134,6 +135,7 @@
 		8C78DBF82B0F2B0B0022BCFB /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		8C78DBFA2B0F39B30022BCFB /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		8C78DBFC2B0F55270022BCFB /* SignUpHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpHeaderView.swift; sourceTree = "<group>"; };
+		8C7966612B6260A600A1E93D /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		8C8006072B1EFF7A004512F9 /* CustomCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCheckbox.swift; sourceTree = "<group>"; };
 		8C8006092B1F10DB004512F9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8C80060D2B209705004512F9 /* MovieLog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MovieLog.entitlements; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				8C5307F22B56A61700B03A45 /* CalendarViewController.swift */,
+				8C7966612B6260A600A1E93D /* CalendarCell.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				8CECBCB72B3D58A800FE6EA7 /* Publisher+Utils.swift in Sources */,
 				8CECBCBD2B3DD4AB00FE6EA7 /* SearchViewModel.swift in Sources */,
 				8CC755252B19BA9C003FB4ED /* CustomLabel.swift in Sources */,
+				8C7966622B6260A600A1E93D /* CalendarCell.swift in Sources */,
 				8C30049A2B45323800E0AAD8 /* CustomInputFormLabel.swift in Sources */,
 				8CECBCB92B3DA8AE00FE6EA7 /* URLSessionDataTaskProtocol.swift in Sources */,
 				8C78DBF72B0F216C0022BCFB /* LoginHeaderView.swift in Sources */,
