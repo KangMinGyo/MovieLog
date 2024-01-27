@@ -63,6 +63,7 @@ class CalendarViewController: UIViewController {
     }
     
     func updateCollectionView(with reviews: [Review]) {
+        fetch()
         viewModel.reviews = reviews
         collectionView.reloadData()
     }
