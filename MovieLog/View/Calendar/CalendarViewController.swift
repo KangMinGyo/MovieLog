@@ -44,7 +44,7 @@ class CalendarViewController: UIViewController {
     func configureCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(HomeCell.self, forCellWithReuseIdentifier: HomeCell.identifier)
+        collectionView.register(CalendarCell.self, forCellWithReuseIdentifier: HomeCell.identifier)
     }
     
     // MARK: - UI Setup
@@ -90,7 +90,7 @@ extension CalendarViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCell.identifier, for: indexPath) as! HomeCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarCell.identifier, for: indexPath) as! CalendarCell
         cell.setup(with: viewModel.reviews[indexPath.row])
         return cell
     }
@@ -105,7 +105,7 @@ extension CalendarViewController: UICollectionViewDataSource {
 extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     //Cell의 크기
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width - 20, height: view.frame.width / 2.5)
+        return CGSize(width: view.frame.width - 20, height: view.frame.width / 3.5)
     }
     
     //Cell간의 간격

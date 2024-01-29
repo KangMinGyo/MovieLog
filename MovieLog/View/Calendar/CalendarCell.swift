@@ -21,6 +21,11 @@ class CalendarCell: UICollectionViewCell {
 
     let movieNameLabel = UILabel().then {
         $0.text = "영화 제목"
+        $0.numberOfLines = 0
+    }
+    
+    let dateLabel = UILabel().then {
+        $0.text = "작성일: 23.01.19 오후 5:23"
     }
     
     //MARK: - Lifecycle
@@ -49,15 +54,23 @@ class CalendarCell: UICollectionViewCell {
     private func setupConstraints() {
         addSubview(posterImageView)
         addSubview(movieNameLabel)
+        addSubview(dateLabel)
         
         posterImageView.snp.makeConstraints {
             $0.top.leading.bottom.equalTo(0).inset(20)
-            $0.width.equalTo(75)
+            $0.width.equalTo(40)
         }
         
         movieNameLabel.snp.makeConstraints {
-            $0.top.trailing.equalTo(0).inset(20)
+            $0.top.equalTo(posterImageView.snp.top)
+            $0.trailing.equalTo(0).inset(20)
             $0.leading.equalTo(posterImageView.snp.trailing).offset(20)
+        }
+        
+        dateLabel.snp.makeConstraints {
+            $0.top.equalTo(movieNameLabel.snp.bottom).offset(5)
+            $0.leading.equalTo(posterImageView.snp.trailing).offset(20)
+            $0.bottom.equalTo(self.snp.bottom).offset(-20)
         }
     }
     
@@ -79,5 +92,6 @@ class CalendarCell: UICollectionViewCell {
         let url = URL(string: "https://image.tmdb.org/t/p/original\(data.posterURL)")
         posterImageView.kf.setImage(with: url)
         movieNameLabel.text = data.title
+//        dateLabel.text = data.date
     }
 }
