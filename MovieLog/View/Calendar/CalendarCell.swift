@@ -12,7 +12,7 @@ import Kingfisher
 
 class CalendarCell: UICollectionViewCell {
     
-    static let identifier = "HomeCell"
+    static let identifier = "CalendarCell"
     
     // MARK: - UI Components
     let posterImageView = UIImageView().then {
@@ -92,6 +92,10 @@ class CalendarCell: UICollectionViewCell {
         let url = URL(string: "https://image.tmdb.org/t/p/original\(data.posterURL)")
         posterImageView.kf.setImage(with: url)
         movieNameLabel.text = data.title
-//        dateLabel.text = data.date
+        if let date = data.date {
+            let dateFormatterManager = DateFormatterManager()
+            let dateString = dateFormatterManager.dateFormatter.string(from: date)
+            dateLabel.text = dateString
+        }
     }
 }

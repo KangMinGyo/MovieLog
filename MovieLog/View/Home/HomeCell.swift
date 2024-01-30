@@ -113,6 +113,10 @@ class HomeCell: UICollectionViewCell {
         movieNameLabel.text = data.title
         directorNameLabel.text = data.director
         movieInfoLabel.text = data.movieInfo
-//        dateLabel.text = data.date
+        if let date = data.date {
+            let dateFormatterManager = DateFormatterManager()
+            let dateString = dateFormatterManager.dateFormatter.string(from: date)
+            dateLabel.text = dateString
+        }
     }
 }

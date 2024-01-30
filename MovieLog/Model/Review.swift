@@ -24,11 +24,18 @@ class Review {
         self.title = data["title"] as? String ?? ""
         self.director = data["director"] as? String ?? ""
         self.movieInfo = data["movieInfo"] as? String ?? ""
+//        if let dateString = data["date"] as? String {
+//            let dateFormatter = DateFormatter()
+//            dateFormatter.dateFormat = "작성일: yy.MM.dd a hh:mm"
+//            dateFormatter.locale = Locale(identifier:"ko_KR")
+//            self.date = dateFormatter.date(from: dateString)
+//        }
+//        
         if let dateString = data["date"] as? String {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "작성일: yy.MM.dd a hh:mm"
-            dateFormatter.locale = Locale(identifier:"ko_KR")
-            self.date = dateFormatter.date(from: dateString)
+            let dateFormatterManager = DateFormatterManager()
+            if let date = dateFormatterManager.dateFormatter.date(from: dateString) {
+                self.date = date
+            }
         }
         self.how = data["how"] as? String ?? ""
         self.what = data["what"] as? [Bool] ?? []

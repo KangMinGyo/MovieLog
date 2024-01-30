@@ -47,6 +47,7 @@
 		8C78DBFB2B0F39B30022BCFB /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78DBFA2B0F39B30022BCFB /* CustomButton.swift */; };
 		8C78DBFD2B0F55270022BCFB /* SignUpHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78DBFC2B0F55270022BCFB /* SignUpHeaderView.swift */; };
 		8C7966622B6260A600A1E93D /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7966612B6260A600A1E93D /* CalendarCell.swift */; };
+		8C7966642B6947E300A1E93D /* DateFormatterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7966632B6947E300A1E93D /* DateFormatterManager.swift */; };
 		8C8006082B1EFF7A004512F9 /* CustomCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8006072B1EFF7A004512F9 /* CustomCheckbox.swift */; };
 		8C80060A2B1F10DB004512F9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8006092B1F10DB004512F9 /* LoginViewModel.swift */; };
 		8C80060F2B20D8A5004512F9 /* AppleAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80060E2B20D8A5004512F9 /* AppleAuthentication.swift */; };
@@ -136,6 +137,7 @@
 		8C78DBFA2B0F39B30022BCFB /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		8C78DBFC2B0F55270022BCFB /* SignUpHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpHeaderView.swift; sourceTree = "<group>"; };
 		8C7966612B6260A600A1E93D /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		8C7966632B6947E300A1E93D /* DateFormatterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterManager.swift; sourceTree = "<group>"; };
 		8C8006072B1EFF7A004512F9 /* CustomCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCheckbox.swift; sourceTree = "<group>"; };
 		8C8006092B1F10DB004512F9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8C80060D2B209705004512F9 /* MovieLog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MovieLog.entitlements; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			children = (
 				8C399A822B10886F00626B0D /* FirebaseManager.swift */,
 				8C5307F42B5958BA00B03A45 /* FirestorageManager.swift */,
+				8C7966632B6947E300A1E93D /* DateFormatterManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 				8CC7551E2B11DC61003FB4ED /* SignUpViewModel.swift in Sources */,
 				8CECBCA12B345CEC00FE6EA7 /* SearchCell.swift in Sources */,
 				8CECBCA62B356F4100FE6EA7 /* CustomLikeButton.swift in Sources */,
+				8C7966642B6947E300A1E93D /* DateFormatterManager.swift in Sources */,
 				8CC755232B18EE53003FB4ED /* Extension+UITextField.swift in Sources */,
 				8C2451782B1A2CE1007B33B4 /* CustomStackView.swift in Sources */,
 				8C6A49EC2B079D1700EE3AEE /* ContentViewPreview.swift in Sources */,
