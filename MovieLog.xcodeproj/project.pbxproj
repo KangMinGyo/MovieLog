@@ -557,6 +557,7 @@
 				8C399A8B2B1089AD00626B0D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				8CB935B82B501BF400D001A5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				8C86B7B62B600B24003F70AA /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				8C7966652B6AD6F600A1E93D /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 8C6A49952B0375C000EE3AEE /* Products */;
 			projectDirPath = "";
@@ -1034,6 +1035,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 2.0.0;
+			};
+		};
+		8C7966652B6AD6F600A1E93D /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
 			};
 		};
 		8C86B7B62B600B24003F70AA /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
