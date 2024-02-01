@@ -48,6 +48,7 @@
 		8C78DBFD2B0F55270022BCFB /* SignUpHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C78DBFC2B0F55270022BCFB /* SignUpHeaderView.swift */; };
 		8C7966622B6260A600A1E93D /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7966612B6260A600A1E93D /* CalendarCell.swift */; };
 		8C7966642B6947E300A1E93D /* DateFormatterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7966632B6947E300A1E93D /* DateFormatterManager.swift */; };
+		8C7966682B6B86EA00A1E93D /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7966672B6B86EA00A1E93D /* ChartViewController.swift */; };
 		8C8006082B1EFF7A004512F9 /* CustomCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8006072B1EFF7A004512F9 /* CustomCheckbox.swift */; };
 		8C80060A2B1F10DB004512F9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8006092B1F10DB004512F9 /* LoginViewModel.swift */; };
 		8C80060F2B20D8A5004512F9 /* AppleAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80060E2B20D8A5004512F9 /* AppleAuthentication.swift */; };
@@ -138,6 +139,7 @@
 		8C78DBFC2B0F55270022BCFB /* SignUpHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpHeaderView.swift; sourceTree = "<group>"; };
 		8C7966612B6260A600A1E93D /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		8C7966632B6947E300A1E93D /* DateFormatterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterManager.swift; sourceTree = "<group>"; };
+		8C7966672B6B86EA00A1E93D /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		8C8006072B1EFF7A004512F9 /* CustomCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCheckbox.swift; sourceTree = "<group>"; };
 		8C8006092B1F10DB004512F9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8C80060D2B209705004512F9 /* MovieLog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MovieLog.entitlements; sourceTree = "<group>"; };
@@ -359,6 +361,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		8C7966662B6B845C00A1E93D /* chart */ = {
+			isa = PBXGroup;
+			children = (
+				8C7966672B6B86EA00A1E93D /* ChartViewController.swift */,
+			);
+			path = chart;
+			sourceTree = "<group>";
+		};
 		8CC4EB232B45721A002B51E0 /* InputForm */ = {
 			isa = PBXGroup;
 			children = (
@@ -412,6 +422,7 @@
 				8CC4EB232B45721A002B51E0 /* InputForm */,
 				8CECBCA22B356A4800FE6EA7 /* Write */,
 				8C5307F12B5680B200B03A45 /* Calendar */,
+				8C7966662B6B845C00A1E93D /* chart */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -633,6 +644,7 @@
 				8CC4EB252B457278002B51E0 /* MovieInputFormHeaderView.swift in Sources */,
 				8CC4EB2D2B495BD6002B51E0 /* HomeViewModel.swift in Sources */,
 				8CECBCAA2B36ADAE00FE6EA7 /* CustomSelectButton.swift in Sources */,
+				8C7966682B6B86EA00A1E93D /* ChartViewController.swift in Sources */,
 				8CC7551E2B11DC61003FB4ED /* SignUpViewModel.swift in Sources */,
 				8CECBCA12B345CEC00FE6EA7 /* SearchCell.swift in Sources */,
 				8CECBCA62B356F4100FE6EA7 /* CustomLikeButton.swift in Sources */,
