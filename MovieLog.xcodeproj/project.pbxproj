@@ -49,6 +49,7 @@
 		8C7966622B6260A600A1E93D /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7966612B6260A600A1E93D /* CalendarCell.swift */; };
 		8C7966642B6947E300A1E93D /* DateFormatterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7966632B6947E300A1E93D /* DateFormatterManager.swift */; };
 		8C7966682B6B86EA00A1E93D /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7966672B6B86EA00A1E93D /* ChartViewController.swift */; };
+		8C7966722B6B97C700A1E93D /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 8C7966712B6B97C700A1E93D /* DGCharts */; };
 		8C8006082B1EFF7A004512F9 /* CustomCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8006072B1EFF7A004512F9 /* CustomCheckbox.swift */; };
 		8C80060A2B1F10DB004512F9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8006092B1F10DB004512F9 /* LoginViewModel.swift */; };
 		8C80060F2B20D8A5004512F9 /* AppleAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C80060E2B20D8A5004512F9 /* AppleAuthentication.swift */; };
@@ -188,6 +189,7 @@
 				8C399A8D2B1089AD00626B0D /* FirebaseAnalytics in Frameworks */,
 				8C399A952B1089AD00626B0D /* FirebaseStorage in Frameworks */,
 				8C399A7D2B1081ED00626B0D /* Toast in Frameworks */,
+				8C7966722B6B97C700A1E93D /* DGCharts in Frameworks */,
 				8C399A912B1089AD00626B0D /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +490,7 @@
 				8C399A942B1089AD00626B0D /* FirebaseStorage */,
 				8CB935B92B501BF400D001A5 /* Kingfisher */,
 				8C86B7B72B600B24003F70AA /* FSCalendar */,
+				8C7966712B6B97C700A1E93D /* DGCharts */,
 			);
 			productName = MovieLog;
 			productReference = 8C6A49942B0375C000EE3AEE /* MovieLog.app */;
@@ -568,7 +571,7 @@
 				8C399A8B2B1089AD00626B0D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				8CB935B82B501BF400D001A5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				8C86B7B62B600B24003F70AA /* XCRemoteSwiftPackageReference "FSCalendar" */,
-				8C7966652B6AD6F600A1E93D /* XCRemoteSwiftPackageReference "Charts" */,
+				8C79666E2B6B95AC00A1E93D /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 8C6A49952B0375C000EE3AEE /* Products */;
 			projectDirPath = "";
@@ -1049,7 +1052,7 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		8C7966652B6AD6F600A1E93D /* XCRemoteSwiftPackageReference "Charts" */ = {
+		8C79666E2B6B95AC00A1E93D /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts";
 			requirement = {
@@ -1115,6 +1118,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8C6A49E72B0794B100EE3AEE /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		8C7966712B6B97C700A1E93D /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DGCharts;
 		};
 		8C86B7B72B600B24003F70AA /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;
