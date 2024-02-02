@@ -24,7 +24,6 @@ class ChartViewController: UIViewController {
         viewModel.fetchReviews()
         setupConstraints()
         setupBarChart()
-        self.setBarData(barChartView: self.barChartView, barChartDataEntries: self.entryData(values: self.priceData))
     }
     
     // MARK: - UI Setup
@@ -32,7 +31,7 @@ class ChartViewController: UIViewController {
         view.addSubview(barChartView)
         
         barChartView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaInsets).offset(20)
+            $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.leading.trailing.equalTo(view.safeAreaInsets).inset(20)
             $0.height.equalTo(200)
         }
@@ -43,9 +42,11 @@ class ChartViewController: UIViewController {
         self.barChartView.noDataFont = .systemFont(ofSize: 20)
         self.barChartView.noDataTextColor = .lightGray
         self.barChartView.backgroundColor = .white
+        self.barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: dayData) //구분 값 보이게하기
+        self.setBarData(barChartView: self.barChartView, barChartDataEntries: self.entryData(values: self.priceData))
     }
 
-    let dayData: [String] = ["11월02일", "11월03일", "11월04일", "11월05일", "11월06일", "11월07일", "11월08일"]
+    let dayData: [String] = ["MON", "TUE", "WEN", "THU", "FRI", "SAT", "SUN"]
     let priceData: [Double] = [1, 2, 0, 0, 1, 1, 0]
     
     func entryData(values: [Double]) -> [BarChartDataEntry] {

@@ -18,7 +18,7 @@ final class TabViewController: UITabBarController {
         tab2.title = "캘린더"
         
         let tab3 = ChartViewController()
-        tab2.title = "차트"
+        tab3.title = "차트"
         
         let nav1 = UINavigationController(rootViewController: tab1)
         let nav2 = UINavigationController(rootViewController: tab2)
