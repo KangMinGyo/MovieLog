@@ -83,6 +83,7 @@
 		8CECBCBD2B3DD4AB00FE6EA7 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBCBC2B3DD4AB00FE6EA7 /* SearchViewModel.swift */; };
 		8CECBCBF2B3DD79D00FE6EA7 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBCBE2B3DD79D00FE6EA7 /* Search.swift */; };
 		8CECBCC12B3DE03600FE6EA7 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CECBCC02B3DE03600FE6EA7 /* SearchResponse.swift */; };
+		8CFD0A562B6BE517001F66F4 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFD0A552B6BE517001F66F4 /* ChartViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +174,7 @@
 		8CECBCBC2B3DD4AB00FE6EA7 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		8CECBCBE2B3DD79D00FE6EA7 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		8CECBCC02B3DE03600FE6EA7 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		8CFD0A552B6BE517001F66F4 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +268,7 @@
 				8C6A49AD2B0375C400EE3AEE /* MovieLogTests */,
 				8C6A49B72B0375C400EE3AEE /* MovieLogUITests */,
 				8C6A49952B0375C000EE3AEE /* Products */,
+				8C7966732B6BA82B00A1E93D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -359,6 +362,7 @@
 				8CECBCBC2B3DD4AB00FE6EA7 /* SearchViewModel.swift */,
 				8CC4EB262B472E7E002B51E0 /* WriteViewModel.swift */,
 				8C86B7B92B60FBD4003F70AA /* CalendarViewModel.swift */,
+				8CFD0A552B6BE517001F66F4 /* ChartViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -369,6 +373,13 @@
 				8C7966672B6B86EA00A1E93D /* ChartViewController.swift */,
 			);
 			path = chart;
+			sourceTree = "<group>";
+		};
+		8C7966732B6BA82B00A1E93D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8CC4EB232B45721A002B51E0 /* InputForm */ = {
@@ -663,6 +674,7 @@
 				8CECBCAC2B37105500FE6EA7 /* Extension+UIImage.swift in Sources */,
 				8CC4EB302B497AD0002B51E0 /* ReviewService.swift in Sources */,
 				8C6A49F02B08AE1700EE3AEE /* InfoFindView.swift in Sources */,
+				8CFD0A562B6BE517001F66F4 /* ChartViewModel.swift in Sources */,
 				8C6A49982B0375C000EE3AEE /* AppDelegate.swift in Sources */,
 				8CECBCBF2B3DD79D00FE6EA7 /* Search.swift in Sources */,
 				8CECBC9F2B345C5F00FE6EA7 /* SearchViewController.swift in Sources */,
