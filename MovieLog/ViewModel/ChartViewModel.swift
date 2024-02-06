@@ -9,6 +9,7 @@ import Foundation
 
 class ChartViewModel: ObservableObject {
     var reviews = [Review]()
+    var reviewCount: [Double] = [1, 0, 0, 0, 0, 0, 0]
     
     func fetchReviews() {
         reviews = [Review]()
@@ -35,8 +36,7 @@ class ChartViewModel: ObservableObject {
             }
     }
     
-    func calculateWeeklyStats(reviews: [Review]) -> [Int] {
-        var weeklyStats = [Int](repeating: 0, count: 7)
+    func calculateWeeklyStats(reviews: [Review]) -> [Double] {
         print("review: \(reviews.count)")
         for review in reviews {
             print("date: \(review.date)")
@@ -44,11 +44,37 @@ class ChartViewModel: ObservableObject {
                 let calendar = Calendar.current
                 let components = calendar.dateComponents([.weekday], from: date)
                 if let weekday = components.weekday {
-                    weeklyStats[weekday - 1] += 1
+                    reviewCount[weekday - 1] += 1
                 }
             }
         }
-        print("weekly : \(weeklyStats)")
-        return weeklyStats
+        print("weekly : \(reviewCount)")
+        return reviewCount
+    }
+    
+    func datesInPastWeek() {
+        // 현재 날짜 얻기
+        let currentDate = Date()
+
+        // Calendar 객체 생성
+        let calendar = Calendar.current
+
+        // 현재 날짜로부터 일주일 전까지의 날짜 얻기
+        var datesInPastWeek: [Date] = []
+
+        for i in 0..<7 {
+            if let date = calendar.date(byAdding: .day, value: -i, to: currentDate) {
+                datesInPastWeek.append(date)
+            }
+        }
+
+        // 얻은 날짜를 문자열로 출력 또는 다른 작업 수행
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+
+        for date in datesInPastWeek {
+            let formattedDate = dateFormatter.string(from: date)
+            print("일주일 전까지의 날짜: \(formattedDate)")
+        }
     }
 }

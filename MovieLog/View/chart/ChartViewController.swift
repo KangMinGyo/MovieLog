@@ -22,6 +22,7 @@ class ChartViewController: UIViewController {
         view.backgroundColor = .systemBackground
         print("Chart")
         viewModel.fetchReviews()
+        viewModel.datesInPastWeek()
         setupConstraints()
         setupBarChart()
     }
@@ -43,11 +44,11 @@ class ChartViewController: UIViewController {
         self.barChartView.noDataTextColor = .lightGray
         self.barChartView.backgroundColor = .white
         self.barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: dayData) //구분 값 보이게하기
-        self.setBarData(barChartView: self.barChartView, barChartDataEntries: self.entryData(values: self.priceData))
+        self.setBarData(barChartView: self.barChartView, barChartDataEntries: self.entryData(values: viewModel.reviewCount))
     }
 
     let dayData: [String] = ["MON", "TUE", "WEN", "THU", "FRI", "SAT", "SUN"]
-    let priceData: [Double] = [1, 2, 0, 0, 1, 1, 0]
+//    let priceData: [Double] = [1, 2, 0, 0, 1, 1, 0]
     
     func entryData(values: [Double]) -> [BarChartDataEntry] {
         var barDataEntries: [BarChartDataEntry] = []
