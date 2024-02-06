@@ -22,7 +22,6 @@ class ChartViewController: UIViewController {
         view.backgroundColor = .systemBackground
         print("Chart")
         viewModel.fetchReviews()
-        viewModel.datesInPastWeek()
         setupConstraints()
         setupBarChart()
     }

@@ -9,7 +9,7 @@ import Foundation
 
 class ChartViewModel: ObservableObject {
     var reviews = [Review]()
-    var reviewCount: [Double] = [1, 0, 0, 0, 0, 0, 0]
+    var reviewCount: [Double] = [0, 0, 0, 0, 0, 0, 0]
     
     func fetchReviews() {
         reviews = [Review]()
@@ -31,13 +31,12 @@ class ChartViewModel: ObservableObject {
                 for document in documents {
                     let reviewData = document.data()
                     self.reviews.append(Review(data: reviewData))
-                    calculateWeeklyStats(reviews: reviews)
+                    datesInPastWeek(reviews: reviews)
                 }
             }
     }
     
     func calculateWeeklyStats(reviews: [Review]) -> [Double] {
-        print("review: \(reviews.count)")
         for review in reviews {
             print("date: \(review.date)")
             if let date = review.date {
@@ -52,15 +51,11 @@ class ChartViewModel: ObservableObject {
         return reviewCount
     }
     
-    func datesInPastWeek() {
-        // 현재 날짜 얻기
+    func datesInPastWeek(reviews: [Review]) {
         let currentDate = Date()
-
-        // Calendar 객체 생성
         let calendar = Calendar.current
-
-        // 현재 날짜로부터 일주일 전까지의 날짜 얻기
         var datesInPastWeek: [Date] = []
+        var index = 0
 
         for i in 0..<7 {
             if let date = calendar.date(byAdding: .day, value: -i, to: currentDate) {
@@ -68,13 +63,29 @@ class ChartViewModel: ObservableObject {
             }
         }
 
-        // 얻은 날짜를 문자열로 출력 또는 다른 작업 수행
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
 
         for date in datesInPastWeek {
             let formattedDate = dateFormatter.string(from: date)
+            for review in reviews {
+                if let reviewDate = review.date {
+                    let formattedReviewDate = dateFormatter.string(from: reviewDate)
+                    print("formattedReviewDate: \(formattedReviewDate)")
+                    if formattedReviewDate == formattedDate {
+                        print("\(formattedReviewDate), \(formattedDate) 일치")
+                        reviewCount[index] += 1
+                    }
+                }
+            }
+            index += 1
             print("일주일 전까지의 날짜: \(formattedDate)")
+        }
+        
+        // 결과 출력
+        for (index, date) in datesInPastWeek.enumerated() {
+            let formattedDate = dateFormatter.string(from: date)
+            print("날짜: \(formattedDate), 리뷰 수: \(reviewCount[index])")
         }
     }
 }
