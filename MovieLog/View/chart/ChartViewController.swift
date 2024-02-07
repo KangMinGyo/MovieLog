@@ -16,6 +16,10 @@ class ChartViewController: UIViewController {
     var subscriptions = Set<AnyCancellable>()
 
     // MARK: - UI Components
+    lazy var label = UILabel().then {
+        $0.text = "일주일간의 리뷰차트"
+        $0.font = .systemFont(ofSize: 20, weight: .semibold)
+    }
     var barChartView: BarChartView = BarChartView()
     
     // MARK: - Life Cycle
@@ -30,10 +34,16 @@ class ChartViewController: UIViewController {
     
     // MARK: - UI Setup
     func setupConstraints() {
+        view.addSubview(label)
         view.addSubview(barChartView)
         
-        barChartView.snp.makeConstraints {
+        label.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.equalTo(view.safeAreaInsets).inset(20)
+        }
+        
+        barChartView.snp.makeConstraints {
+            $0.top.equalTo(label.snp.bottom).offset(20)
             $0.leading.trailing.equalTo(view.safeAreaInsets).inset(20)
             $0.height.equalTo(200)
         }
@@ -58,7 +68,7 @@ class ChartViewController: UIViewController {
             }.store(in: &subscriptions)
     }
 
-    let dayData: [String] = ["MON", "TUE", "WEN", "THU", "FRI", "SAT", "SUN"]
+    let dayData: [String] = ["오늘", "1일전", "2일전", "3일전", "4일전", "5일전", "6일전"]
     
     func entryData(values: [Double]) -> [BarChartDataEntry] {
         var barDataEntries: [BarChartDataEntry] = []
