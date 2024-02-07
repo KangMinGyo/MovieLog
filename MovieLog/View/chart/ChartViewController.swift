@@ -17,8 +17,8 @@ class ChartViewController: UIViewController {
 
     // MARK: - UI Components
     lazy var label = UILabel().then {
-        $0.text = "일주일간의 리뷰차트"
-        $0.font = .systemFont(ofSize: 20, weight: .semibold)
+        $0.text = "일주일간의 내 리뷰"
+        $0.font = .systemFont(ofSize: 25, weight: .semibold)
     }
     var barChartView: BarChartView = BarChartView()
     
@@ -49,26 +49,28 @@ class ChartViewController: UIViewController {
         }
     }
     
-    func setupBarChart() {
-        self.barChartView.noDataText = "출력 데이터가 없습니다."
-        self.barChartView.noDataFont = .systemFont(ofSize: 20)
-        self.barChartView.noDataTextColor = .lightGray
-        self.barChartView.backgroundColor = .white
-        self.barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: dayData) //구분 값 보이게하기
-        self.setBarData(barChartView: self.barChartView, barChartDataEntries: self.entryData(values: viewModel.reviewCount))
-    }
-    
     // MARK: - Binding
     func bind() {
         viewModel.$reviewCount
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
                 self?.setupBarChart()
-                print("qwer: \(self?.viewModel.reviewCount)")
             }.store(in: &subscriptions)
     }
 
+    // MARK: - Chart
     let dayData: [String] = ["오늘", "1일전", "2일전", "3일전", "4일전", "5일전", "6일전"]
+    
+    func setupBarChart() {
+        self.barChartView.noDataText = "출력 데이터가 없습니다."
+        self.barChartView.noDataFont = .systemFont(ofSize: 20)
+        self.barChartView.noDataTextColor = .lightGray
+        self.barChartView.backgroundColor = UIColor(named: "GrayColor")
+        self.barChartView.doubleTapToZoomEnabled = false //줌x
+        self.barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: dayData)
+        self.barChartView.rightAxis.enabled = false
+        self.setBarData(barChartView: self.barChartView, barChartDataEntries: self.entryData(values: viewModel.reviewCount))
+    }
     
     func entryData(values: [Double]) -> [BarChartDataEntry] {
         var barDataEntries: [BarChartDataEntry] = []
@@ -81,6 +83,8 @@ class ChartViewController: UIViewController {
     
     func setBarData(barChartView: BarChartView, barChartDataEntries: [BarChartDataEntry]) {
         let barChartdataSet = BarChartDataSet(entries: barChartDataEntries, label: "리뷰")
+        barChartdataSet.colors = [.green]
+        barChartdataSet.highlightEnabled = false //선택x
         let barChartData = BarChartData(dataSet: barChartdataSet)
         barChartView.data = barChartData
     }
