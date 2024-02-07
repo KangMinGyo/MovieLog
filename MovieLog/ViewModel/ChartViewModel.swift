@@ -9,7 +9,7 @@ import Foundation
 
 class ChartViewModel: ObservableObject {
     var reviews = [Review]()
-    var reviewCount: [Double] = [0, 0, 0, 0, 0, 0, 0]
+    @Published var reviewCount: [Double] = [0, 0, 0, 0, 0, 0, 0]
     
     func fetchReviews() {
         reviews = [Review]()
@@ -36,25 +36,26 @@ class ChartViewModel: ObservableObject {
             }
     }
     
-    func calculateWeeklyStats(reviews: [Review]) -> [Double] {
-        for review in reviews {
-            print("date: \(review.date)")
-            if let date = review.date {
-                let calendar = Calendar.current
-                let components = calendar.dateComponents([.weekday], from: date)
-                if let weekday = components.weekday {
-                    reviewCount[weekday - 1] += 1
-                }
-            }
-        }
-        print("weekly : \(reviewCount)")
-        return reviewCount
-    }
+//    func calculateWeeklyStats(reviews: [Review]) -> [Double] {
+//        for review in reviews {
+//            print("date: \(review.date)")
+//            if let date = review.date {
+//                let calendar = Calendar.current
+//                let components = calendar.dateComponents([.weekday], from: date)
+//                if let weekday = components.weekday {
+//                    reviewCount[weekday - 1] += 1
+//                }
+//            }
+//        }
+//        print("weekly : \(reviewCount)")
+//        return reviewCount
+//    }
     
     func datesInPastWeek(reviews: [Review]) {
         let currentDate = Date()
         let calendar = Calendar.current
         var datesInPastWeek: [Date] = []
+        reviewCount = [0, 0, 0, 0, 0, 0, 0]
         var index = 0
 
         for i in 0..<7 {
@@ -86,6 +87,7 @@ class ChartViewModel: ObservableObject {
         for (index, date) in datesInPastWeek.enumerated() {
             let formattedDate = dateFormatter.string(from: date)
             print("날짜: \(formattedDate), 리뷰 수: \(reviewCount[index])")
+            print("reviewCount : \(reviewCount)")
         }
     }
 }

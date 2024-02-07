@@ -8,10 +8,12 @@
 import UIKit
 import Charts
 import DGCharts
+import Combine
 
 class ChartViewController: UIViewController {
     
     var viewModel = ChartViewModel()
+    var subscriptions = Set<AnyCancellable>()
 
     // MARK: - UI Components
     var barChartView: BarChartView = BarChartView()
@@ -20,10 +22,10 @@ class ChartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        print("Chart")
         viewModel.fetchReviews()
         setupConstraints()
         setupBarChart()
+        bind()
     }
     
     // MARK: - UI Setup
@@ -45,9 +47,18 @@ class ChartViewController: UIViewController {
         self.barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: dayData) //구분 값 보이게하기
         self.setBarData(barChartView: self.barChartView, barChartDataEntries: self.entryData(values: viewModel.reviewCount))
     }
+    
+    // MARK: - Binding
+    func bind() {
+        viewModel.$reviewCount
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.setupBarChart()
+                print("qwer: \(self?.viewModel.reviewCount)")
+            }.store(in: &subscriptions)
+    }
 
     let dayData: [String] = ["MON", "TUE", "WEN", "THU", "FRI", "SAT", "SUN"]
-//    let priceData: [Double] = [1, 2, 0, 0, 1, 1, 0]
     
     func entryData(values: [Double]) -> [BarChartDataEntry] {
         var barDataEntries: [BarChartDataEntry] = []
