@@ -49,8 +49,6 @@ class CalendarViewController: UIViewController {
     }
     
     func configureCollectionView() {
-//        collectionView.dataSource = self
-//        collectionView.delegate = self
         collectionView.register(CalendarCell.self, forCellWithReuseIdentifier: CalendarCell.identifier)
     }
     

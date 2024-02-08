@@ -104,7 +104,7 @@ class HomeCell: UICollectionViewCell {
         contentView.layer.masksToBounds = true
     }
     
-    func setup(with data: Review) {
+    func configure(_ data: Review) {
         posterImageView.image = UIImage(named: "Poster")
         print("Data: \(data)")
         print("Title: \(data.uid), PosterURL: \(data.posterURL)")
