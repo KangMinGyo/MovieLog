@@ -7,7 +7,8 @@
 
 import UIKit
 
-class Review {
+struct Review: Hashable {
+    
     var uid: String = ""
     var posterURL: String = ""
     var title: String = ""

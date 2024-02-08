@@ -28,10 +28,6 @@ class CalendarCell: UICollectionViewCell {
         $0.text = "영화 감독"
     }
     
-    let movieInfoLabel = UILabel().then {
-        $0.text = "미국 | 미스터리, 범죄 | 2000"
-    }
-    
     let dateLabel = UILabel().then {
         $0.text = "작성일: 23.01.19 오후 5:23"
     }
@@ -63,7 +59,6 @@ class CalendarCell: UICollectionViewCell {
         addSubview(posterImageView)
         addSubview(movieNameLabel)
         addSubview(directorNameLabel)
-        addSubview(movieInfoLabel)
         addSubview(dateLabel)
         
         posterImageView.snp.makeConstraints {
@@ -78,11 +73,6 @@ class CalendarCell: UICollectionViewCell {
         
         directorNameLabel.snp.makeConstraints {
             $0.top.equalTo(movieNameLabel.snp.bottom).offset(5)
-            $0.leading.equalTo(posterImageView.snp.trailing).offset(20)
-        }
-        
-        movieInfoLabel.snp.makeConstraints {
-            $0.top.equalTo(directorNameLabel.snp.bottom).offset(5)
             $0.leading.equalTo(posterImageView.snp.trailing).offset(20)
         }
         
@@ -105,7 +95,7 @@ class CalendarCell: UICollectionViewCell {
         contentView.layer.masksToBounds = true
     }
     
-    func setup(with data: Review) {
+    func configure(_ data: Review) {
         posterImageView.image = UIImage(named: "Poster")
         print("Data: \(data)")
         print("Title: \(data.uid), PosterURL: \(data.posterURL)")
@@ -113,7 +103,6 @@ class CalendarCell: UICollectionViewCell {
         posterImageView.kf.setImage(with: url)
         movieNameLabel.text = data.title
         directorNameLabel.text = data.director
-        movieInfoLabel.text = data.movieInfo
         if let date = data.date {
             let dateFormatterManager = DateFormatterManager()
             let dateString = dateFormatterManager.dateFormatter.string(from: date)
