@@ -97,6 +97,9 @@ class CalendarViewController: UIViewController {
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
         
         let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 5, bottom: 10, trailing: 5)
+        section.interGroupSpacing = 10
+        
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
     }
