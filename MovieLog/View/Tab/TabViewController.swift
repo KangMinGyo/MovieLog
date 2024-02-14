@@ -20,16 +20,20 @@ final class TabViewController: UITabBarController {
         let tab3 = ChartViewController()
 //        tab3.title = "차트"
         
+        let tab4 = SettingViewController()
+        
         let nav1 = UINavigationController(rootViewController: tab1)
         let nav2 = UINavigationController(rootViewController: tab2)
         let nav3 = UINavigationController(rootViewController: tab3)
+        let nav4 = UINavigationController(rootViewController: tab4)
         
         nav1.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 1)
         nav2.tabBarItem = UITabBarItem(title: "Calendar", image: UIImage(systemName: "calendar"), tag: 2)
         nav3.tabBarItem = UITabBarItem(title: "Chart", image: UIImage(systemName: "chart.bar"), tag: 3)
+        nav4.tabBarItem = UITabBarItem(title: "Setting", image: UIImage(systemName: "gearshape"), tag: 4)
         
         setViewControllers([
-            nav1, nav2, nav3
+            nav1, nav2, nav3, nav4
         ], animated: true)
     }
 }
