@@ -22,7 +22,10 @@ class SettingViewController: UIViewController {
     
     lazy var nameLabel = UILabel().then {
         $0.text = "닉네임"
+        $0.font = .systemFont(ofSize: 15, weight: .semibold)
     }
+    
+    
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -40,22 +43,22 @@ class SettingViewController: UIViewController {
         
         profileImage.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
-            $0.leading.equalTo(view.safeAreaLayoutGuide).inset(20)
+            $0.centerX.equalTo(view.snp.centerX)
             $0.width.equalTo(50)
             $0.height.equalTo(50)
         }
         
         nameLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide)
-            $0.leading.equalTo(profileImage.snp.trailing).offset(10)
+            $0.top.equalTo(profileImage.snp.bottom).offset(10)
+            $0.centerX.equalTo(view.snp.centerX)
         }
     }
     
     // MARK: - Binding
     func bind() {
-        viewModel.$user
+        viewModel.$userID
             .sink { [weak self] _ in
-                self?.nameLabel.text = self?.viewModel.user?.email
+                self?.nameLabel.text = self?.viewModel.userID
             }.store(in: &subscriptions)
     }
 }

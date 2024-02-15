@@ -6,20 +6,20 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 class SettingViewModel: ObservableObject {
     
-    @Published var user: User?
-    
-    let service = ProfileService()
+    @Published var userID: String?
     
     func fetchCurrentUser() {
-        print("-----------")
-        print("\(FirebaseManager.shared.auth.currentUser?.uid)")
-        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
-        service.fetchCurrentUser(uid: uid) { user in
-            self.user = user
+        if let currentUser = Auth.auth().currentUser {
+            guard let email = currentUser.email else { return }
+            let components = email.components(separatedBy: "@")
+            userID = components.first
+            print("사용자의 email: \(email)")
+        } else {
+            print("사용자가 로그인되어 있지 않습니다.")
         }
     }
-
 }

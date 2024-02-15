@@ -21,6 +21,7 @@ final class TabViewController: UITabBarController {
 //        tab3.title = "차트"
         
         let tab4 = SettingViewController()
+//        tab4.title = "마이페이지"
         
         let nav1 = UINavigationController(rootViewController: tab1)
         let nav2 = UINavigationController(rootViewController: tab2)
@@ -30,7 +31,7 @@ final class TabViewController: UITabBarController {
         nav1.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 1)
         nav2.tabBarItem = UITabBarItem(title: "Calendar", image: UIImage(systemName: "calendar"), tag: 2)
         nav3.tabBarItem = UITabBarItem(title: "Chart", image: UIImage(systemName: "chart.bar"), tag: 3)
-        nav4.tabBarItem = UITabBarItem(title: "Setting", image: UIImage(systemName: "gearshape"), tag: 4)
+        nav4.tabBarItem = UITabBarItem(title: "My", image: UIImage(systemName: "person"), tag: 4)
         
         setViewControllers([
             nav1, nav2, nav3, nav4
