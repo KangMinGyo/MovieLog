@@ -22,4 +22,13 @@ class SettingViewModel: ObservableObject {
             print("사용자가 로그인되어 있지 않습니다.")
         }
     }
+    
+    func logOutButtonTapped() {
+        do {
+            try Auth.auth().signOut()
+            print("로그아웃 성공")
+        } catch let signOutError as NSError {
+            print("로그아웃 실패: \(signOutError.localizedDescription)")
+        }
+    }
 }
