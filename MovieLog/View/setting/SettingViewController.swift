@@ -20,9 +20,8 @@ class SettingViewController: UIViewController {
         $0.clipsToBounds = true
     }
     
-    lazy var nameLabel = UILabel().then {
-        $0.text = "닉네임"
-        $0.font = .systemFont(ofSize: 15, weight: .semibold)
+    lazy var nameLabel = UIButton().then {
+        $0.setTitle("닉네임", for: .normal)
     }
     
     lazy var modifyButton = UIButton().then {
@@ -100,7 +99,15 @@ class SettingViewController: UIViewController {
         
         viewModel.$userID
             .sink { [weak self] _ in
-                self?.nameLabel.text = self?.viewModel.userID
+                self?.nameLabel.setTitle("\(self?.viewModel.userID ?? "")", for: .normal)
+                self?.nameLabel.setTitleColor(.black, for: .normal)
+            }.store(in: &subscriptions)
+        
+        nameLabel.controlEvent(.touchUpInside)
+            .sink { [weak self] _ in
+                let vc = LoginViewController()
+                vc.modalPresentationStyle = .fullScreen
+                self?.present(vc, animated: false, completion: nil)
             }.store(in: &subscriptions)
         
         logOutButton.controlEvent(.touchUpInside)
@@ -113,10 +120,12 @@ class SettingViewController: UIViewController {
     func updateUI(isLogin: Bool) {
            if isLogin {
                viewModel.fetchCurrentUser()
+               nameLabel.isEnabled = false
            } else {
                profileImage.image = UIImage(systemName: "person")
                DispatchQueue.main.async {
-                    self.nameLabel.text = "로그인해주세요."
+                   self.nameLabel.setTitle("이곳을 눌러 로그인해주세요.", for: .normal)
+                   self.nameLabel.setTitleColor(.black, for: .normal)
                 }
                logOutButton.isHidden = true
            }
