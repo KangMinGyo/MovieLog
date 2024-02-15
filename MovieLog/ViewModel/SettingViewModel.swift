@@ -11,6 +11,7 @@ import FirebaseAuth
 class SettingViewModel: ObservableObject {
     
     @Published var userID: String?
+    @Published var isLogin: Bool?
     
     func fetchCurrentUser() {
         if let currentUser = Auth.auth().currentUser {
@@ -29,6 +30,14 @@ class SettingViewModel: ObservableObject {
             print("로그아웃 성공")
         } catch let signOutError as NSError {
             print("로그아웃 실패: \(signOutError.localizedDescription)")
+        }
+    }
+    
+    func checkLoginStatus() {
+        if let currentUser = Auth.auth().currentUser {
+            isLogin = true
+        } else {
+            isLogin = false
         }
     }
 }

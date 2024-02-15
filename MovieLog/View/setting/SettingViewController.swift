@@ -48,6 +48,7 @@ class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        viewModel.checkLoginStatus()
         viewModel.fetchCurrentUser()
         setupConstraints()
         bind()
@@ -74,7 +75,7 @@ class SettingViewController: UIViewController {
         }
         
         modifyButton.snp.makeConstraints {
-            $0.top.equalTo(nameLabel.snp.bottom).offset(10)
+            $0.top.equalTo(nameLabel.snp.bottom).offset(20)
             $0.leading.equalTo(view.safeAreaLayoutGuide).offset(20)
         }
         
@@ -92,6 +93,11 @@ class SettingViewController: UIViewController {
     
     // MARK: - Binding
     func bind() {
+        viewModel.$isLogin
+            .sink { [weak self] state in
+                self?.updateUI(isLogin: state!)
+            }.store(in: &subscriptions)
+        
         viewModel.$userID
             .sink { [weak self] _ in
                 self?.nameLabel.text = self?.viewModel.userID
@@ -103,6 +109,18 @@ class SettingViewController: UIViewController {
                 self?.navigationController?.popViewController(animated: true)
             }.store(in: &subscriptions)
     }
+    
+    func updateUI(isLogin: Bool) {
+           if isLogin {
+               viewModel.fetchCurrentUser()
+           } else {
+               profileImage.image = UIImage(systemName: "person")
+               DispatchQueue.main.async {
+                    self.nameLabel.text = "로그인해주세요."
+                }
+               logOutButton.isHidden = true
+           }
+       }
 }
 
 #if canImport(SwiftUI) && DEBUG
