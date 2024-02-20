@@ -86,7 +86,6 @@ class SignUpViewModel {
                     print("Firestore에 사용자 정보 저장 실패: \(err.localizedDescription)")
                 } else {
                     print("Firestore에 사용자 정보 저장 성공!")
-                    // 필요 시 추가 작업 수행
                 }
             }
     }

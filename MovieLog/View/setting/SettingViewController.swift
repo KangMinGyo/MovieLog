@@ -113,6 +113,7 @@ class SettingViewController: UIViewController {
         logOutButton.controlEvent(.touchUpInside)
             .sink { [weak self] _ in
                 self?.viewModel.logOutButtonTapped()
+                self?.updateUI(isLogin: false)
                 self?.navigationController?.popViewController(animated: true)
             }.store(in: &subscriptions)
     }
