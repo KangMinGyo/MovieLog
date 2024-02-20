@@ -112,8 +112,7 @@ class SettingViewController: UIViewController {
         
         logOutButton.controlEvent(.touchUpInside)
             .sink { [weak self] _ in
-                self?.viewModel.logOutButtonTapped()
-                self?.updateUI(isLogin: false)
+                self?.showLogoutAlert()
                 self?.navigationController?.popViewController(animated: true)
             }.store(in: &subscriptions)
     }
@@ -131,6 +130,23 @@ class SettingViewController: UIViewController {
                logOutButton.isHidden = true
            }
        }
+    
+    func showLogoutAlert() {
+            let alertController = UIAlertController(title: "로그아웃",
+                                                    message: "로그아웃 하시겠습니까?",
+                                                    preferredStyle: .alert)
+
+            let confirmAction = UIAlertAction(title: "확인", style: .default) { _ in
+                // 사용자가 확인하면 로그아웃 수행
+                self.viewModel.logOutButtonTapped()
+                self.updateUI(isLogin: false)
+            }
+            alertController.addAction(confirmAction)
+
+            let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+            alertController.addAction(cancelAction)
+            present(alertController, animated: true, completion: nil)
+        }
 }
 
 #if canImport(SwiftUI) && DEBUG
