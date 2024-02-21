@@ -11,6 +11,7 @@ import Combine
 class SettingViewController: UIViewController {
 
     var viewModel = SettingViewModel()
+    var loginViewModel = LoginViewModel()
     var subscriptions = Set<AnyCancellable>()
     
     // MARK: - UI Components
@@ -50,7 +51,12 @@ class SettingViewController: UIViewController {
         viewModel.checkLoginStatus()
         viewModel.fetchCurrentUser()
         setupConstraints()
+        updateUI()
         bind()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        updateUI()
     }
     
     // MARK: - UI Setup
@@ -94,7 +100,7 @@ class SettingViewController: UIViewController {
     func bind() {
         viewModel.$isLogin
             .sink { [weak self] state in
-                self?.updateUI(isLogin: state!)
+                self?.updateUI()
             }.store(in: &subscriptions)
         
         viewModel.$userID
@@ -106,22 +112,28 @@ class SettingViewController: UIViewController {
         nameLabel.controlEvent(.touchUpInside)
             .sink { [weak self] _ in
                 let vc = LoginViewController()
-                vc.modalPresentationStyle = .fullScreen
+//                vc.modalPresentationStyle = .fullScreen
                 self?.present(vc, animated: false, completion: nil)
             }.store(in: &subscriptions)
         
         logOutButton.controlEvent(.touchUpInside)
             .sink { [weak self] _ in
+                AuthManager.shared.logout()
                 self?.showLogoutAlert()
+                self?.viewModel.checkLoginStatus()
                 self?.navigationController?.popViewController(animated: true)
             }.store(in: &subscriptions)
     }
     
-    func updateUI(isLogin: Bool) {
-           if isLogin {
+    func updateUI() {
+        print("AuthManager.shared.isUserLoggedIn : \(AuthManager.shared.isUserLoggedIn)")
+        if AuthManager.shared.isUserLoggedIn {
+            // 로그인 상태
                viewModel.fetchCurrentUser()
                nameLabel.isEnabled = false
+               logOutButton.isHidden = false
            } else {
+               // 로그아웃 상태
                profileImage.image = UIImage(systemName: "person")
                DispatchQueue.main.async {
                    self.nameLabel.setTitle("이곳을 눌러 로그인해주세요.", for: .normal)
@@ -139,7 +151,8 @@ class SettingViewController: UIViewController {
             let confirmAction = UIAlertAction(title: "확인", style: .default) { _ in
                 // 사용자가 확인하면 로그아웃 수행
                 self.viewModel.logOutButtonTapped()
-                self.updateUI(isLogin: false)
+                self.updateUI()
+                self.loginViewModel.signInComplete = false
             }
             alertController.addAction(confirmAction)
 

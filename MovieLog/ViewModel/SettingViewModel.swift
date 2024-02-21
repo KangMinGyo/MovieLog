@@ -35,9 +35,9 @@ class SettingViewModel: ObservableObject {
     
     func checkLoginStatus() {
         if let currentUser = Auth.auth().currentUser {
-            isLogin = true
+            AuthManager.shared.login()
         } else {
-            isLogin = false
+            AuthManager.shared.logout()
         }
     }
 }

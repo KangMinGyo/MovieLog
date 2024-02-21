@@ -56,6 +56,7 @@
 		8C86B7B82B600B24003F70AA /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 8C86B7B72B600B24003F70AA /* FSCalendar */; };
 		8C86B7BA2B60FBD4003F70AA /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C86B7B92B60FBD4003F70AA /* CalendarViewModel.swift */; };
 		8C9D8B732B7D1F9F0079D79F /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9D8B722B7D1F9F0079D79F /* SettingViewModel.swift */; };
+		8CA7B08F2B85B44600297F3F /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA7B08E2B85B44600297F3F /* AuthManager.swift */; };
 		8CB935BA2B501BF400D001A5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8CB935B92B501BF400D001A5 /* Kingfisher */; };
 		8CB935BC2B5165CE00D001A5 /* CustomPosterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB935BB2B5165CE00D001A5 /* CustomPosterButton.swift */; };
 		8CBC6AD22B73C668007F4949 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBC6AD12B73C668007F4949 /* SettingViewController.swift */; };
@@ -150,6 +151,7 @@
 		8C80060E2B20D8A5004512F9 /* AppleAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthentication.swift; sourceTree = "<group>"; };
 		8C86B7B92B60FBD4003F70AA /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		8C9D8B722B7D1F9F0079D79F /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		8CA7B08E2B85B44600297F3F /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		8CB935BB2B5165CE00D001A5 /* CustomPosterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPosterButton.swift; sourceTree = "<group>"; };
 		8CBC6AD12B73C668007F4949 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		8CC4EB242B457278002B51E0 /* MovieInputFormHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInputFormHeaderView.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				8C399A822B10886F00626B0D /* FirebaseManager.swift */,
 				8C5307F42B5958BA00B03A45 /* FirestorageManager.swift */,
 				8C7966632B6947E300A1E93D /* DateFormatterManager.swift */,
+				8CA7B08E2B85B44600297F3F /* AuthManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -652,6 +655,7 @@
 				8CECBCA42B356AAC00FE6EA7 /* HowViewController.swift in Sources */,
 				8C86B7BA2B60FBD4003F70AA /* CalendarViewModel.swift in Sources */,
 				8CB935BC2B5165CE00D001A5 /* CustomPosterButton.swift in Sources */,
+				8CA7B08F2B85B44600297F3F /* AuthManager.swift in Sources */,
 				8CC4EB292B49358D002B51E0 /* Poster.swift in Sources */,
 				8CECBCB72B3D58A800FE6EA7 /* Publisher+Utils.swift in Sources */,
 				8C9D8B732B7D1F9F0079D79F /* SettingViewModel.swift in Sources */,

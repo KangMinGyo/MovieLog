@@ -83,7 +83,7 @@ extension LoginViewModel: ASAuthorizationControllerDelegate {
                     return
                 }
                 self.signInComplete = true
-                print("Loggen In Success: \(result?.user.email ?? "")")
+                print("Loggen In Success: \(result?.user.email ?? ""), \(self.signInComplete)")
             }
         }
     }

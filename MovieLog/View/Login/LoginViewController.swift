@@ -35,6 +35,7 @@ class LoginViewController: UIViewController {
         bind(viewModel: viewModel)
         setupConstraints()
         setupDelegates()
+        print("APPLE 1 --> \(self.viewModel.signInComplete)")
     }
 
     // MARK: - UI Setup
@@ -134,14 +135,19 @@ class LoginViewController: UIViewController {
         
         appleLoginButton.controlEvent(.touchUpInside)
             .sink { _ in
+                print("APPLE 2 --> \(self.viewModel.signInComplete)")
                 viewModel.AppleLogin()
+                print("APPLE 3 --> \(self.viewModel.signInComplete)")
             }.store(in: &subscriptions)
         
         viewModel.$signInComplete
             .sink { [weak self] state in
                 if state {
-                    let vc = HomeViewController()
-                    self?.navigationController?.pushViewController(vc, animated: true)
+                    print("APPLE 4 --> \(state)")
+                    self?.dismiss(animated: true) {
+                        let homeViewController = HomeViewController()
+                        self?.navigationController?.pushViewController(homeViewController, animated: true)
+                    }
                 }
             }.store(in: &subscriptions)
     }
