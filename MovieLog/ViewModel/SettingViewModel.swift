@@ -27,6 +27,7 @@ class SettingViewModel: ObservableObject {
     func logOutButtonTapped() {
         do {
             try Auth.auth().signOut()
+            AuthManager.shared.logout()
             print("로그아웃 성공")
         } catch let signOutError as NSError {
             print("로그아웃 실패: \(signOutError.localizedDescription)")

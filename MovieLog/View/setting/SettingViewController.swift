@@ -113,7 +113,7 @@ class SettingViewController: UIViewController {
             .sink { [weak self] _ in
                 let vc = LoginViewController()
 //                vc.modalPresentationStyle = .fullScreen
-                self?.present(vc, animated: false, completion: nil)
+                self?.present(vc, animated: true, completion: nil)
             }.store(in: &subscriptions)
         
         logOutButton.controlEvent(.touchUpInside)
@@ -126,8 +126,9 @@ class SettingViewController: UIViewController {
     }
     
     func updateUI() {
-        print("AuthManager.shared.isUserLoggedIn : \(AuthManager.shared.isUserLoggedIn)")
-        if AuthManager.shared.isUserLoggedIn {
+        print("AuthManager.shared.isUserLoggedIn : \(UserDefaults.standard.bool(forKey: "isLoggedIn"))")
+        var isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
+        if isLoggedIn {
             // 로그인 상태
                viewModel.fetchCurrentUser()
                nameLabel.isEnabled = false
@@ -139,6 +140,7 @@ class SettingViewController: UIViewController {
                    self.nameLabel.setTitle("이곳을 눌러 로그인해주세요.", for: .normal)
                    self.nameLabel.setTitleColor(.black, for: .normal)
                 }
+               nameLabel.isEnabled = true
                logOutButton.isHidden = true
            }
        }
