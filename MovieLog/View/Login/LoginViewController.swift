@@ -144,6 +144,8 @@ class LoginViewController: UIViewController {
             .sink { [weak self] state in
                 if state {
                     print("APPLE 4 --> \(state)")
+                    AuthManager.shared.login()
+                    NotificationCenter.default.post(name: Notification.Name("LoginStatusChanged"), object: nil)
                     self?.dismiss(animated: true) {
                         let homeViewController = HomeViewController()
                         self?.navigationController?.pushViewController(homeViewController, animated: true)

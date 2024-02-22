@@ -48,15 +48,12 @@ class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        NotificationCenter.default.addObserver(self, selector: #selector(handleLoginStatusChange), name: Notification.Name("LoginStatusChanged"), object: nil)
         viewModel.checkLoginStatus()
         viewModel.fetchCurrentUser()
         setupConstraints()
         updateUI()
         bind()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        updateUI()
     }
     
     // MARK: - UI Setup
@@ -123,6 +120,11 @@ class SettingViewController: UIViewController {
                 self?.viewModel.checkLoginStatus()
                 self?.navigationController?.popViewController(animated: true)
             }.store(in: &subscriptions)
+    }
+    
+    //N
+    @objc func handleLoginStatusChange() {
+        updateUI()
     }
     
     func updateUI() {
