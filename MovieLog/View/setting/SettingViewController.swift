@@ -25,8 +25,8 @@ class SettingViewController: UIViewController {
         $0.setTitle("닉네임", for: .normal)
     }
     
-    lazy var modifyButton = UIButton().then {
-        $0.setTitle("내 정보 수정", for: .normal)
+    lazy var inquiryButton = UIButton().then {
+        $0.setTitle("1:1 문의하기", for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 13)
         $0.setTitleColor(.black, for: .normal)
         $0.backgroundColor = .clear
@@ -60,7 +60,7 @@ class SettingViewController: UIViewController {
     func setupConstraints() {
         view.addSubview(profileImage)
         view.addSubview(nameLabel)
-        view.addSubview(modifyButton)
+        view.addSubview(inquiryButton)
         view.addSubview(lineView)
         view.addSubview(logOutButton)
         
@@ -76,13 +76,13 @@ class SettingViewController: UIViewController {
             $0.centerX.equalTo(view.snp.centerX)
         }
         
-        modifyButton.snp.makeConstraints {
+        inquiryButton.snp.makeConstraints {
             $0.top.equalTo(nameLabel.snp.bottom).offset(20)
             $0.leading.equalTo(view.safeAreaLayoutGuide).offset(20)
         }
         
         lineView.snp.makeConstraints {
-            $0.top.equalTo(modifyButton.snp.bottom).offset(5)
+            $0.top.equalTo(inquiryButton.snp.bottom).offset(5)
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
             $0.height.equalTo(1)
         }
@@ -111,6 +111,11 @@ class SettingViewController: UIViewController {
                 let vc = LoginViewController()
 //                vc.modalPresentationStyle = .fullScreen
                 self?.present(vc, animated: true, completion: nil)
+            }.store(in: &subscriptions)
+        
+        inquiryButton.controlEvent(.touchUpInside)
+            .sink { [weak self] _ in
+                print("메일 보내기")
             }.store(in: &subscriptions)
         
         logOutButton.controlEvent(.touchUpInside)
