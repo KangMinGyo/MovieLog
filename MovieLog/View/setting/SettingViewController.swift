@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import MovieLog_Resource
 
 class SettingViewController: UIViewController {
 
@@ -16,7 +17,7 @@ class SettingViewController: UIViewController {
     
     // MARK: - UI Components
     lazy var profileImage = UIImageView().then {
-        $0.image = UIImage(named: "IMG_8368")
+        $0.image = R.Image.profileImage
         $0.layer.cornerRadius = 25
         $0.clipsToBounds = true
     }

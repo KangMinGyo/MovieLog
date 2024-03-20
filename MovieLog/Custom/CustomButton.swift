@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MovieLog_Resource
 
 class CustomButton: UIButton {
     enum FontSize {
@@ -20,7 +21,7 @@ class CustomButton: UIButton {
         self.layer.cornerRadius = 10
         self.layer.masksToBounds = true
         
-        self.backgroundColor = hasBackground ? UIColor(named: "MainColor") : .clear
+        self.backgroundColor = hasBackground ? R.Color.green : .clear
         
         let titleColor: UIColor = hasBackground ? .white : .systemGray
         self.setTitleColor(titleColor, for: .normal)

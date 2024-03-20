@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import Then
 import Combine
+import MovieLog_Resource
 
 class SignUpViewController: UIViewController {
     
@@ -148,7 +149,7 @@ class SignUpViewController: UIViewController {
                     self?.idLabel.textColor = .red
                 case .success:
                     self?.idLabel.text = "사용가능한 이메일입니다."
-                    self?.idLabel.textColor = UIColor(named: "MainColor")
+                    self?.idLabel.textColor = R.Color.green
                 case .failed:
                     self?.idLabel.text = "사용할 수 없는 이메일입니다."
                     self?.idLabel.textColor = .red
@@ -162,7 +163,7 @@ class SignUpViewController: UIViewController {
                     self?.pwLabel.textColor = .red
                 case .success:
                     self?.pwLabel.text = "사용가능한 비밀번호입니다."
-                    self?.pwLabel.textColor = UIColor(named: "MainColor")
+                    self?.pwLabel.textColor = R.Color.green
                 case .failed:
                     self?.pwLabel.text = "비밀번호를 입력하세요(영문+숫자/8~20자)"
                     self?.pwLabel.textColor = .red

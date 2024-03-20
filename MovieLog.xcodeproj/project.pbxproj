@@ -28,10 +28,11 @@
 		8C5307F02B567D9300B03A45 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5307EF2B567D9300B03A45 /* TabViewController.swift */; };
 		8C5307F32B56A61700B03A45 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5307F22B56A61700B03A45 /* CalendarViewController.swift */; };
 		8C5307F52B5958BA00B03A45 /* FirestorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5307F42B5958BA00B03A45 /* FirestorageManager.swift */; };
+		8C5555EF2BAAFE0900FA83B3 /* MovieLog_Resource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C5555EE2BAAFDDC00FA83B3 /* MovieLog_Resource.framework */; };
+		8C5555F02BAAFE0900FA83B3 /* MovieLog_Resource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C5555EE2BAAFDDC00FA83B3 /* MovieLog_Resource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8C6A49982B0375C000EE3AEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49972B0375C000EE3AEE /* AppDelegate.swift */; };
 		8C6A499A2B0375C000EE3AEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49992B0375C000EE3AEE /* SceneDelegate.swift */; };
 		8C6A499C2B0375C000EE3AEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A499B2B0375C000EE3AEE /* LoginViewController.swift */; };
-		8C6A49A12B0375C400EE3AEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C6A49A02B0375C400EE3AEE /* Assets.xcassets */; };
 		8C6A49A42B0375C400EE3AEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C6A49A22B0375C400EE3AEE /* LaunchScreen.storyboard */; };
 		8C6A49AF2B0375C400EE3AEE /* MovieLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49AE2B0375C400EE3AEE /* MovieLogTests.swift */; };
 		8C6A49B92B0375C400EE3AEE /* MovieLogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49B82B0375C400EE3AEE /* MovieLogUITests.swift */; };
@@ -90,6 +91,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8C5555ED2BAAFDDC00FA83B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8C5555E92BAAFDDB00FA83B3 /* MovieLog_Resource.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8C5555DF2BAAFDDB00FA83B3;
+			remoteInfo = MovieLog_Resource;
+		};
 		8C6A49AB2B0375C400EE3AEE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8C6A498C2B0375C000EE3AEE /* Project object */;
@@ -105,6 +113,20 @@
 			remoteInfo = MovieLog;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8C9AF3C72BAAC5C2007D4F9C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8C5555F02BAAFE0900FA83B3 /* MovieLog_Resource.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8C2451772B1A2CE1007B33B4 /* CustomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStackView.swift; sourceTree = "<group>"; };
@@ -122,11 +144,11 @@
 		8C5307EF2B567D9300B03A45 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		8C5307F22B56A61700B03A45 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		8C5307F42B5958BA00B03A45 /* FirestorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestorageManager.swift; sourceTree = "<group>"; };
+		8C5555E92BAAFDDB00FA83B3 /* MovieLog_Resource.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MovieLog_Resource.xcodeproj; path = ../../MovieLog_Resource/MovieLog_Resource.xcodeproj; sourceTree = "<group>"; };
 		8C6A49942B0375C000EE3AEE /* MovieLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C6A49972B0375C000EE3AEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C6A49992B0375C000EE3AEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8C6A499B2B0375C000EE3AEE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		8C6A49A02B0375C400EE3AEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C6A49A32B0375C400EE3AEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C6A49A52B0375C400EE3AEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C6A49AA2B0375C400EE3AEE /* MovieLogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +218,7 @@
 				8C399A932B1089AD00626B0D /* FirebaseFirestoreSwift in Frameworks */,
 				8C399A8D2B1089AD00626B0D /* FirebaseAnalytics in Frameworks */,
 				8C399A952B1089AD00626B0D /* FirebaseStorage in Frameworks */,
+				8C5555EF2BAAFE0900FA83B3 /* MovieLog_Resource.framework in Frameworks */,
 				8C399A7D2B1081ED00626B0D /* Toast in Frameworks */,
 				8C7966722B6B97C700A1E93D /* DGCharts in Frameworks */,
 				8C399A912B1089AD00626B0D /* FirebaseFirestore in Frameworks */,
@@ -268,6 +291,14 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
+		8C5555EA2BAAFDDB00FA83B3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8C5555EE2BAAFDDC00FA83B3 /* MovieLog_Resource.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		8C6A498B2B0375C000EE3AEE = {
 			isa = PBXGroup;
 			children = (
@@ -292,9 +323,10 @@
 		8C6A49962B0375C000EE3AEE /* MovieLog */ = {
 			isa = PBXGroup;
 			children = (
+				8C5555E92BAAFDDB00FA83B3 /* MovieLog_Resource.xcodeproj */,
+				8C9AF3882BAABF5C007D4F9C /* Sources */,
 				8CC4EB2E2B497AAF002B51E0 /* Service */,
 				8CECBCB12B3D579600FE6EA7 /* Network */,
-				8C80060D2B209705004512F9 /* MovieLog.entitlements */,
 				8C399A7E2B1087EF00626B0D /* Model */,
 				8CECBC9C2B345C1400FE6EA7 /* View */,
 				8C78DBEE2B0E221B0022BCFB /* ViewModel */,
@@ -304,10 +336,10 @@
 				8C6A49EA2B079CF800EE3AEE /* Utils */,
 				8C6A49972B0375C000EE3AEE /* AppDelegate.swift */,
 				8C6A49992B0375C000EE3AEE /* SceneDelegate.swift */,
-				8C6A49A02B0375C400EE3AEE /* Assets.xcassets */,
 				8C6A49A22B0375C400EE3AEE /* LaunchScreen.storyboard */,
 				8C6A49A52B0375C400EE3AEE /* Info.plist */,
 				8C399A6C2B106E5B00626B0D /* GoogleService-Info.plist */,
+				8C80060D2B209705004512F9 /* MovieLog.entitlements */,
 			);
 			path = MovieLog;
 			sourceTree = "<group>";
@@ -388,6 +420,13 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C9AF3882BAABF5C007D4F9C /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		8CBC6AD02B73C633007F4949 /* setting */ = {
@@ -501,6 +540,7 @@
 				8C6A49902B0375C000EE3AEE /* Sources */,
 				8C6A49912B0375C000EE3AEE /* Frameworks */,
 				8C6A49922B0375C000EE3AEE /* Resources */,
+				8C9AF3C72BAAC5C2007D4F9C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -603,6 +643,12 @@
 			);
 			productRefGroup = 8C6A49952B0375C000EE3AEE /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8C5555EA2BAAFDDB00FA83B3 /* Products */;
+					ProjectRef = 8C5555E92BAAFDDB00FA83B3 /* MovieLog_Resource.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8C6A49932B0375C000EE3AEE /* MovieLog */,
@@ -612,13 +658,22 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		8C5555EE2BAAFDDC00FA83B3 /* MovieLog_Resource.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MovieLog_Resource.framework;
+			remoteRef = 8C5555ED2BAAFDDC00FA83B3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		8C6A49922B0375C000EE3AEE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8C6A49A42B0375C400EE3AEE /* LaunchScreen.storyboard in Resources */,
-				8C6A49A12B0375C400EE3AEE /* Assets.xcassets in Resources */,
 				8C399A6D2B106E5B00626B0D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

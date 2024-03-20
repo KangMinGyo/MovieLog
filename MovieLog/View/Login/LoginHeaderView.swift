@@ -8,12 +8,13 @@
 import UIKit
 import SnapKit
 import Then
+import MovieLog_Resource
 
 final class LoginHeaderView: UIView {
     
     // MARK: - UI Components
     lazy var logoImage = UIImageView().then {
-        $0.image = UIImage(named: "LogoImage")
+        $0.image = R.Image.logoImage
         $0.contentMode = .scaleAspectFit
     }
     
