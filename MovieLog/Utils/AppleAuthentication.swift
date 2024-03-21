@@ -24,7 +24,6 @@ class AppleAuthentication: NSObject {
         controller.delegate = self
         controller.performRequests()
     }
-    
 }
 
 extension AppleAuthentication: ASAuthorizationControllerDelegate {

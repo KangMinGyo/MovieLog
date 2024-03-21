@@ -1,5 +1,5 @@
 //
-//  Extension+UIImage.swift
+//  UIImage+Extension.swift
 //  MovieLog
 //
 //  Created by KangMingyo on 12/23/23.

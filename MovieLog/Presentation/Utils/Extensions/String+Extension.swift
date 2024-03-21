@@ -1,5 +1,5 @@
 //
-//  Extension+String.swift
+//  String+Extension.swift
 //  MovieLog
 //
 //  Created by KangMingyo on 11/25/23.
