@@ -28,8 +28,8 @@
 		8C5307F02B567D9300B03A45 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5307EF2B567D9300B03A45 /* TabViewController.swift */; };
 		8C5307F32B56A61700B03A45 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5307F22B56A61700B03A45 /* CalendarViewController.swift */; };
 		8C5307F52B5958BA00B03A45 /* FirestorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5307F42B5958BA00B03A45 /* FirestorageManager.swift */; };
-		8C5555EF2BAAFE0900FA83B3 /* MovieLog_Resource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C5555EE2BAAFDDC00FA83B3 /* MovieLog_Resource.framework */; };
-		8C5555F02BAAFE0900FA83B3 /* MovieLog_Resource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C5555EE2BAAFDDC00FA83B3 /* MovieLog_Resource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8C55563E2BAC115700FA83B3 /* MovieLog_Resource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C5556312BAC0FFE00FA83B3 /* MovieLog_Resource.framework */; };
+		8C55563F2BAC115700FA83B3 /* MovieLog_Resource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C5556312BAC0FFE00FA83B3 /* MovieLog_Resource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8C6A49982B0375C000EE3AEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49972B0375C000EE3AEE /* AppDelegate.swift */; };
 		8C6A499A2B0375C000EE3AEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49992B0375C000EE3AEE /* SceneDelegate.swift */; };
 		8C6A499C2B0375C000EE3AEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A499B2B0375C000EE3AEE /* LoginViewController.swift */; };
@@ -91,11 +91,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8C5555ED2BAAFDDC00FA83B3 /* PBXContainerItemProxy */ = {
+		8C5556302BAC0FFE00FA83B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8C5555E92BAAFDDB00FA83B3 /* MovieLog_Resource.xcodeproj */;
+			containerPortal = 8C55562C2BAC0FFD00FA83B3 /* MovieLog_Resource.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 8C5555DF2BAAFDDB00FA83B3;
+			remoteGlobalIDString = 8C5556222BAC0FFD00FA83B3;
 			remoteInfo = MovieLog_Resource;
 		};
 		8C6A49AB2B0375C400EE3AEE /* PBXContainerItemProxy */ = {
@@ -121,7 +121,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8C5555F02BAAFE0900FA83B3 /* MovieLog_Resource.framework in Embed Frameworks */,
+				8C55563F2BAC115700FA83B3 /* MovieLog_Resource.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,7 +144,7 @@
 		8C5307EF2B567D9300B03A45 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		8C5307F22B56A61700B03A45 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		8C5307F42B5958BA00B03A45 /* FirestorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestorageManager.swift; sourceTree = "<group>"; };
-		8C5555E92BAAFDDB00FA83B3 /* MovieLog_Resource.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MovieLog_Resource.xcodeproj; path = ../../MovieLog_Resource/MovieLog_Resource.xcodeproj; sourceTree = "<group>"; };
+		8C55562C2BAC0FFD00FA83B3 /* MovieLog_Resource.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MovieLog_Resource.xcodeproj; path = ../../MovieLog_Resource/MovieLog_Resource.xcodeproj; sourceTree = "<group>"; };
 		8C6A49942B0375C000EE3AEE /* MovieLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C6A49972B0375C000EE3AEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C6A49992B0375C000EE3AEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -218,7 +218,7 @@
 				8C399A932B1089AD00626B0D /* FirebaseFirestoreSwift in Frameworks */,
 				8C399A8D2B1089AD00626B0D /* FirebaseAnalytics in Frameworks */,
 				8C399A952B1089AD00626B0D /* FirebaseStorage in Frameworks */,
-				8C5555EF2BAAFE0900FA83B3 /* MovieLog_Resource.framework in Frameworks */,
+				8C55563E2BAC115700FA83B3 /* MovieLog_Resource.framework in Frameworks */,
 				8C399A7D2B1081ED00626B0D /* Toast in Frameworks */,
 				8C7966722B6B97C700A1E93D /* DGCharts in Frameworks */,
 				8C399A912B1089AD00626B0D /* FirebaseFirestore in Frameworks */,
@@ -291,10 +291,10 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
-		8C5555EA2BAAFDDB00FA83B3 /* Products */ = {
+		8C55562D2BAC0FFD00FA83B3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8C5555EE2BAAFDDC00FA83B3 /* MovieLog_Resource.framework */,
+				8C5556312BAC0FFE00FA83B3 /* MovieLog_Resource.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -323,8 +323,7 @@
 		8C6A49962B0375C000EE3AEE /* MovieLog */ = {
 			isa = PBXGroup;
 			children = (
-				8C5555E92BAAFDDB00FA83B3 /* MovieLog_Resource.xcodeproj */,
-				8C9AF3882BAABF5C007D4F9C /* Sources */,
+				8C55562C2BAC0FFD00FA83B3 /* MovieLog_Resource.xcodeproj */,
 				8CC4EB2E2B497AAF002B51E0 /* Service */,
 				8CECBCB12B3D579600FE6EA7 /* Network */,
 				8C399A7E2B1087EF00626B0D /* Model */,
@@ -420,13 +419,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		8C9AF3882BAABF5C007D4F9C /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Sources;
 			sourceTree = "<group>";
 		};
 		8CBC6AD02B73C633007F4949 /* setting */ = {
@@ -645,8 +637,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 8C5555EA2BAAFDDB00FA83B3 /* Products */;
-					ProjectRef = 8C5555E92BAAFDDB00FA83B3 /* MovieLog_Resource.xcodeproj */;
+					ProductGroup = 8C55562D2BAC0FFD00FA83B3 /* Products */;
+					ProjectRef = 8C55562C2BAC0FFD00FA83B3 /* MovieLog_Resource.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -659,11 +651,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		8C5555EE2BAAFDDC00FA83B3 /* MovieLog_Resource.framework */ = {
+		8C5556312BAC0FFE00FA83B3 /* MovieLog_Resource.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = MovieLog_Resource.framework;
-			remoteRef = 8C5555ED2BAAFDDC00FA83B3 /* PBXContainerItemProxy */;
+			remoteRef = 8C5556302BAC0FFE00FA83B3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

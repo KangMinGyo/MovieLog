@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Combine
+import MovieLog_Resource
 
 class HowViewController: UIViewController {
     
@@ -31,7 +32,7 @@ class HowViewController: UIViewController {
     
     lazy var nextButton = UIButton().then {
         $0.setTitle("다음", for: .normal)
-        $0.backgroundColor = UIColor(named: "MainColor")
+        $0.backgroundColor = R.Color.green
         $0.layer.masksToBounds = true
         $0.layer.cornerRadius = 25
     }
@@ -97,7 +98,7 @@ class HowViewController: UIViewController {
         likeButton.controlEvent(.touchUpInside)
             .sink { [weak self] _ in
                 print("좋았어요")
-                self?.likeButton.backgroundColor = UIColor(named: "MainColor")
+                self?.likeButton.backgroundColor = R.Color.green
                 self?.likeButton.setTitleColor(.white, for: .normal)
                 self?.hateButton.backgroundColor = UIColor.systemGray6
                 self?.hateButton.setTitleColor(.black, for: .normal)
@@ -107,7 +108,7 @@ class HowViewController: UIViewController {
         hateButton.controlEvent(.touchUpInside)
             .sink { [weak self] _ in
                 print("별로였어요")
-                self?.hateButton.backgroundColor = UIColor(named: "MainColor")
+                self?.hateButton.backgroundColor = R.Color.green
                 self?.hateButton.setTitleColor(.white, for: .normal)
                 self?.likeButton.backgroundColor = UIColor.systemGray6
                 self?.likeButton.setTitleColor(.black, for: .normal)

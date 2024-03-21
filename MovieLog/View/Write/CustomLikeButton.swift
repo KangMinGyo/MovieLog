@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MovieLog_Resource
 
 class CustomLikeButton: UIButton {
     enum State {
@@ -38,7 +39,7 @@ class CustomLikeButton: UIButton {
     
     @objc func buttonTapped(_ sender: UIButton) {
         if sender.backgroundColor == UIColor.systemGray6 {
-            sender.backgroundColor = UIColor(named: "MainColor")
+            sender.backgroundColor = R.Color.green
             self.setTitleColor(.white, for: .normal)
         } else {
             sender.backgroundColor = UIColor.systemGray6

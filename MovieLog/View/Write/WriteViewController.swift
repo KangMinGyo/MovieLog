@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import MovieLog_Resource
 
 class WriteViewController: UIViewController {
     
@@ -32,7 +33,7 @@ class WriteViewController: UIViewController {
     
     lazy var registerButton = UIButton().then {
         $0.setTitle("등록", for: .normal)
-        $0.backgroundColor = UIColor(named: "MainColor")
+        $0.backgroundColor = R.Color.green
         $0.layer.masksToBounds = true
         $0.layer.cornerRadius = 25
     }

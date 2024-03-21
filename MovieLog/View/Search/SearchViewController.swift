@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import MovieLog_Resource
 
 class SearchViewController: UIViewController {
     
@@ -32,7 +33,7 @@ class SearchViewController: UIViewController {
     lazy var button = UIButton().then {
         $0.setTitle("영화정보 추가하기", for: .normal)
         $0.setTitleColor(.white, for: .normal)
-        $0.backgroundColor = UIColor(named: "MainColor")
+        $0.backgroundColor = R.Color.green
         $0.layer.cornerRadius = 25
         $0.layer.masksToBounds = true
     }

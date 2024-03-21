@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8C5555D22BAAFB0D00FA83B3 /* R+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5555D12BAAFB0D00FA83B3 /* R+Color.swift */; };
-		8C9AF39F2BAAC321007D4F9C /* MovieLog_Resource.docc in Sources */ = {isa = PBXBuildFile; fileRef = 8C9AF39E2BAAC321007D4F9C /* MovieLog_Resource.docc */; };
+		8C5556152BAC0EE900FA83B3 /* R+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5556142BAC0EE900FA83B3 /* R+Image.swift */; };
 		8C9AF3A52BAAC322007D4F9C /* MovieLog_Resource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C9AF39A2BAAC321007D4F9C /* MovieLog_Resource.framework */; };
-		8C9AF3AA2BAAC322007D4F9C /* MovieLog_ResourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9AF3A92BAAC322007D4F9C /* MovieLog_ResourceTests.swift */; };
-		8C9AF3AB2BAAC322007D4F9C /* MovieLog_Resource.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C9AF39D2BAAC321007D4F9C /* MovieLog_Resource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C9AF3B62BAAC36B007D4F9C /* Image in Resources */ = {isa = PBXBuildFile; fileRef = 8C9AF3B42BAAC36B007D4F9C /* Image */; };
 		8C9AF3B72BAAC36B007D4F9C /* Color in Resources */ = {isa = PBXBuildFile; fileRef = 8C9AF3B52BAAC36B007D4F9C /* Color */; };
 		8C9AF3B92BAAC523007D4F9C /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9AF3B82BAAC523007D4F9C /* R.swift */; };
@@ -29,11 +27,9 @@
 
 /* Begin PBXFileReference section */
 		8C5555D12BAAFB0D00FA83B3 /* R+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R+Color.swift"; sourceTree = "<group>"; };
+		8C5556142BAC0EE900FA83B3 /* R+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R+Image.swift"; sourceTree = "<group>"; };
 		8C9AF39A2BAAC321007D4F9C /* MovieLog_Resource.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MovieLog_Resource.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C9AF39D2BAAC321007D4F9C /* MovieLog_Resource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieLog_Resource.h; sourceTree = "<group>"; };
-		8C9AF39E2BAAC321007D4F9C /* MovieLog_Resource.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = MovieLog_Resource.docc; sourceTree = "<group>"; };
 		8C9AF3A42BAAC322007D4F9C /* MovieLog-ResourceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MovieLog-ResourceTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C9AF3A92BAAC322007D4F9C /* MovieLog_ResourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLog_ResourceTests.swift; sourceTree = "<group>"; };
 		8C9AF3B42BAAC36B007D4F9C /* Image */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Image; path = ../../MovieLog/Image; sourceTree = "<group>"; };
 		8C9AF3B52BAAC36B007D4F9C /* Color */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Color; path = ../../MovieLog/Color; sourceTree = "<group>"; };
 		8C9AF3B82BAAC523007D4F9C /* R.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
@@ -62,7 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				8C9AF39C2BAAC321007D4F9C /* MovieLog-Resource */,
-				8C9AF3A82BAAC322007D4F9C /* MovieLog-ResourceTests */,
 				8C9AF39B2BAAC321007D4F9C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,20 +76,11 @@
 			children = (
 				8C9AF3B82BAAC523007D4F9C /* R.swift */,
 				8C5555D12BAAFB0D00FA83B3 /* R+Color.swift */,
+				8C5556142BAC0EE900FA83B3 /* R+Image.swift */,
 				8C9AF3B52BAAC36B007D4F9C /* Color */,
 				8C9AF3B42BAAC36B007D4F9C /* Image */,
-				8C9AF39D2BAAC321007D4F9C /* MovieLog_Resource.h */,
-				8C9AF39E2BAAC321007D4F9C /* MovieLog_Resource.docc */,
 			);
 			path = "MovieLog-Resource";
-			sourceTree = "<group>";
-		};
-		8C9AF3A82BAAC322007D4F9C /* MovieLog-ResourceTests */ = {
-			isa = PBXGroup;
-			children = (
-				8C9AF3A92BAAC322007D4F9C /* MovieLog_ResourceTests.swift */,
-			);
-			path = "MovieLog-ResourceTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,7 +90,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C9AF3AB2BAAC322007D4F9C /* MovieLog_Resource.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,9 +193,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C5556152BAC0EE900FA83B3 /* R+Image.swift in Sources */,
 				8C9AF3B92BAAC523007D4F9C /* R.swift in Sources */,
 				8C5555D22BAAFB0D00FA83B3 /* R+Color.swift in Sources */,
-				8C9AF39F2BAAC321007D4F9C /* MovieLog_Resource.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +203,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C9AF3AA2BAAC322007D4F9C /* MovieLog_ResourceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

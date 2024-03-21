@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MovieLog_Resource
 
 class CustomSelectButton: UIButton {
     let imageSize = CGSize(width: 50, height: 50)
@@ -14,7 +15,7 @@ class CustomSelectButton: UIButton {
         case acting
         case direct
         case ost
-        case visual
+        case video
         case story
     }
 
@@ -33,23 +34,23 @@ class CustomSelectButton: UIButton {
         
         switch select {
         case .acting:
-            let image = UIImage(named: "Acting")?.resize(targetSize: imageSize)
+            let image = R.Image.acting.resize(targetSize: imageSize)
             self.setImage(image, for: .normal)
             self.tag = 0
         case .direct:
-            let image = UIImage(named: "direct")?.resize(targetSize: imageSize)
+            let image = R.Image.direct.resize(targetSize: imageSize)
             self.setImage(image, for: .normal)
             self.tag = 1
         case .ost:
-            let image = UIImage(named: "music")?.resize(targetSize: imageSize)
+            let image = R.Image.music.resize(targetSize: imageSize)
             self.setImage(image, for: .normal)
             self.tag = 2
-        case .visual:
-            let image = UIImage(named: "video")?.resize(targetSize: imageSize)
+        case .video:
+            let image = R.Image.video.resize(targetSize: imageSize)
             self.setImage(image, for: .normal)
             self.tag = 3
         case .story:
-            let image = UIImage(named: "story")?.resize(targetSize: imageSize)
+            let image = R.Image.story.resize(targetSize: imageSize)
             self.setImage(image, for: .normal)
             self.tag = 4
         }

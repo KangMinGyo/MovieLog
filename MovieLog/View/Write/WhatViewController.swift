@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import MovieLog_Resource
 
 class WhatViewController: UIViewController {
     
@@ -24,34 +25,34 @@ class WhatViewController: UIViewController {
     }
     
     lazy var actingButton = UIButton().then {
-        let image = UIImage(named: "Acting")?.resize(targetSize: imageSize)
+        let image = R.Image.acting.resize(targetSize: imageSize)
         $0.setImage(image, for: .normal)
         $0.addTarget(self, action: #selector(goodPointButtonAction), for: .touchUpInside)
         $0.tag = 0
     }
     lazy var directButton = UIButton().then {
-        let image = UIImage(named: "direct")?.resize(targetSize: imageSize)
+        let image = R.Image.direct.resize(targetSize: imageSize)
         $0.setImage(image, for: .normal)
         $0.addTarget(self, action: #selector(goodPointButtonAction), for: .touchUpInside)
         $0.tag = 1
     }
     
     lazy var ostButton = UIButton().then {
-        let image = UIImage(named: "music")?.resize(targetSize: imageSize)
+        let image = R.Image.music.resize(targetSize: imageSize)
         $0.setImage(image, for: .normal)
         $0.addTarget(self, action: #selector(goodPointButtonAction), for: .touchUpInside)
         $0.tag = 2
     }
     
     lazy var storyButton = UIButton().then {
-        let image = UIImage(named: "story")?.resize(targetSize: imageSize)
+        let image = R.Image.story.resize(targetSize: imageSize)
         $0.setImage(image, for: .normal)
         $0.addTarget(self, action: #selector(goodPointButtonAction), for: .touchUpInside)
         $0.tag = 3
     }
     
     lazy var visualButton = UIButton().then {
-        let image = UIImage(named: "video")?.resize(targetSize: imageSize)
+        let image = R.Image.video.resize(targetSize: imageSize)
         $0.setImage(image, for: .normal)
         $0.addTarget(self, action: #selector(goodPointButtonAction), for: .touchUpInside)
         $0.tag = 4
@@ -115,7 +116,7 @@ class WhatViewController: UIViewController {
     
     lazy var nextButton = UIButton().then {
         $0.setTitle("다음", for: .normal)
-        $0.backgroundColor = UIColor(named: "MainColor")
+        $0.backgroundColor = R.Color.green
         $0.layer.masksToBounds = true
         $0.layer.cornerRadius = 25
     }
@@ -202,19 +203,19 @@ class WhatViewController: UIViewController {
     @objc func goodPointButtonAction(sender: UIButton) {
         if sender.tag == 0 {
             goodPointSelected[0].toggle()
-            actingLabel.textColor = goodPointSelected[0] ? UIColor(named: "RedColor") : .black
+            actingLabel.textColor = goodPointSelected[0] ? R.Color.red : .black
         } else if sender.tag == 1 {
             goodPointSelected[1].toggle()
-            directLabel.textColor = goodPointSelected[1] ? UIColor(named: "RedColor") : .black
+            directLabel.textColor = goodPointSelected[1] ? R.Color.red : .black
         } else if sender.tag == 2 {
             goodPointSelected[2].toggle()
-            ostLabel.textColor = goodPointSelected[2] ? UIColor(named: "RedColor") : .black
+            ostLabel.textColor = goodPointSelected[2] ? R.Color.red : .black
         } else if sender.tag == 3 {
             goodPointSelected[3].toggle()
-            storyLabel.textColor = goodPointSelected[3] ? UIColor(named: "RedColor") : .black
+            storyLabel.textColor = goodPointSelected[3] ? R.Color.red : .black
         } else {
             goodPointSelected[4].toggle()
-            visualLabel.textColor = goodPointSelected[4] ? UIColor(named: "RedColor") : .black
+            visualLabel.textColor = goodPointSelected[4] ? R.Color.red : .black
         }
     }
 }
