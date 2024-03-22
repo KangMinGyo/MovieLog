@@ -58,8 +58,8 @@ class CalendarViewController: UIViewController {
         
         collectionView.snp.makeConstraints {
             $0.top.equalTo(calendar.snp.bottom).offset(20)
-            $0.leading.trailing.equalTo(view.safeAreaInsets).inset(20)
-            $0.bottom.equalTo(view.safeAreaInsets)
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
     
@@ -70,7 +70,6 @@ class CalendarViewController: UIViewController {
     func updateCollectionView(with reviews: [Review]) {
         fetch()
         viewModel.reviews = reviews
-//        collectionView.reloadData()
         
         // presentation, data, layout
         dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
@@ -93,7 +92,7 @@ class CalendarViewController: UIViewController {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.33))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.4))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
         
         let section = NSCollectionLayoutSection(group: group)
@@ -118,14 +117,6 @@ extension CalendarViewController: FSCalendarDataSource, FSCalendarDelegate {
         updateCollectionView(with: selectedReviews)
     }
 }
-
-//extension CalendarViewController: UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let nextVC = MovieReviewDetailViewController()
-//        nextVC.viewModel.movieData = viewModel.review[indexPath.row]
-//        self.show(nextVC, sender: self)
-//    }
-//}
 
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI

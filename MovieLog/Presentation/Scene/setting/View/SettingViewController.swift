@@ -17,7 +17,7 @@ class SettingViewController: UIViewController {
     
     // MARK: - UI Components
     lazy var profileImage = UIImageView().then {
-        $0.image = R.Image.profileImage
+        $0.image = UIImage(systemName: "person")
         $0.layer.cornerRadius = 25
         $0.clipsToBounds = true
     }

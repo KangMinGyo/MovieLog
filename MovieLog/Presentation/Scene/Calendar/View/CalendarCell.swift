@@ -67,7 +67,7 @@ class CalendarCell: UICollectionViewCell {
         
         posterImageView.snp.makeConstraints {
             $0.top.leading.bottom.equalTo(0).inset(20)
-            $0.width.equalTo(75)
+            $0.width.equalTo(50)
         }
         
         movieNameLabel.snp.makeConstraints {
