@@ -249,8 +249,8 @@
 		8C399A762B1077D100626B0D /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				8C399A772B1077ED00626B0D /* HomeViewController.swift */,
-				8CECBC982B32A31500FE6EA7 /* HomeCell.swift */,
+				8C5556512BAD676900FA83B3 /* View */,
+				8C5556522BAD677200FA83B3 /* ViewModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -288,8 +288,8 @@
 		8C5307F12B5680B200B03A45 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				8C5307F22B56A61700B03A45 /* CalendarViewController.swift */,
-				8C7966612B6260A600A1E93D /* CalendarCell.swift */,
+				8C55565A2BAD681A00FA83B3 /* View */,
+				8C55565B2BAD682300FA83B3 /* ViewModel */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -350,8 +350,17 @@
 		8C5556452BAC216300FA83B3 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				8CECBC9C2B345C1400FE6EA7 /* View */,
-				8C78DBEE2B0E221B0022BCFB /* ViewModel */,
+				8C6A49C72B04B59F00EE3AEE /* Login */,
+				8C6A49F12B0C7B7000EE3AEE /* SignUp */,
+				8C5307EE2B567CFF00B03A45 /* Tab */,
+				8C399A762B1077D100626B0D /* Home */,
+				8C5556482BAC30CE00FA83B3 /* ReviewDetail */,
+				8CECBC9D2B345C3D00FE6EA7 /* Search */,
+				8CC4EB232B45721A002B51E0 /* InputForm */,
+				8CECBCA22B356A4800FE6EA7 /* Write */,
+				8C5307F12B5680B200B03A45 /* Calendar */,
+				8C7966662B6B845C00A1E93D /* chart */,
+				8CBC6AD02B73C633007F4949 /* setting */,
 				8CC755262B19BD59003FB4ED /* Custom */,
 			);
 			path = Scene;
@@ -360,9 +369,164 @@
 		8C5556482BAC30CE00FA83B3 /* ReviewDetail */ = {
 			isa = PBXGroup;
 			children = (
-				8C5556492BAC30F000FA83B3 /* ReviewDetailViewController.swift */,
+				8C5556532BAD678800FA83B3 /* View */,
+				8C5556542BAD678F00FA83B3 /* ViewModel */,
 			);
 			path = ReviewDetail;
+			sourceTree = "<group>";
+		};
+		8C55564D2BAD66F000FA83B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8C6A499B2B0375C000EE3AEE /* LoginViewController.swift */,
+				8C6A49EF2B08AE1700EE3AEE /* InfoFindView.swift */,
+				8C78DBF62B0F216C0022BCFB /* LoginHeaderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8C55564E2BAD66FA00FA83B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8C8006092B1F10DB004512F9 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8C55564F2BAD673300FA83B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8C6A49F22B0C7CC900EE3AEE /* SignUpViewController.swift */,
+				8C78DBFC2B0F55270022BCFB /* SignUpHeaderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8C5556502BAD674600FA83B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8CC7551D2B11DC61003FB4ED /* SignUpViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8C5556512BAD676900FA83B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8C399A772B1077ED00626B0D /* HomeViewController.swift */,
+				8CECBC982B32A31500FE6EA7 /* HomeCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8C5556522BAD677200FA83B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8CC4EB2C2B495BD6002B51E0 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8C5556532BAD678800FA83B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8C5556492BAC30F000FA83B3 /* ReviewDetailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8C5556542BAD678F00FA83B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8C55564B2BAC4FAE00FA83B3 /* ReviewDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8C5556552BAD67A400FA83B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8CECBC9E2B345C5F00FE6EA7 /* SearchViewController.swift */,
+				8CECBCA02B345CEC00FE6EA7 /* SearchCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8C5556562BAD67AC00FA83B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8CECBCBC2B3DD4AB00FE6EA7 /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8C5556582BAD67FA00FA83B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8CECBCA32B356AAC00FE6EA7 /* HowViewController.swift */,
+				8CECBCA52B356F4100FE6EA7 /* CustomLikeButton.swift */,
+				8CECBCA72B35E19B00FE6EA7 /* WhatViewController.swift */,
+				8CECBCA92B36ADAE00FE6EA7 /* CustomSelectButton.swift */,
+				8CECBCAF2B3B0C2B00FE6EA7 /* WriteViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8C5556592BAD680500FA83B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8CC4EB262B472E7E002B51E0 /* WriteViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8C55565A2BAD681A00FA83B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8C5307F22B56A61700B03A45 /* CalendarViewController.swift */,
+				8C7966612B6260A600A1E93D /* CalendarCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8C55565B2BAD682300FA83B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8C86B7B92B60FBD4003F70AA /* CalendarViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8C55565C2BAD684900FA83B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8C7966672B6B86EA00A1E93D /* ChartViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8C55565D2BAD685400FA83B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8CFD0A552B6BE517001F66F4 /* ChartViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8C55565E2BAD686D00FA83B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8CBC6AD12B73C668007F4949 /* SettingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8C55565F2BAD687600FA83B3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8C9D8B722B7D1F9F0079D79F /* SettingViewModel.swift */,
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 		8C6A498B2B0375C000EE3AEE = {
@@ -424,9 +588,8 @@
 		8C6A49C72B04B59F00EE3AEE /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				8C6A499B2B0375C000EE3AEE /* LoginViewController.swift */,
-				8C6A49EF2B08AE1700EE3AEE /* InfoFindView.swift */,
-				8C78DBF62B0F216C0022BCFB /* LoginHeaderView.swift */,
+				8C55564D2BAD66F000FA83B3 /* View */,
+				8C55564E2BAD66FA00FA83B3 /* ViewModel */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -445,32 +608,17 @@
 		8C6A49F12B0C7B7000EE3AEE /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				8C6A49F22B0C7CC900EE3AEE /* SignUpViewController.swift */,
-				8C78DBFC2B0F55270022BCFB /* SignUpHeaderView.swift */,
+				8C55564F2BAD673300FA83B3 /* View */,
+				8C5556502BAD674600FA83B3 /* ViewModel */,
 			);
 			path = SignUp;
-			sourceTree = "<group>";
-		};
-		8C78DBEE2B0E221B0022BCFB /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				8CC7551D2B11DC61003FB4ED /* SignUpViewModel.swift */,
-				8C8006092B1F10DB004512F9 /* LoginViewModel.swift */,
-				8CC4EB2C2B495BD6002B51E0 /* HomeViewModel.swift */,
-				8C55564B2BAC4FAE00FA83B3 /* ReviewDetailViewModel.swift */,
-				8CECBCBC2B3DD4AB00FE6EA7 /* SearchViewModel.swift */,
-				8CC4EB262B472E7E002B51E0 /* WriteViewModel.swift */,
-				8C86B7B92B60FBD4003F70AA /* CalendarViewModel.swift */,
-				8CFD0A552B6BE517001F66F4 /* ChartViewModel.swift */,
-				8C9D8B722B7D1F9F0079D79F /* SettingViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		8C7966662B6B845C00A1E93D /* chart */ = {
 			isa = PBXGroup;
 			children = (
-				8C7966672B6B86EA00A1E93D /* ChartViewController.swift */,
+				8C55565C2BAD684900FA83B3 /* View */,
+				8C55565D2BAD685400FA83B3 /* ViewModel */,
 			);
 			path = chart;
 			sourceTree = "<group>";
@@ -485,7 +633,8 @@
 		8CBC6AD02B73C633007F4949 /* setting */ = {
 			isa = PBXGroup;
 			children = (
-				8CBC6AD12B73C668007F4949 /* SettingViewController.swift */,
+				8C55565E2BAD686D00FA83B3 /* View */,
+				8C55565F2BAD687600FA83B3 /* ViewModel */,
 			);
 			path = setting;
 			sourceTree = "<group>";
@@ -532,29 +681,11 @@
 			path = Custom;
 			sourceTree = "<group>";
 		};
-		8CECBC9C2B345C1400FE6EA7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				8C6A49C72B04B59F00EE3AEE /* Login */,
-				8C6A49F12B0C7B7000EE3AEE /* SignUp */,
-				8C5307EE2B567CFF00B03A45 /* Tab */,
-				8C399A762B1077D100626B0D /* Home */,
-				8C5556482BAC30CE00FA83B3 /* ReviewDetail */,
-				8CECBC9D2B345C3D00FE6EA7 /* Search */,
-				8CC4EB232B45721A002B51E0 /* InputForm */,
-				8CECBCA22B356A4800FE6EA7 /* Write */,
-				8C5307F12B5680B200B03A45 /* Calendar */,
-				8C7966662B6B845C00A1E93D /* chart */,
-				8CBC6AD02B73C633007F4949 /* setting */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		8CECBC9D2B345C3D00FE6EA7 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				8CECBC9E2B345C5F00FE6EA7 /* SearchViewController.swift */,
-				8CECBCA02B345CEC00FE6EA7 /* SearchCell.swift */,
+				8C5556552BAD67A400FA83B3 /* View */,
+				8C5556562BAD67AC00FA83B3 /* ViewModel */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -562,11 +693,8 @@
 		8CECBCA22B356A4800FE6EA7 /* Write */ = {
 			isa = PBXGroup;
 			children = (
-				8CECBCA32B356AAC00FE6EA7 /* HowViewController.swift */,
-				8CECBCA52B356F4100FE6EA7 /* CustomLikeButton.swift */,
-				8CECBCA72B35E19B00FE6EA7 /* WhatViewController.swift */,
-				8CECBCA92B36ADAE00FE6EA7 /* CustomSelectButton.swift */,
-				8CECBCAF2B3B0C2B00FE6EA7 /* WriteViewController.swift */,
+				8C5556582BAD67FA00FA83B3 /* View */,
+				8C5556592BAD680500FA83B3 /* ViewModel */,
 			);
 			path = Write;
 			sourceTree = "<group>";
