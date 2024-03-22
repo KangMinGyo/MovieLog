@@ -21,7 +21,8 @@ class HomeCell: UICollectionViewCell {
 
     let movieNameLabel = UILabel().then {
         $0.text = "영화 제목"
-        $0.font = .systemFont(ofSize: 18, weight: .semibold)
+        $0.font = .systemFont(ofSize: 17, weight: .semibold)
+        $0.numberOfLines = 0
     }
     
     let directorNameLabel = UILabel().then {

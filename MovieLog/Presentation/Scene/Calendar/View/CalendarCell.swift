@@ -22,14 +22,18 @@ class CalendarCell: UICollectionViewCell {
     let movieNameLabel = UILabel().then {
         $0.text = "영화 제목"
         $0.numberOfLines = 0
+        $0.font = .systemFont(ofSize: 17, weight: .semibold)
     }
     
     let directorNameLabel = UILabel().then {
         $0.text = "영화 감독"
+        $0.font = .systemFont(ofSize: 15)
     }
     
     let dateLabel = UILabel().then {
         $0.text = "작성일: 23.01.19 오후 5:23"
+        $0.font = .systemFont(ofSize: 15)
+        $0.textColor = .systemGray2
     }
     
     //MARK: - Lifecycle
