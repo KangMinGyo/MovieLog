@@ -9,6 +9,7 @@ import UIKit
 import Charts
 import DGCharts
 import Combine
+import MovieLog_Resource
 
 class ChartViewController: UIViewController {
     
@@ -65,7 +66,7 @@ class ChartViewController: UIViewController {
         self.barChartView.noDataText = "출력 데이터가 없습니다."
         self.barChartView.noDataFont = .systemFont(ofSize: 20)
         self.barChartView.noDataTextColor = .lightGray
-        self.barChartView.backgroundColor = UIColor(named: "GrayColor")
+        self.barChartView.backgroundColor = R.Color.gray
         self.barChartView.doubleTapToZoomEnabled = false //줌x
         self.barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: dayData)
         self.barChartView.rightAxis.enabled = false

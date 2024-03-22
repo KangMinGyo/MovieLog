@@ -30,6 +30,8 @@
 		8C5307F52B5958BA00B03A45 /* FirestorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5307F42B5958BA00B03A45 /* FirestorageManager.swift */; };
 		8C55563E2BAC115700FA83B3 /* MovieLog_Resource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C5556312BAC0FFE00FA83B3 /* MovieLog_Resource.framework */; };
 		8C55563F2BAC115700FA83B3 /* MovieLog_Resource.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C5556312BAC0FFE00FA83B3 /* MovieLog_Resource.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8C55564A2BAC30F000FA83B3 /* ReviewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5556492BAC30F000FA83B3 /* ReviewDetailViewController.swift */; };
+		8C55564C2BAC4FAE00FA83B3 /* ReviewDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C55564B2BAC4FAE00FA83B3 /* ReviewDetailViewModel.swift */; };
 		8C6A49982B0375C000EE3AEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49972B0375C000EE3AEE /* AppDelegate.swift */; };
 		8C6A499A2B0375C000EE3AEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49992B0375C000EE3AEE /* SceneDelegate.swift */; };
 		8C6A499C2B0375C000EE3AEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A499B2B0375C000EE3AEE /* LoginViewController.swift */; };
@@ -145,6 +147,8 @@
 		8C5307F22B56A61700B03A45 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		8C5307F42B5958BA00B03A45 /* FirestorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestorageManager.swift; sourceTree = "<group>"; };
 		8C55562C2BAC0FFD00FA83B3 /* MovieLog_Resource.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MovieLog_Resource.xcodeproj; path = ../../MovieLog_Resource/MovieLog_Resource.xcodeproj; sourceTree = "<group>"; };
+		8C5556492BAC30F000FA83B3 /* ReviewDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailViewController.swift; sourceTree = "<group>"; };
+		8C55564B2BAC4FAE00FA83B3 /* ReviewDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailViewModel.swift; sourceTree = "<group>"; };
 		8C6A49942B0375C000EE3AEE /* MovieLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C6A49972B0375C000EE3AEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C6A49992B0375C000EE3AEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -304,9 +308,7 @@
 				8C6A49972B0375C000EE3AEE /* AppDelegate.swift */,
 				8C6A49992B0375C000EE3AEE /* SceneDelegate.swift */,
 				8C6A49A22B0375C400EE3AEE /* LaunchScreen.storyboard */,
-				8C6A49A52B0375C400EE3AEE /* Info.plist */,
 				8C399A6C2B106E5B00626B0D /* GoogleService-Info.plist */,
-				8C80060D2B209705004512F9 /* MovieLog.entitlements */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -355,6 +357,14 @@
 			path = Scene;
 			sourceTree = "<group>";
 		};
+		8C5556482BAC30CE00FA83B3 /* ReviewDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8C5556492BAC30F000FA83B3 /* ReviewDetailViewController.swift */,
+			);
+			path = ReviewDetail;
+			sourceTree = "<group>";
+		};
 		8C6A498B2B0375C000EE3AEE = {
 			isa = PBXGroup;
 			children = (
@@ -379,6 +389,7 @@
 		8C6A49962B0375C000EE3AEE /* MovieLog */ = {
 			isa = PBXGroup;
 			children = (
+				8C55562C2BAC0FFD00FA83B3 /* MovieLog_Resource.xcodeproj */,
 				8C5556402BAC185E00FA83B3 /* Application */,
 				8C5556412BAC188A00FA83B3 /* Presentation */,
 				8C5556422BAC1B1100FA83B3 /* Domain */,
@@ -386,7 +397,8 @@
 				8CC4EB2E2B497AAF002B51E0 /* Service */,
 				8CECBCB12B3D579600FE6EA7 /* Network */,
 				8C6A49EA2B079CF800EE3AEE /* Utils */,
-				8C55562C2BAC0FFD00FA83B3 /* MovieLog_Resource.xcodeproj */,
+				8C80060D2B209705004512F9 /* MovieLog.entitlements */,
+				8C6A49A52B0375C400EE3AEE /* Info.plist */,
 			);
 			path = MovieLog;
 			sourceTree = "<group>";
@@ -445,6 +457,7 @@
 				8CC7551D2B11DC61003FB4ED /* SignUpViewModel.swift */,
 				8C8006092B1F10DB004512F9 /* LoginViewModel.swift */,
 				8CC4EB2C2B495BD6002B51E0 /* HomeViewModel.swift */,
+				8C55564B2BAC4FAE00FA83B3 /* ReviewDetailViewModel.swift */,
 				8CECBCBC2B3DD4AB00FE6EA7 /* SearchViewModel.swift */,
 				8CC4EB262B472E7E002B51E0 /* WriteViewModel.swift */,
 				8C86B7B92B60FBD4003F70AA /* CalendarViewModel.swift */,
@@ -526,6 +539,7 @@
 				8C6A49F12B0C7B7000EE3AEE /* SignUp */,
 				8C5307EE2B567CFF00B03A45 /* Tab */,
 				8C399A762B1077D100626B0D /* Home */,
+				8C5556482BAC30CE00FA83B3 /* ReviewDetail */,
 				8CECBC9D2B345C3D00FE6EA7 /* Search */,
 				8CC4EB232B45721A002B51E0 /* InputForm */,
 				8CECBCA22B356A4800FE6EA7 /* Write */,
@@ -746,6 +760,7 @@
 				8C30049C2B454E1B00E0AAD8 /* CustomInputFormTextField.swift in Sources */,
 				8C5307F02B567D9300B03A45 /* TabViewController.swift in Sources */,
 				8C3004922B3EE77900E0AAD8 /* APIComponents.swift in Sources */,
+				8C55564C2BAC4FAE00FA83B3 /* ReviewDetailViewModel.swift in Sources */,
 				8C5307F32B56A61700B03A45 /* CalendarViewController.swift in Sources */,
 				8CECBCA42B356AAC00FE6EA7 /* HowViewController.swift in Sources */,
 				8C86B7BA2B60FBD4003F70AA /* CalendarViewModel.swift in Sources */,
@@ -763,6 +778,7 @@
 				8CC755212B11DFDE003FB4ED /* String+Extension.swift in Sources */,
 				8CECBCB02B3B0C2B00FE6EA7 /* WriteViewController.swift in Sources */,
 				8C399A832B10887000626B0D /* FirebaseManager.swift in Sources */,
+				8C55564A2BAC30F000FA83B3 /* ReviewDetailViewController.swift in Sources */,
 				8CECBC992B32A31500FE6EA7 /* HomeCell.swift in Sources */,
 				8C6A499C2B0375C000EE3AEE /* LoginViewController.swift in Sources */,
 				8C78DBF92B0F2B0B0022BCFB /* CustomTextField.swift in Sources */,

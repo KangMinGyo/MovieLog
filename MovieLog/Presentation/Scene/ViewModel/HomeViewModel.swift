@@ -9,8 +9,14 @@ import Foundation
 import Combine
 
 class HomeViewModel: ObservableObject {
+    
+    //
+    init(selectedItem: Review? = nil) {
+        self.selectedItem = CurrentValueSubject(selectedItem)
+    }
 
     var reviewsSubject = PassthroughSubject<[Review], Error>()
+    let selectedItem: CurrentValueSubject<Review?, Never> //
     
     @Published var reviews = [Review]()
     var subscriptions = Set<AnyCancellable>()
@@ -39,6 +45,12 @@ class HomeViewModel: ObservableObject {
                 
                 self.reviewsSubject.send(reviews)
             }
+    }
+    
+    //
+    func didSelect(at indexPath: IndexPath) {
+        let review = reviews[indexPath.item]
+        selectedItem.send(review)
     }
 }
     

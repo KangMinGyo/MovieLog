@@ -71,7 +71,8 @@ class HomeViewController: UIViewController {
     
     func configureCollectionView() {
 //        collectionView.dataSource = self
-//        collectionView.delegate = self
+        collectionView.delegate = self
+        
         collectionView.register(HomeCell.self, forCellWithReuseIdentifier: HomeCell.identifier)
         
         // presentation, data, layout
@@ -121,10 +122,29 @@ class HomeViewController: UIViewController {
                 }
                 self?.dataSource.apply(snapshot)
             }.store(in: &subscriptions)
+        
+        viewModel.selectedItem
+            .compactMap { $0 }
+            .receive(on: RunLoop.main)
+            .sink { review in
+                let nextVC = ReviewDetailViewController()
+                nextVC.viewModel = ReviewDetailViewModel(review: review)
+                self.present(nextVC, animated: true)
+            }.store(in: &subscriptions)
     }
     
     func fetch() {
         viewModel.fetchReviews()
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelect(at: indexPath)
+//        let nextVC = ReviewDetailViewController()
+//        print("viewModel.reviews[indexPath.row]: \(viewModel.reviews[indexPath.row])")
+//        nextVC.viewModel.review = viewModel.reviews[indexPath.row]
+//        self.show(nextVC, sender: self)
     }
 }
 
@@ -140,11 +160,11 @@ class HomeViewController: UIViewController {
 //        return cell
 //    }
 //    
-////    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-////        let nextVC = MovieReviewDetailViewController()
-////        nextVC.viewModel.movieData = viewModel.review[indexPath.row]
-////        self.show(nextVC, sender: self)
-////    }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let nextVC = MovieReviewDetailViewController()
+//        nextVC.viewModel.movieData = viewModel.review[indexPath.row]
+//        self.show(nextVC, sender: self)
+//    }
 //}
 
 //extension HomeViewController: UICollectionViewDelegateFlowLayout {

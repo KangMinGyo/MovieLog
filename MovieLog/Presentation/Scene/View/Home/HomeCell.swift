@@ -105,9 +105,6 @@ class HomeCell: UICollectionViewCell {
     }
     
     func configure(_ data: Review) {
-        posterImageView.image = UIImage(named: "Poster")
-        print("Data: \(data)")
-        print("Title: \(data.uid), PosterURL: \(data.posterURL)")
         let url = URL(string: "https://image.tmdb.org/t/p/original\(data.posterURL)")
         posterImageView.kf.setImage(with: url)
         movieNameLabel.text = data.title
