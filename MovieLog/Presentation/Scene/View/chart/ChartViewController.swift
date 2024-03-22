@@ -21,6 +21,13 @@ class ChartViewController: UIViewController {
         $0.text = "일주일간의 내 리뷰"
         $0.font = .systemFont(ofSize: 25, weight: .semibold)
     }
+    
+    let chartView = UIView().then {
+        $0.backgroundColor = .systemGray6
+        $0.layer.cornerRadius = 10
+        $0.clipsToBounds = true
+    }
+    
     var barChartView: BarChartView = BarChartView()
     
     // MARK: - Life Cycle
@@ -35,16 +42,24 @@ class ChartViewController: UIViewController {
     
     // MARK: - UI Setup
     func setupConstraints() {
-        view.addSubview(label)
-        view.addSubview(barChartView)
+        view.addSubview(chartView)
+        chartView.addSubview(label)
+        chartView.addSubview(barChartView)
+        
+        chartView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.centerX.equalTo(view.snp.centerX)
+            $0.height.equalTo(270)
+        }
         
         label.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.top.equalTo(chartView.snp.top).inset(10)
             $0.leading.equalTo(view.safeAreaInsets).inset(20)
         }
         
         barChartView.snp.makeConstraints {
-            $0.top.equalTo(label.snp.bottom).offset(20)
+            $0.top.equalTo(label.snp.bottom).offset(10)
             $0.leading.trailing.equalTo(view.safeAreaInsets).inset(20)
             $0.height.equalTo(200)
         }
