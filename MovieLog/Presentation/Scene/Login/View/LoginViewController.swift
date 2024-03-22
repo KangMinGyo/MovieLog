@@ -130,7 +130,8 @@ class LoginViewController: UIViewController {
         signUpButton.controlEvent(.touchUpInside)
             .sink { [weak self] _ in
                 let vc = SignUpViewController()
-                self?.navigationController?.pushViewController(vc, animated: true)
+//                self?.navigationController?.pushViewController(vc, animated: true)
+                self?.present(vc, animated: false, completion: nil)
             }.store(in: &subscriptions)
         
         appleLoginButton.controlEvent(.touchUpInside)

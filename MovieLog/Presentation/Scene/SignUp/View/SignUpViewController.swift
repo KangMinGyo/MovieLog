@@ -58,7 +58,7 @@ class SignUpViewController: UIViewController {
         contentView.addSubview(signUpButton)
 
         scrollView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.top.equalTo(view.safeAreaLayoutGuide).offset(20)
             $0.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
         }
         
@@ -177,7 +177,7 @@ class SignUpViewController: UIViewController {
                     self?.pwCheckLabel.textColor = .red
                 case .success:
                     self?.pwCheckLabel.text = "비밀번호가 일치합니다."
-                    self?.pwCheckLabel.textColor = UIColor(named: "MainColor")
+                    self?.pwCheckLabel.textColor = R.Color.green
                 case .failed:
                     self?.pwCheckLabel.text = "비밀번호가 일치하지 않습니다."
                     self?.pwCheckLabel.textColor = .red
@@ -192,7 +192,7 @@ class SignUpViewController: UIViewController {
                     self?.signUpButton.backgroundColor = .gray
                 case .success:
                     self?.signUpButton.isEnabled = true
-                    self?.signUpButton.backgroundColor = UIColor(named: "MainColor")
+                    self?.signUpButton.backgroundColor = R.Color.green
                 case .failed:
                     self?.signUpButton.isEnabled = false
                     self?.signUpButton.backgroundColor = .gray
