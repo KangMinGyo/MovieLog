@@ -18,15 +18,15 @@ class ReviewDetailViewController: UIViewController {
     // MARK: - UI Components
     let movieNameLabel = UILabel().then {
         $0.text = "영화 제목"
-        $0.font = .systemFont(ofSize: 25)
+        $0.font = .systemFont(ofSize: 22, weight: .semibold)
         $0.textAlignment = .center
-        $0.numberOfLines = 2
+        $0.numberOfLines = 0
     }
     
     let dateLabel = UILabel().then {
         $0.text = "작성일"
         $0.textColor = .systemGray2
-        $0.font = .systemFont(ofSize: 15)
+        $0.font = .systemFont(ofSize: 17)
     }
     
     let posterImageView = UIImageView().then {
@@ -35,6 +35,7 @@ class ReviewDetailViewController: UIViewController {
     
     let myReviewLabel = UILabel().then {
         $0.text = "내 관람평"
+        $0.font = .systemFont(ofSize: 18, weight: .semibold)
     }
     
     let reviewView = UIView().then {
@@ -42,13 +43,12 @@ class ReviewDetailViewController: UIViewController {
     }
     
     let likeUnlikeLabel = UILabel().then {
-        $0.font = .systemFont(ofSize: 15, weight: .bold)
+        $0.font = .systemFont(ofSize: 15, weight: .semibold)
     }
     
     let reviewTextView = UITextView().then {
         $0.text = "내용을 입력해주세요."
         $0.font = .systemFont(ofSize: 17)
-        $0.textColor = .lightGray
         $0.backgroundColor = .systemGray6
         $0.isScrollEnabled = false
     }
