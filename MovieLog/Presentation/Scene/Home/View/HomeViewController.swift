@@ -52,8 +52,9 @@ class HomeViewController: UIViewController {
         let boxOfficeButton = UIBarButtonItem(image: UIImage(systemName: "chart.bar.xaxis"),
                                      style: .plain,
                                      target: self,
-                                     action: nil)
+                                     action: #selector(boxOfficeButtonPressed))
         boxOfficeButton.tintColor = .black
+        
         let settingButton = UIBarButtonItem(image: UIImage(systemName: "gearshape.fill"),
                                      style: .plain,
                                      target: self,
@@ -66,6 +67,11 @@ class HomeViewController: UIViewController {
     
     @objc func searchButtonPressed() {
         let nextVC = SearchViewController()
+        self.show(nextVC, sender: self)
+    }
+    
+    @objc func boxOfficeButtonPressed() {
+        let nextVC = BoxOfficeViewController()
         self.show(nextVC, sender: self)
     }
     

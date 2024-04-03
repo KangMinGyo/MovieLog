@@ -33,6 +33,7 @@
 		8C55564A2BAC30F000FA83B3 /* ReviewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5556492BAC30F000FA83B3 /* ReviewDetailViewController.swift */; };
 		8C55564C2BAC4FAE00FA83B3 /* ReviewDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C55564B2BAC4FAE00FA83B3 /* ReviewDetailViewModel.swift */; };
 		8C5556622BBC348C00FA83B3 /* BoxOfficeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5556612BBC348C00FA83B3 /* BoxOfficeViewController.swift */; };
+		8C5556652BBD454400FA83B3 /* BoxOfficeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5556642BBD454400FA83B3 /* BoxOfficeCell.swift */; };
 		8C6A49982B0375C000EE3AEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49972B0375C000EE3AEE /* AppDelegate.swift */; };
 		8C6A499A2B0375C000EE3AEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A49992B0375C000EE3AEE /* SceneDelegate.swift */; };
 		8C6A499C2B0375C000EE3AEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A499B2B0375C000EE3AEE /* LoginViewController.swift */; };
@@ -151,6 +152,7 @@
 		8C5556492BAC30F000FA83B3 /* ReviewDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailViewController.swift; sourceTree = "<group>"; };
 		8C55564B2BAC4FAE00FA83B3 /* ReviewDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailViewModel.swift; sourceTree = "<group>"; };
 		8C5556612BBC348C00FA83B3 /* BoxOfficeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeViewController.swift; sourceTree = "<group>"; };
+		8C5556642BBD454400FA83B3 /* BoxOfficeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeCell.swift; sourceTree = "<group>"; };
 		8C6A49942B0375C000EE3AEE /* MovieLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C6A49972B0375C000EE3AEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C6A49992B0375C000EE3AEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -544,6 +546,7 @@
 			isa = PBXGroup;
 			children = (
 				8C5556612BBC348C00FA83B3 /* BoxOfficeViewController.swift */,
+				8C5556642BBD454400FA83B3 /* BoxOfficeCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -963,6 +966,7 @@
 				8C8006082B1EFF7A004512F9 /* CustomCheckbox.swift in Sources */,
 				8C78DBFB2B0F39B30022BCFB /* CustomButton.swift in Sources */,
 				8C399A782B1077ED00626B0D /* HomeViewController.swift in Sources */,
+				8C5556652BBD454400FA83B3 /* BoxOfficeCell.swift in Sources */,
 				8C3004902B3EE74D00E0AAD8 /* APIRequest.swift in Sources */,
 				8C80060A2B1F10DB004512F9 /* LoginViewModel.swift in Sources */,
 			);
