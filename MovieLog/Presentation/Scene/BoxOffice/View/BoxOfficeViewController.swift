@@ -12,8 +12,11 @@ import Combine
 
 class BoxOfficeViewController: UIViewController {
     
+    var viewModel = BoxOfficeViewModel()
+    var subscriptions = Set<AnyCancellable>()
+    
     var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
-    typealias Item = Review
+    typealias Item = DailyBoxOfficeList
     
     enum Section {
         case main
@@ -29,20 +32,21 @@ class BoxOfficeViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.configureBoxOffice(date: "20240403")
         configureCollectionView()
         setupConstraints()
-//        bind()
+        bind()
     }
     
     func configureCollectionView() {
 //        collectionView.dataSource = self
         collectionView.delegate = self
         
-        collectionView.register(HomeCell.self, forCellWithReuseIdentifier: HomeCell.identifier)
+        collectionView.register(BoxOfficeCell.self, forCellWithReuseIdentifier: BoxOfficeCell.identifier)
         
         // presentation, data, layout
         dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCell.identifier, for: indexPath) as? HomeCell else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BoxOfficeCell.identifier, for: indexPath) as? BoxOfficeCell else {
                 return nil
             }
             cell.configure(item)
@@ -73,6 +77,20 @@ class BoxOfficeViewController: UIViewController {
         collectionView.snp.makeConstraints {
             $0.edges.equalTo(0)
         }
+    }
+    
+    // MARK: - Binding
+    func bind() {
+        viewModel.$boxOfficeData
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
+                snapshot.appendSections([.main])
+                if let items = self?.viewModel.boxOfficeData {
+                    snapshot.appendItems(items, toSection: .main)
+                }
+                self?.dataSource.apply(snapshot)
+            }.store(in: &subscriptions)
     }
 }
 

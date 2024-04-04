@@ -174,16 +174,11 @@ class BoxOfficeCell: UICollectionViewCell {
         contentView.layer.masksToBounds = true
     }
     
-    func configure(_ data: Review) {
-        let url = URL(string: "https://image.tmdb.org/t/p/original\(data.posterURL)")
-        posterImageView.kf.setImage(with: url)
-        movieNameLabel.text = data.title
-//        directorNameLabel.text = data.director
-//        movieInfoLabel.text = data.movieInfo
-//        if let date = data.date {
-//            let dateFormatterManager = DateFormatterManager()
-//            let dateString = dateFormatterManager.dateFormatter.string(from: date)
-//            dateLabel.text = dateString
-//        }
+    func configure(_ data: DailyBoxOfficeList) {
+        movieNameLabel.text = data.movieNm
+        openDateLabel.text = data.openDt
+        boxOfficeRank.text = data.rank
+//        rankInten.text = rankIntenCal(data.rankInten)
+//        audiAcc.text = audiAccCal(data.audiAcc)
     }
 }

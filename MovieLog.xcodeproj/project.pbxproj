@@ -71,6 +71,8 @@
 		8CC4EB2B2B49544C002B51E0 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4EB2A2B49544C002B51E0 /* Review.swift */; };
 		8CC4EB2D2B495BD6002B51E0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4EB2C2B495BD6002B51E0 /* HomeViewModel.swift */; };
 		8CC4EB302B497AD0002B51E0 /* ReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC4EB2F2B497AD0002B51E0 /* ReviewService.swift */; };
+		8CC5E94E2BBE6321009557A8 /* BoxOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC5E94D2BBE6321009557A8 /* BoxOffice.swift */; };
+		8CC5E9512BBE6D5C009557A8 /* BoxOfficeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC5E9502BBE6D5C009557A8 /* BoxOfficeViewModel.swift */; };
 		8CC7551E2B11DC61003FB4ED /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC7551D2B11DC61003FB4ED /* SignUpViewModel.swift */; };
 		8CC755212B11DFDE003FB4ED /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC755202B11DFDE003FB4ED /* String+Extension.swift */; };
 		8CC755232B18EE53003FB4ED /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC755222B18EE53003FB4ED /* UITextField+Extension.swift */; };
@@ -190,6 +192,8 @@
 		8CC4EB2A2B49544C002B51E0 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		8CC4EB2C2B495BD6002B51E0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		8CC4EB2F2B497AD0002B51E0 /* ReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewService.swift; sourceTree = "<group>"; };
+		8CC5E94D2BBE6321009557A8 /* BoxOffice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOffice.swift; sourceTree = "<group>"; };
+		8CC5E9502BBE6D5C009557A8 /* BoxOfficeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeViewModel.swift; sourceTree = "<group>"; };
 		8CC7551D2B11DC61003FB4ED /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		8CC755202B11DFDE003FB4ED /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		8CC755222B18EE53003FB4ED /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
@@ -267,6 +271,7 @@
 				8CECBCC02B3DE03600FE6EA7 /* SearchResponse.swift */,
 				8CC4EB282B49358D002B51E0 /* Poster.swift */,
 				8CC4EB2A2B49544C002B51E0 /* Review.swift */,
+				8CC5E94D2BBE6321009557A8 /* BoxOffice.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -538,6 +543,7 @@
 			isa = PBXGroup;
 			children = (
 				8C5556632BBC349B00FA83B3 /* View */,
+				8CC5E94F2BBE6D3F009557A8 /* ViewModel */,
 			);
 			path = BoxOffice;
 			sourceTree = "<group>";
@@ -679,6 +685,14 @@
 				8CC4EB2F2B497AD0002B51E0 /* ReviewService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		8CC5E94F2BBE6D3F009557A8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8CC5E9502BBE6D5C009557A8 /* BoxOfficeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		8CC7551F2B11DFCC003FB4ED /* Extensions */ = {
@@ -923,6 +937,7 @@
 				8CC755252B19BA9C003FB4ED /* CustomLabel.swift in Sources */,
 				8C5556622BBC348C00FA83B3 /* BoxOfficeViewController.swift in Sources */,
 				8C7966622B6260A600A1E93D /* CalendarCell.swift in Sources */,
+				8CC5E9512BBE6D5C009557A8 /* BoxOfficeViewModel.swift in Sources */,
 				8C30049A2B45323800E0AAD8 /* CustomInputFormLabel.swift in Sources */,
 				8CECBCB92B3DA8AE00FE6EA7 /* URLSessionDataTaskProtocol.swift in Sources */,
 				8C78DBF72B0F216C0022BCFB /* LoginHeaderView.swift in Sources */,
@@ -960,6 +975,7 @@
 				8C6A49982B0375C000EE3AEE /* AppDelegate.swift in Sources */,
 				8CECBCBF2B3DD79D00FE6EA7 /* Search.swift in Sources */,
 				8CECBC9F2B345C5F00FE6EA7 /* SearchViewController.swift in Sources */,
+				8CC5E94E2BBE6321009557A8 /* BoxOffice.swift in Sources */,
 				8C3004982B4518F100E0AAD8 /* MovieInputFormViewController.swift in Sources */,
 				8CC4EB2B2B49544C002B51E0 /* Review.swift in Sources */,
 				8C6A499A2B0375C000EE3AEE /* SceneDelegate.swift in Sources */,

@@ -46,6 +46,7 @@ enum BaseURL: String {
     case moviePoster = "https://api.themoviedb.org/3/search/movie?language=ko&page=1&include_adult=false&region=KR"
     case movieInfo = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json"
     case poster = "https://image.tmdb.org/t/p/original"
+    case boxOffice = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json"
 }
 
 enum APIKey: String {

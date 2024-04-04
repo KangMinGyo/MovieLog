@@ -35,9 +35,9 @@ struct EndPoints {
         return EndPoint(baseURL: .moviePoster, key: .tbdmKey(key: key), query: .moviePoster(query: title))
     }
     
-//    static func makeBoxOfficeApi(key: String, date: String) -> APIRequest {
-//        return EndPoint(baseURL: .boxOfficeURL, key: .boxOffice(key: key), query: .boxOffice(targetDt: date))
-//    }
+    static func makeBoxOfficeApi(key: String, date: String) -> APIRequest {
+        return EndPoint(baseURL: .boxOffice, key: .kobisKey(key: key), query: .boxOffice(targetDt: date))
+    }
 //    
 //    static func makeDetailMovieApi(key: String, code: String) -> APIRequest {
 //        return EndPoint(baseURL: .movieInfo, key: .boxOffice(key: key), query: .movieInfo(code: code))
