@@ -13,6 +13,7 @@ class BoxOfficeViewModel: ObservableObject {
     let networkManager = NetworkManager()
     
     @Published var boxOfficeData = [DailyBoxOfficeList]()
+    var posterUpdatePublisher = PassthroughSubject<Void, Never>()
 
     func configureBoxOffice(date: String) {
         boxOfficeData = [DailyBoxOfficeList]()
@@ -71,6 +72,7 @@ class BoxOfficeViewModel: ObservableObject {
         dispatchGroup.notify(queue: .main) {
             print("All poster fetching tasks have completed")
             print("\(self.boxOfficeData)")
+            self.posterUpdatePublisher.send()
         }
     }
 }

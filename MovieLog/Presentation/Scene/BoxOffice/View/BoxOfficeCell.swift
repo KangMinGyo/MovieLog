@@ -182,8 +182,12 @@ class BoxOfficeCell: UICollectionViewCell {
     }
     
     func configure(_ data: DailyBoxOfficeList) {
-        let url = URL(string: "https://image.tmdb.org/t/p/original\(data.posterPath)")
-        posterImageView.kf.setImage(with: url)
+        if let posterPath = data.posterPath {
+            let urlString = "https://image.tmdb.org/t/p/original\(posterPath)"
+            if let url = URL(string: urlString) {
+                posterImageView.kf.setImage(with: url)
+            }
+        }
         movieNameLabel.text = data.movieNm
         openDateLabel.text = data.openDt
         boxOfficeRank.text = data.rank

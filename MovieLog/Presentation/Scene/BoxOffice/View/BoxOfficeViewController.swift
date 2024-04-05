@@ -81,7 +81,18 @@ class BoxOfficeViewController: UIViewController {
     
     // MARK: - Binding
     func bind() {
-        viewModel.$boxOfficeData
+//        viewModel.$boxOfficeData
+//            .receive(on: DispatchQueue.main)
+//            .sink { [weak self] _ in
+//                var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
+//                snapshot.appendSections([.main])
+//                if let items = self?.viewModel.boxOfficeData {
+//                    snapshot.appendItems(items, toSection: .main)
+//                }
+//                self?.dataSource.apply(snapshot)
+//            }.store(in: &subscriptions)
+//        
+        viewModel.posterUpdatePublisher
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
                 var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
