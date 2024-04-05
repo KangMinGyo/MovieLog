@@ -13,8 +13,6 @@ class BoxOfficeViewModel: ObservableObject {
     let networkManager = NetworkManager()
     
     @Published var boxOfficeData = [DailyBoxOfficeList]()
-    var posterData = [Results]()
-    var posterUrl = [String]()
 
     func configureBoxOffice(date: String) {
         boxOfficeData = [DailyBoxOfficeList]()
@@ -36,8 +34,7 @@ class BoxOfficeViewModel: ObservableObject {
     }
     
     // Poster 이미지 url 가져오기
-    func getMoviePoster(title: String, completion: @escaping () -> Void) {
-        posterData = [Results]()
+    func getMoviePoster(title: String, completion: @escaping (String?) -> Void) {
         let url = EndPoints.makeMoviePosterApi(
             key: "ab318418ee513b352deb4c9ab21f7ed7",
             title: title
@@ -46,20 +43,34 @@ class BoxOfficeViewModel: ObservableObject {
                                  dataType: Poster.self) { result in
             switch result {
             case .success(let data):
-                self.posterData.append(contentsOf: data.results)
+                if let posterPath = data.results.first?.posterPath {
+                    completion(posterPath)
+                } else {
+                    // 포스터 URL이 없는 경우 빈 문자열을 추가
+                    completion(nil)
+                }
             case .failure(let err):
                 print(err)
             }
         }
     }
-    
+
     func getBoxOfficeMoviePoster() {
-        for i in 0..<boxOfficeData.count {
-            let name = boxOfficeData[i].movieNm
-            getMoviePoster(title: name) { [self] in
-                posterUrl.append(posterData.first?.posterPath ?? "")
-                posterData = [Results]()
+        let dispatchGroup = DispatchGroup() // DispatchGroup 생성
+        
+        for (index, movie) in boxOfficeData.enumerated() {
+            dispatchGroup.enter() // DispatchGroup에 작업 시작을 알림
+            
+            getMoviePoster(title: movie.movieNm) { posterPath in
+                self.boxOfficeData[index].posterPath = posterPath
+                
+                dispatchGroup.leave() // DispatchGroup에 작업 완료를 알림
             }
+        }
+        // 모든 작업이 완료될 때까지 기다림
+        dispatchGroup.notify(queue: .main) {
+            print("All poster fetching tasks have completed")
+            print("\(self.boxOfficeData)")
         }
     }
 }

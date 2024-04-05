@@ -137,9 +137,16 @@ class BoxOfficeCell: UICollectionViewCell {
         }
         
         lineView.snp.makeConstraints {
-            $0.top.equalTo(openDateLabel.snp.bottom).offset(5)
-            $0.leading.equalTo(posterImageView.snp.trailing).offset(20)
-            $0.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(20)
+            $0.top.equalTo(openDateLabel.snp.bottom).offset(10)
+            $0.leading.equalTo(posterImageView.snp.trailing).offset(10)
+            $0.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).inset(10)
+            $0.height.equalTo(1)
+        }
+        
+        stackView.snp.makeConstraints {
+            $0.top.equalTo(lineView.snp.bottom).offset(10)
+            $0.leading.equalTo(posterImageView.snp.trailing).offset(10)
+            $0.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).inset(10)
         }
     }
     
@@ -175,9 +182,13 @@ class BoxOfficeCell: UICollectionViewCell {
     }
     
     func configure(_ data: DailyBoxOfficeList) {
+        let url = URL(string: "https://image.tmdb.org/t/p/original\(data.posterPath)")
+        posterImageView.kf.setImage(with: url)
         movieNameLabel.text = data.movieNm
         openDateLabel.text = data.openDt
         boxOfficeRank.text = data.rank
+        rankInten.text = data.rankInten
+        audiAcc.text = data.audiAcc
 //        rankInten.text = rankIntenCal(data.rankInten)
 //        audiAcc.text = audiAccCal(data.audiAcc)
     }

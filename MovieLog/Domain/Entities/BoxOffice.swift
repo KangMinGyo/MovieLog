@@ -22,4 +22,5 @@ struct DailyBoxOfficeList: Codable, Hashable {
     let openDt: String
     let audiAcc: String
     let movieCd: String
+    var posterPath: String?
 }
