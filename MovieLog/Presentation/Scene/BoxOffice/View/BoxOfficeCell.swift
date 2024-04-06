@@ -191,9 +191,7 @@ class BoxOfficeCell: UICollectionViewCell {
         movieNameLabel.text = data.movieNm
         openDateLabel.text = data.openDt
         boxOfficeRank.text = data.rank
-        rankInten.text = data.rankInten
-        audiAcc.text = data.audiAcc
-//        rankInten.text = rankIntenCal(data.rankInten)
-//        audiAcc.text = audiAccCal(data.audiAcc)
+        rankInten.text = data.rankInten.formattedRankInten()
+        audiAcc.text = data.audiAcc.formattedAudiAcc()
     }
 }
