@@ -33,6 +33,7 @@ class HomeCell: UICollectionViewCell {
     let movieInfoLabel = UILabel().then {
         $0.text = "미국 | 미스터리, 범죄 | 2000"
         $0.font = .systemFont(ofSize: 15)
+        $0.numberOfLines = 0
     }
     
     let dateLabel = UILabel().then {
@@ -89,6 +90,7 @@ class HomeCell: UICollectionViewCell {
         movieInfoLabel.snp.makeConstraints {
             $0.top.equalTo(directorNameLabel.snp.bottom).offset(5)
             $0.leading.equalTo(posterImageView.snp.trailing).offset(20)
+            $0.trailing.equalTo(0).inset(20)
         }
         
         dateLabel.snp.makeConstraints {
