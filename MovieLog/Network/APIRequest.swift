@@ -11,7 +11,7 @@ protocol APIRequest {
     var baseURL: BaseURL { get }
     var key: Key { get }
     var method: String { get }
-    var query: Query { get }
+    var query: MovieQuery { get }
 }
 
 extension APIRequest {

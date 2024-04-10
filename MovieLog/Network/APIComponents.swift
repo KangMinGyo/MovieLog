@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Query {
+enum MovieQuery {
     case searchMovie(title: String)
     case moviePoster(query: String)
     case boxOffice(targetDt: String)

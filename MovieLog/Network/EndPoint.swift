@@ -11,13 +11,13 @@ class EndPoint: APIRequest {
     var baseURL: BaseURL
     var key: Key
     var method: String
-    var query: Query
+    var query: MovieQuery
     
     init(
         baseURL: BaseURL,
         key: Key,
         method: String = "GET",
-        query: Query
+        query: MovieQuery
     ) {
         self.baseURL = baseURL
         self.key = key
