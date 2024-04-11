@@ -20,10 +20,7 @@ class HomeViewController: UIViewController {
     
     enum Section {
         case main
-        case loading
     }
-    
-    var isLoading = Bool()
     
     // MARK: - UI Components
     lazy var collectionView: UICollectionView = {
@@ -58,13 +55,6 @@ class HomeViewController: UIViewController {
                                      action: #selector(boxOfficeButtonPressed))
         boxOfficeButton.tintColor = .black
         
-        let settingButton = UIBarButtonItem(image: UIImage(systemName: "gearshape.fill"),
-                                     style: .plain,
-                                     target: self,
-                                     action: nil)
-        settingButton.tintColor = .black
-        
-        navigationItem.leftBarButtonItem = settingButton
         navigationItem.rightBarButtonItems = [boxOfficeButton, reviewWriteButton]
     }
     
