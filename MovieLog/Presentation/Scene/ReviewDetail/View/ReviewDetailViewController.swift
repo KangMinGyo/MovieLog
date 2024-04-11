@@ -38,6 +38,11 @@ class ReviewDetailViewController: UIViewController {
         $0.font = .systemFont(ofSize: 18, weight: .semibold)
     }
     
+    let editDeleteButton = UIButton().then {
+        $0.setImage(UIImage(systemName: "trash.fill"), for: .normal)
+        $0.tintColor = .systemGray2
+    }
+    
     let reviewView = UIView().then {
         $0.backgroundColor = .systemGray6
     }
@@ -72,6 +77,7 @@ class ReviewDetailViewController: UIViewController {
         view.addSubview(dateLabel)
         view.addSubview(posterImageView)
         view.addSubview(myReviewLabel)
+        view.addSubview(editDeleteButton)
         view.addSubview(reviewView)
         reviewView.addSubview(likeUnlikeLabel)
         reviewView.addSubview(reviewTextView)
@@ -99,6 +105,11 @@ class ReviewDetailViewController: UIViewController {
         myReviewLabel.snp.makeConstraints {
             $0.top.equalTo(posterImageView.snp.bottom).offset(20)
             $0.leading.equalTo(view.snp.leading).offset(20)
+        }
+        
+        editDeleteButton.snp.makeConstraints {
+            $0.top.equalTo(posterImageView.snp.bottom).offset(20)
+            $0.trailing.equalToSuperview().inset(20)
         }
         
         reviewView.snp.makeConstraints {
@@ -143,6 +154,18 @@ class ReviewDetailViewController: UIViewController {
                 
             }
             .store(in: &subscriptions)
+        
+        editDeleteButton.controlEvent(.touchUpInside)
+            .sink { [weak self] _ in
+                guard let self = self else { return }
+                let sheet = UIAlertController(title: "경고", message: "정말 삭제하시겠습니까?", preferredStyle: .alert)
+                sheet.addAction(UIAlertAction(title: "삭제", style: .destructive, handler: { _ in
+                    self.viewModel.findReviewToDelete(title: self.movieNameLabel.text!)
+                    self.dismiss(animated: true)
+                }))
+                sheet.addAction(UIAlertAction(title: "취소", style: .cancel, handler: { _ in print("취소") }))
+                present(sheet, animated: true)
+            }.store(in: &subscriptions)
     }
 }
 
