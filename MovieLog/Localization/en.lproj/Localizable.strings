@@ -13,7 +13,7 @@ chart = "Chart";
 my = "My";
 
 // MARK: - Search
-movieSearch = "Movie Search"
-searchMessage = "Please search for the movie you want to review."
-noMovieFound = "Don't see the movie you're looking for?"
-addMovie = "Add movie information"
+movieSearch = "Movie Search";
+searchMessage = "Please search for the movie you want to review.";
+noMovieFound = "Don't see the movie you're looking for?";
+addMovie = "Add movie information";
