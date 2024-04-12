@@ -26,12 +26,12 @@ class SearchViewController: UIViewController {
     }
     
     lazy var label = UILabel().then {
-        $0.text = "찾는 영화가 없으신가요?"
+        $0.text = "noMovieFound".localized
         $0.font = .systemFont(ofSize: 18)
     }
     
     lazy var button = UIButton().then {
-        $0.setTitle("영화정보 추가하기", for: .normal)
+        $0.setTitle("addMovie".localized, for: .normal)
         $0.setTitleColor(.white, for: .normal)
         $0.backgroundColor = R.Color.green
         $0.layer.cornerRadius = 25
@@ -42,7 +42,7 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "영화 검색"
+        title = "movieSearch".localized
         view.backgroundColor = .systemBackground
         configureTableView()
         setUpSearchBar()
@@ -70,7 +70,7 @@ class SearchViewController: UIViewController {
         searchBar.delegate = self
         searchBar.frame = (CGRect(x: 0, y: 0, width: 200, height: 70))
         searchBar.searchBarStyle = .minimal
-        searchBar.placeholder = "리뷰 작성 할 영화를 검색해주세요."
+        searchBar.placeholder = "searchMessage".localized
     }
     
     // MARK: - UI Setup

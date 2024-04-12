@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  MovieLog
+
+  Created by KangMingyo on 4/12/24.
+  
+*/
+
+// MARK: - Tab
+home = "홈";
+calendar = "캘린더";
+chart = "차트";
+my = "마이페이지";
+
+// MARK: - Search
+movieSearch = "영화 검색"
+searchMessage = "리뷰를 작성 할 영화를 검색해주세요."
+noMovieFound = "찾는 영화가 없으신가요?"
+addMovie = "영화 정보 추가하기"
