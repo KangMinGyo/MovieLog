@@ -75,6 +75,7 @@
 		8CC5E9512BBE6D5C009557A8 /* BoxOfficeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC5E9502BBE6D5C009557A8 /* BoxOfficeViewModel.swift */; };
 		8CC5E9532BC6CB29009557A8 /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC5E9522BC6CB28009557A8 /* LoadingCell.swift */; };
 		8CC5E9572BC91E34009557A8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CC5E9552BC91E34009557A8 /* Localizable.strings */; };
+		8CC5E95B2BC971EC009557A8 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC5E95A2BC971EC009557A8 /* Date+Extension.swift */; };
 		8CC7551E2B11DC61003FB4ED /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC7551D2B11DC61003FB4ED /* SignUpViewModel.swift */; };
 		8CC755212B11DFDE003FB4ED /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC755202B11DFDE003FB4ED /* String+Extension.swift */; };
 		8CC755232B18EE53003FB4ED /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC755222B18EE53003FB4ED /* UITextField+Extension.swift */; };
@@ -200,6 +201,7 @@
 		8CC5E9562BC91E34009557A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8CC5E9582BC920DE009557A8 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		8CC5E9592BC920DE009557A8 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8CC5E95A2BC971EC009557A8 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		8CC7551D2B11DC61003FB4ED /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		8CC755202B11DFDE003FB4ED /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		8CC755222B18EE53003FB4ED /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
@@ -717,6 +719,7 @@
 				8CC755202B11DFDE003FB4ED /* String+Extension.swift */,
 				8CC755222B18EE53003FB4ED /* UITextField+Extension.swift */,
 				8CECBCAB2B37105500FE6EA7 /* UIImage+Extension.swift */,
+				8CC5E95A2BC971EC009557A8 /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -960,6 +963,7 @@
 				8CECBCB92B3DA8AE00FE6EA7 /* URLSessionDataTaskProtocol.swift in Sources */,
 				8C78DBF72B0F216C0022BCFB /* LoginHeaderView.swift in Sources */,
 				8CC755212B11DFDE003FB4ED /* String+Extension.swift in Sources */,
+				8CC5E95B2BC971EC009557A8 /* Date+Extension.swift in Sources */,
 				8CECBCB02B3B0C2B00FE6EA7 /* WriteViewController.swift in Sources */,
 				8C399A832B10887000626B0D /* FirebaseManager.swift in Sources */,
 				8C55564A2BAC30F000FA83B3 /* ReviewDetailViewController.swift in Sources */,

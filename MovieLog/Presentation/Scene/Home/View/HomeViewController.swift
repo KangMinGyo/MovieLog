@@ -54,7 +54,7 @@ class HomeViewController: UIViewController {
                                      target: self,
                                      action: #selector(boxOfficeButtonPressed))
         boxOfficeButton.tintColor = .black
-        
+
         navigationItem.rightBarButtonItems = [boxOfficeButton, reviewWriteButton]
     }
     

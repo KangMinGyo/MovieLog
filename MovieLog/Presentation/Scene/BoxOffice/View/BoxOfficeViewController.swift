@@ -33,7 +33,7 @@ class BoxOfficeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "박스오피스"
-        viewModel.configureBoxOffice(date: "20240403")
+        viewModel.configureBoxOffice(date: Date().yesterdayDate())
         configureCollectionView()
         setupConstraints()
         bind()
