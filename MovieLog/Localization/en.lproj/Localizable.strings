@@ -14,6 +14,49 @@ my = "My";
 
 // MARK: - Search
 movieSearch = "Movie Search";
-searchMessage = "Please search for the movie you want to review.";
+searchMessage = "Please search movie";
 noMovieFound = "Don't see the movie you're looking for?";
 addMovie = "Add movie information";
+
+// MARK: - Write
+howMessage = "How was the movie?";
+good = "❤️It was good";
+notGood = "💔It wasn't good.";
+
+whatMessage = "What did you like about it?";
+acting = "Acting";
+direct = "Directing";
+ost = "OST";
+story = "Story";
+visual = "Visual Beauty";
+
+writeReview = "Review";
+enterMessage = "Please enter your details";
+register = "Register";
+
+next = "next";
+
+// MARK: - boxOffice
+boxOffice = "BoxOffice";
+
+//MARK: - Chart
+week = "My review for a week";
+noData = "No Data";
+review = "Review";
+
+today = "Today";
+yesterday = "Yesterday";
+twoDaysAgo = "2d Ago";
+threeDaysAgo = "3d Ago";
+fourDaysAgo = "4d Ago";
+fiveDaysAgo = "5d Ago";
+sixDaysAgo = "6d Ago";
+
+//MARK: - Setting
+contact = "Contact us 1:1";
+login = "Login";
+logout = "Logout";
+loginMessage = "Please click here to log in.";
+logoutMessage = "Do you want to log out?";
+ok = "OK";
+cancel = "Cancel";

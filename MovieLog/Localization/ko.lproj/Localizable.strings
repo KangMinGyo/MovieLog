@@ -17,3 +17,45 @@ movieSearch = "영화 검색";
 searchMessage = "리뷰를 작성 할 영화를 검색해주세요.";
 noMovieFound = "찾는 영화가 없으신가요?";
 addMovie = "영화 정보 추가하기";
+
+// MARK: - Write
+howMessage = "영화 어땠어요?";
+good = "❤️좋았어요";
+notGood = "💔별로였어요";
+
+whatMessage = "어떤점이 좋았나요?";
+acting = "연기";
+direct = "연출";
+ost = "OST";
+story = "스토리";
+visual = "영상미";
+
+writeReview = "관람평";
+enterMessage = "Please enter your details";
+
+next = "다음";
+
+// MARK: - BoxOffice
+boxOffice = "박스오피스";
+
+//MARK: - Chart
+week = "일주일간의 내 리뷰";
+noData = "데이터가 없습니다.";
+review = "리뷰";
+
+today = "오늘";
+yesterday = "1일전";
+twoDaysAgo = "2일전";
+threeDaysAgo = "3일전";
+fourDaysAgo = "4일전";
+fiveDaysAgo = "5일전";
+sixDaysAgo = "6일전";
+
+//MARK: - Setting
+contact = "1:1 문의하기";
+login = "로그인";
+logout = "로그아웃";
+loginMessage = "이곳을 눌러 로그인해주세요.";
+logoutMessage = "로그아웃 하시겠습니까?";
+ok = "확인";
+cancel = "취소";

@@ -19,11 +19,11 @@ class HowViewController: UIViewController {
     
     // MARK: - UI Components
     lazy var movieNameLabel = UILabel().then {
-        $0.text = "영화 어땠어요?"
+        $0.text = "howMessage".localized
         $0.font = .systemFont(ofSize: 25)
     }
-    lazy var likeButton = CustomLikeButton(title: "❤️좋았어요", state: .like)
-    lazy var hateButton = CustomLikeButton(title: "💔별로였어요", state: .like)
+    lazy var likeButton = CustomLikeButton(title: "good".localized, state: .like)
+    lazy var hateButton = CustomLikeButton(title: "notGood".localized, state: .like)
     
     let stackView = UIStackView().then {
         $0.axis = .horizontal
@@ -31,7 +31,7 @@ class HowViewController: UIViewController {
     }
     
     lazy var nextButton = UIButton().then {
-        $0.setTitle("다음", for: .normal)
+        $0.setTitle("next".localized, for: .normal)
         $0.backgroundColor = R.Color.green
         $0.layer.masksToBounds = true
         $0.layer.cornerRadius = 25
@@ -97,22 +97,20 @@ class HowViewController: UIViewController {
     func bind() {
         likeButton.controlEvent(.touchUpInside)
             .sink { [weak self] _ in
-                print("좋았어요")
                 self?.likeButton.backgroundColor = R.Color.green
                 self?.likeButton.setTitleColor(.white, for: .normal)
                 self?.hateButton.backgroundColor = UIColor.systemGray6
                 self?.hateButton.setTitleColor(.black, for: .normal)
-                self?.howData = "❤️좋았어요"
+                self?.howData = "good".localized
             }.store(in: &subscriptions)
         
         hateButton.controlEvent(.touchUpInside)
             .sink { [weak self] _ in
-                print("별로였어요")
                 self?.hateButton.backgroundColor = R.Color.green
                 self?.hateButton.setTitleColor(.white, for: .normal)
                 self?.likeButton.backgroundColor = UIColor.systemGray6
                 self?.likeButton.setTitleColor(.black, for: .normal)
-                self?.howData = "💔별로였어요"
+                self?.howData = "notGood".localized
             }.store(in: &subscriptions)
         
         nextButton.controlEvent(.touchUpInside)

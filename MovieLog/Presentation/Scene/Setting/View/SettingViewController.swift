@@ -27,7 +27,7 @@ class SettingViewController: UIViewController {
     }
     
     lazy var inquiryButton = UIButton().then {
-        $0.setTitle("1:1 문의하기", for: .normal)
+        $0.setTitle("contact".localized, for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 13)
         $0.setTitleColor(.black, for: .normal)
         $0.backgroundColor = .clear
@@ -38,7 +38,7 @@ class SettingViewController: UIViewController {
     }
     
     lazy var logOutButton = UIButton().then {
-        $0.setTitle("로그아웃", for: .normal)
+        $0.setTitle("logout".localized, for: .normal)
         $0.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         $0.setTitleColor(.gray, for: .normal)
         $0.backgroundColor = .clear
@@ -145,7 +145,7 @@ class SettingViewController: UIViewController {
                // 로그아웃 상태
                profileImage.image = UIImage(systemName: "person")
                DispatchQueue.main.async {
-                   self.nameLabel.setTitle("이곳을 눌러 로그인해주세요.", for: .normal)
+                   self.nameLabel.setTitle("loginMessage".localized, for: .normal)
                    self.nameLabel.setTitleColor(.black, for: .normal)
                 }
                nameLabel.isEnabled = true
@@ -154,22 +154,22 @@ class SettingViewController: UIViewController {
        }
     
     func showLogoutAlert() {
-            let alertController = UIAlertController(title: "로그아웃",
-                                                    message: "로그아웃 하시겠습니까?",
-                                                    preferredStyle: .alert)
-
-            let confirmAction = UIAlertAction(title: "확인", style: .default) { _ in
-                // 사용자가 확인하면 로그아웃 수행
-                self.viewModel.logOutButtonTapped()
-                self.updateUI()
-                self.loginViewModel.signInComplete = false
-            }
-            alertController.addAction(confirmAction)
-
-            let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-            alertController.addAction(cancelAction)
-            present(alertController, animated: true, completion: nil)
+        let alertController = UIAlertController(title: "logout".localized,
+                                                message: "logoutMessage".localized,
+                                                preferredStyle: .alert)
+        
+        let confirmAction = UIAlertAction(title: "ok".localized, style: .default) { _ in
+            // 사용자가 확인하면 로그아웃 수행
+            self.viewModel.logOutButtonTapped()
+            self.updateUI()
+            self.loginViewModel.signInComplete = false
         }
+        alertController.addAction(confirmAction)
+        
+        let cancelAction = UIAlertAction(title: "cancel".localized, style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
+    }
 }
 
 #if canImport(SwiftUI) && DEBUG

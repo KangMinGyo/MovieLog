@@ -18,7 +18,7 @@ class ChartViewController: UIViewController {
 
     // MARK: - UI Components
     lazy var label = UILabel().then {
-        $0.text = "일주일간의 내 리뷰"
+        $0.text = "week".localized
         $0.font = .systemFont(ofSize: 25, weight: .semibold)
     }
     
@@ -75,10 +75,16 @@ class ChartViewController: UIViewController {
     }
 
     // MARK: - Chart
-    let dayData: [String] = ["오늘", "1일전", "2일전", "3일전", "4일전", "5일전", "6일전"]
+    let dayData: [String] = ["today".localized,
+                             "yesterday".localized,
+                             "twoDaysAgo".localized,
+                             "threeDaysAgo".localized,
+                             "fourDaysAgo".localized,
+                             "fiveDaysAgo".localized,
+                             "sixDaysAgo".localized]
     
     func setupBarChart() {
-        self.barChartView.noDataText = "출력 데이터가 없습니다."
+        self.barChartView.noDataText = "noData".localized
         self.barChartView.noDataFont = .systemFont(ofSize: 20)
         self.barChartView.noDataTextColor = .lightGray
         self.barChartView.backgroundColor = R.Color.gray
@@ -98,7 +104,7 @@ class ChartViewController: UIViewController {
     }
     
     func setBarData(barChartView: BarChartView, barChartDataEntries: [BarChartDataEntry]) {
-        let barChartdataSet = BarChartDataSet(entries: barChartDataEntries, label: "리뷰")
+        let barChartdataSet = BarChartDataSet(entries: barChartDataEntries, label: "review".localized)
         barChartdataSet.colors = [.green]
         barChartdataSet.highlightEnabled = false //선택x
         let barChartData = BarChartData(dataSet: barChartdataSet)

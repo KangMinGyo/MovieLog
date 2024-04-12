@@ -20,7 +20,7 @@ class WhatViewController: UIViewController {
     
     // MARK: - UI Components
     lazy var label = UILabel().then {
-        $0.text = "어떤점이 좋았나요?"
+        $0.text = "whatMessage".localized
         $0.font = .systemFont(ofSize: 25)
     }
     
@@ -59,23 +59,29 @@ class WhatViewController: UIViewController {
     }
 
     lazy var actingLabel = UILabel().then {
-        $0.text = "연기"
+        $0.text = "acting".localized
+        $0.font = .systemFont(ofSize: 12)
     }
     
     lazy var directLabel = UILabel().then {
-        $0.text = "연출"
+        $0.text = "direct".localized
+        $0.font = .systemFont(ofSize: 12)
     }
     
     lazy var ostLabel = UILabel().then {
-        $0.text = "OST"
+        $0.text = "ost".localized
+        $0.font = .systemFont(ofSize: 12)
     }
     
     lazy var visualLabel = UILabel().then {
-        $0.text = "영상미"
+        $0.text = "visual".localized
+        $0.font = .systemFont(ofSize: 12)
+        $0.numberOfLines = 0
     }
     
     lazy var storyLabel = UILabel().then {
-        $0.text = "스토리"
+        $0.text = "story".localized
+        $0.font = .systemFont(ofSize: 12)
     }
     
     let actingStackView = UIStackView().then {
@@ -115,7 +121,7 @@ class WhatViewController: UIViewController {
     }
     
     lazy var nextButton = UIButton().then {
-        $0.setTitle("다음", for: .normal)
+        $0.setTitle("next".localized, for: .normal)
         $0.backgroundColor = R.Color.green
         $0.layer.masksToBounds = true
         $0.layer.cornerRadius = 25
@@ -146,10 +152,12 @@ class WhatViewController: UIViewController {
         
         label.snp.makeConstraints {
             $0.centerX.equalTo(view.snp.centerX)
-            $0.centerY.equalTo(view.snp.centerY).offset(-60)
+            $0.centerY.equalTo(view.snp.centerY).offset(-80)
         }
         
         stackView.snp.makeConstraints {
+            $0.top.equalTo(label.snp.bottom).inset(20)
+            $0.leading.trailing.equalTo(0).inset(20)
             $0.centerX.equalTo(view.snp.centerX)
             $0.centerY.equalTo(view.snp.centerY)
         }
@@ -163,6 +171,12 @@ class WhatViewController: UIViewController {
     }
     
     func setupStackView() {
+        actingStackView.distribution = .fillEqually
+        directStackView.distribution = .fillEqually
+        ostStackView.distribution = .fillEqually
+        storyStackView.distribution = .fillEqually
+        visualStackView.distribution = .fillEqually
+        
         [actingButton, actingLabel].forEach {
             self.actingStackView.addArrangedSubview($0)
         }

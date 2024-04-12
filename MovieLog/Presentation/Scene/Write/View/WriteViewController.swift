@@ -19,12 +19,12 @@ class WriteViewController: UIViewController {
     
     // MARK: - UI Components
     lazy var label = UILabel().then {
-        $0.text = "관람평"
+        $0.text = "writeReview".localized
         $0.font = .systemFont(ofSize: 25)
     }
     
     lazy var reviewTextView = UITextView().then {
-        $0.text = "내용을 입력해주세요."
+        $0.text = "enterMessage".localized
         $0.font = .systemFont(ofSize: 17)
         $0.textColor = .lightGray
         $0.backgroundColor = .systemGray6
@@ -32,7 +32,7 @@ class WriteViewController: UIViewController {
     }
     
     lazy var registerButton = UIButton().then {
-        $0.setTitle("등록", for: .normal)
+        $0.setTitle("register".localized, for: .normal)
         $0.backgroundColor = R.Color.green
         $0.layer.masksToBounds = true
         $0.layer.cornerRadius = 25
@@ -113,7 +113,7 @@ extension WriteViewController: UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if reviewTextView.text.isEmpty {
-            reviewTextView.text = "내용을 입력해주세요."
+            reviewTextView.text = "enterMessage".localized
             reviewTextView.textColor = UIColor.lightGray
         }
     }
