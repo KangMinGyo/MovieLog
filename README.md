@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://github.com/KangMinGyo/MixSpace/assets/98341623/b69cf191-3ba0-422a-af9b-54082974d130">
-</p>
-
 # Overview
 
 ![image.jpg1](https://github.com/KangMinGyo/MovieDiary_/assets/98341623/c34604ef-93e6-42de-8307-84d8b5f91ed2) |![image.jpg2](https://github.com/KangMinGyo/MovieDiary_/assets/98341623/18c18b81-7c12-4cef-a1fd-c46a7de816e7) |![image.jpg3](https://github.com/KangMinGyo/MovieDiary_/assets/98341623/b4953a64-6030-44e6-a249-5764a314c4de)
