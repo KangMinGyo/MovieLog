@@ -63,19 +63,15 @@
 
 <br/><br/>
 
-- 홈 화면
+- 홈 화면 & 리뷰 상세 화면
   - Firebase를 통해 지금까지 작성한 리뷰들을 홈 화면에 불러옵니다.
   - UICollectionViewDiffableDataSource를 적용해 데이터의 변화에 유연하게 대응할 수 있습니다.
-<img src="https://github.com/KangMinGyo/MovieDiary_/assets/98341623/226db573-e295-4cc1-ab9f-25c3c4fe3313" width="200">
-
-<br/><br/>
-
-- 영화 상세 화면
   - 작성한 리뷰를 상세하게 확인 할 수 있습니다.
-<img src="https://github.com/KangMinGyo/MovieDiary_/assets/98341623/3ca13744-89d5-4d08-8af8-713f6c415391" width="200">
 
+![image.jpg1](https://github.com/KangMinGyo/MovieDiary_/assets/98341623/226db573-e295-4cc1-ab9f-25c3c4fe3313) |![image.jpg2](https://github.com/KangMinGyo/MovieDiary_/assets/98341623/3ca13744-89d5-4d08-8af8-713f6c415391)
+--- | --- |
 <br/><br/>
-
+ 
 - 영화 검색 화면
   - 리뷰를 작성할 영화의 제목을 검색합니다.
   - 만약 영화가 존재하지 않는다면, 직접 영화 정보를 추가 할 수도 있습니다.
